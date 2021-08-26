@@ -1,0 +1,64 @@
+.account_container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 80px;
+  margin: 20px;
+}
+
+.photo_container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.notification_container {
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+}
+
+.icon_badge_container {
+  position: relative;
+  top: 10px;
+}
+
+.icon_bell {
+  position: relative;
+}
+
+.icon_badge {
+  background-color: red;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: relative;
+  top: -32px;
+  left: 8px;
+}
+
+.info_container {
+  display: block;
+  justify-content: flex-start;
+  align-self: center;
+}
+
+.photo_container img {
+  width: 45px;
+  height:45px;
+  border-radius:22.5px;
+}
+
+.info_container h5 {
+  font-size: 15px;
+  margin: 0;
+  padding: 0 0 0 15px;
+}
+
+.info_container p {
+  font-size: 12px;
+  margin: 0;
+  padding: 5px 0 0 15px;
+}
