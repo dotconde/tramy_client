@@ -6,7 +6,7 @@
 }
 
 hr {
-  height: 1px;
+  height: 0.0625rem;
   background-color: #383838;
   border: none;
 }
@@ -15,40 +15,40 @@ hr {
   display: flex;
   align-items: center;
   justify-content: start;
-  height: 65px;
-  padding: 15px 20px 0;
+  height: 4rem;
+  padding: 0.9375rem 1.25rem 0;
 }
 
 .navbar_logo img {
-  width: 100px;
+  width: 45%;
 }
 
 .navbar_menu {
   display: block;
   align-items: flex-start;
   justify-content: start;
-  height: 350px;
+  height: 21.875rem;
 }
 
 .navbar_list {
   margin: 0;
-  padding: 20px;
+  padding: 1.25rem;
   display: block;
 }
 
 .navbar_list li {
   display: flex;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
   text-decoration: none;
   list-style: none;
   color: #FFFFFF;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .navbar_list svg {
-  width: 16px;
-  padding-right: 10px;
+  width: 1rem;
+  padding-right: 0.625rem;
 }
 
 li:hover path, li:hover {
