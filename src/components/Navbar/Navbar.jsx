@@ -8,7 +8,8 @@ function NavBar() {
     <div className="navbar_container">
       <section className="navbar_logo">
         <img src={logoTramy} alt="tramy logo" />
-      </section> <hr />
+      </section> 
+      <hr />
       <section className="navbar_menu">
         <AccountInfo></AccountInfo>
         <ul className="navbar_list">
@@ -29,7 +30,8 @@ function NavBar() {
             </svg>Embudo de Ventas
           </li>
         </ul>
-      </section> <hr />
+      </section> 
+      <hr />
       <section>
       <ul className="navbar_list">
         <li>
