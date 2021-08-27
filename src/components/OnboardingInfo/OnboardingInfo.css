@@ -1,0 +1,21 @@
+.onboarding_info_container{
+  margin: 0 2.18rem 2.18rem 1.09rem ;
+  background-color: #FFFFFF;
+}
+
+.onboarding_introduction {
+  padding: 1.5rem;
+}
+
+.onboarding_introduction h5 {
+  font-weight: 500;
+  color: #5A5A5A;
+  font-size: 1.25rem;
+  margin: 2.19rem 0 0;
+}
+
+.onboarding_introduction p {
+  font-weight: 500;
+  color: #9A9A9A;
+  font-size: 0.9rem;
+}
