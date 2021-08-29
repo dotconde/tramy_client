@@ -5,13 +5,13 @@ import checkIcon from "../../assets/icons/check.svg";
 
 function Feed() {
   return (
-    <div className="home">
-      <section className="home__welcome">
+    <div className="feed">
+      <section className="feed__welcome">
         <h3>Hola, Deyvi 👋 </h3>
         <p>¡Bienvenido a Tramy!</p>
         <hr />
       </section>
-      <section className="channel-list">
+      <section className="feed__channel">
         <h4>Canales Integrados</h4>
         <article className="channel">
           <div className="channel__icon">
