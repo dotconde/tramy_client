@@ -1,7 +1,7 @@
 .detailed_product_container {
   margin: 0 1.09rem 2.18rem 2.18rem;
   padding: 1.5rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .intro_container {
@@ -13,13 +13,13 @@
 .intro_container h3 {
   font-weight: 500;
   font-size: 2.19rem;
-  color: #5A5A5A;
+  color: #5a5a5a;
   margin: 2.19rem 0 0;
 }
 
 .intro_container p {
   font-size: 1.25rem;
-  color: #9A9A9A;
+  color: #9a9a9a;
   margin: 0 0 1.5rem;
 }
 
@@ -38,14 +38,14 @@ hr {
 .channels_container h4 {
   font-weight: 600;
   font-size: 1.25rem;
-  color: #5A5A5A;
+  color: #5a5a5a;
   margin: 1.5rem 0;
 }
 
 .article_container {
   display: grid;
   grid-template-columns: 1fr 3.5fr 1.5fr;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border-radius: 0.75rem;
   box-shadow: 0 0.18rem 0.625rem rgb(0 0 0 / 0.2);
 }
@@ -61,7 +61,7 @@ hr {
   padding: 1rem;
 }
 
-.social_network_description{
+.social_network_description {
   display: block;
   justify-content: flex-start;
   align-items: center;
@@ -70,17 +70,17 @@ hr {
 .social_network_description h5 {
   font-weight: 600;
   font-size: 0.94rem;
-  color: #5A5A5A;
+  color: #5a5a5a;
   margin: 1.2rem 0 0.3rem;
 }
 
 .social_network_description p {
   font-size: 0.65rem;
-  color: #9A9A9A;
+  color: #9a9a9a;
   margin: 0 0 1.2rem;
 }
 
-.social_network_status{
+.social_network_status {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -93,6 +93,6 @@ hr {
 
 .social_network_status p {
   font-size: 0.95rem;
-  color: #32AE7A;
+  color: #32ae7a;
   padding-left: 0.5rem;
 }
