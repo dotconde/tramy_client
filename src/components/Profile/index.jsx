@@ -3,7 +3,11 @@ import "./styles.css";
 import photoProfile from "../../assets/img/photo.jpg";
 import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
 
-function Profile() {
+function Profile({
+  fullName = "Deyvi Conde",
+  notificationCount = 0,
+  email = "deyvi@tramy.io",
+}) {
   return (
     <div>
       <div className="account">
@@ -13,14 +17,14 @@ function Profile() {
         </section>
         {/* Profile/account info */}
         <section className="account__info">
-          <h5>Deyvi Conde</h5>
-          <p>deyvi@disoft.io</p>
+          <h5>{fullName}</h5>
+          <p>{email}</p>
         </section>
         {/* Notification Center */}
         <section className="notification-center">
           <div className="notification">
             <NotificationIcon />
-            <div className="notification__number">1</div>
+            <div className="notification__number">{notificationCount}</div>
           </div>
         </section>
       </div>

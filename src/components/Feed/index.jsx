@@ -3,12 +3,12 @@ import "./styles.css";
 import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp.svg";
 import checkIcon from "../../assets/icons/check.svg";
 
-function Feed() {
+function Feed({ firstName = "Deyvi", whatsappIsActive = false }) {
   return (
     <div className="feed">
       {/* Feed Welcome */}
       <section className="feed__welcome">
-        <h3>Hola, Deyvi 👋 </h3>
+        <h3>Hola, {firstName} 👋 </h3>
         <p>¡Bienvenido a Tramy!</p>
         <hr />
       </section>
@@ -27,7 +27,7 @@ function Feed() {
           <div className="channel__status">
             {/* Wrap checkIcon within img for compatibility purposes */}
             <img src={checkIcon} alt="check icon" />
-            <p>Conectado</p>
+            <p>{whatsappIsActive ? "Conectado" : "No conectado"}</p>
           </div>
         </article>
       </section>
