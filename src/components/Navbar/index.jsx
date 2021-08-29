@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import AccountInfo from "../AccountInfo";
+import Profile from "../Profile";
 import tramyLogo from "../../assets/logo/tramy_logo.svg";
 import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
 import { ReactComponent as ChatIcon } from "../../assets/icons/chat.svg";
@@ -17,7 +17,7 @@ function Navbar() {
       </section>
       <hr />
       <section className="navbar__menu">
-        <AccountInfo />
+        <Profile />
         <ul className="navbar__list">
           <li>
             <HomeIcon />
