@@ -9,7 +9,7 @@ import { ReactComponent as FunnelIcon } from "../../assets/icons/funnel.svg";
 import { ReactComponent as TeamIcon } from "../../assets/icons/team.svg";
 import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
 
-function NavBar() {
+function Navbar() {
   return (
     <div className="navbar">
       <section className="navbar__logo">
@@ -54,4 +54,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;

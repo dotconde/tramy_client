@@ -1,7 +1,7 @@
-import React from 'react'
-import './home.css';
-import DetailedProduct from '../DetailedProduct'
-import OnboardingInfo from '../OnboardingInfo'
+import React from "react";
+import "./home.css";
+import DetailedProduct from "../DetailedProduct";
+import OnboardingInfo from "../Onboarding";
 
 function Home() {
   return (
@@ -9,7 +9,7 @@ function Home() {
       <DetailedProduct></DetailedProduct>
       <OnboardingInfo></OnboardingInfo>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
