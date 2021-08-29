@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.css";
+import "./styles.css";
 import AccountInfo from "../AccountInfo";
 import tramyLogo from "../../assets/logo/tramy_logo.svg";
 import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
@@ -11,14 +11,14 @@ import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
 
 function NavBar() {
   return (
-    <div className="navbar_container">
-      <section className="navbar_logo">
-        <img src={tramyLogo} alt="tramy logo" />
+    <div className="navbar">
+      <section className="navbar__logo">
+        <img src={tramyLogo} alt="Tramy logo" />
       </section>
       <hr />
-      <section className="navbar_menu">
+      <section className="navbar__menu">
         <AccountInfo />
-        <ul className="navbar_list">
+        <ul className="navbar__list">
           <li>
             <HomeIcon />
             Inicio
@@ -39,7 +39,7 @@ function NavBar() {
       </section>
       <hr />
       <section>
-        <ul className="navbar_list">
+        <ul className="navbar__list">
           <li>
             <TeamIcon />
             Equipo
