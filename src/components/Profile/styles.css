@@ -1,23 +1,23 @@
-.account_container {
+.account {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   height: 5rem;
   margin: 1.25rem;
 }
 
-.photo_container{
+.account__photo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.notification_container {
+.notification-center {
   display: flex;
   justify-self: flex-end;
   align-items: center;
 }
 
-.icon_badge_container {
+.notification {
   position: relative;
   top: 0.625rem;
 }
@@ -26,7 +26,7 @@
   position: relative;
 }
 
-.icon_badge {
+.notification__number {
   background-color: red;
   font-size: 0.625rem;
   color: white;
@@ -39,25 +39,25 @@
   left: 0.5rem;
 }
 
-.info_container {
+.account__info {
   display: block;
   justify-content: flex-start;
   align-self: center;
 }
 
-.photo_container img {
+.account__photo img {
   width: 2.8125rem;
-  height:2.8125rem;
-  border-radius:1.40625rem;
+  height: 2.8125rem;
+  border-radius: 1.40625rem;
 }
 
-.info_container h5 {
+.account__info h5 {
   font-size: 0.9375rem;
   margin: 0;
   padding: 0 0 0 0.9375rem;
 }
 
-.info_container p {
+.account__info p {
   font-size: 0.75rem;
   margin: 0;
   padding: 0.3125rem 0 0 0.9375rem;

@@ -1,0 +1,83 @@
+.onboarding-accordion {
+  background-color: #ffff;
+  color: #9a9a9a;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Accordion styles */
+.onboarding-accordion__steps {
+  overflow: hidden;
+}
+
+.step {
+  width: 100%;
+  color: #9a9a9a;
+  overflow: hidden;
+}
+
+.step label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Icon */
+.step label:hover {
+  background-color: #6c6c6c;
+  color: #ffff;
+}
+
+.step label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.step__content {
+  max-height: 0;
+  padding: 0 1em;
+  font-size: 0.9rem;
+  font-weight: 400;
+  border-bottom: 1px solid rgb(167, 167, 167, 0.2);
+  transition: all 0.35s;
+}
+
+.step__content p {
+  margin: 0;
+  padding: 0.5rem 1.25rem;
+}
+
+.step__content ol {
+  margin: 0.63rem 0;
+}
+
+.step__content li {
+  margin: 0;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #9a9a9a;
+}
+
+/* :checked */
+input:checked + .step__title {
+  background: #6c6c6c;
+  color: #ffff;
+}
+
+input:checked + .step__title::after {
+  transform: rotate(90deg);
+}
+
+input:checked ~ .step__content {
+  max-height: 100vh;
+  padding: 1em;
+}
