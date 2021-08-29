@@ -4,14 +4,14 @@ import "./styles.css";
 function OnboardingSteps() {
   return (
     <div className="onboarding-accordion">
-      <div className="onboarding-accordion__tabs">
+      <div className="onboarding-accordion__steps">
         {/* First item */}
-        <div className="tab">
+        <div className="step">
           <input type="radio" id="rd1" name="rd" />
-          <label className="tab-label" for="rd1">
+          <label className="step__title" for="rd1">
             😃 &nbsp; Agrega un miembro
           </label>
-          <div className="tab-content">
+          <div className="step__content">
             <p>
               Para agregar a un nuevo miembro a tu equipo, sigue los siguientes
               pasos:
@@ -28,12 +28,12 @@ function OnboardingSteps() {
           </div>
         </div>
         {/* Second item */}
-        <div className="tab">
+        <div className="step">
           <input type="radio" id="rd2" name="rd" />
-          <label className="tab-label" for="rd2">
+          <label className="step__title" for="rd2">
             🚀 &nbsp; Tu primer embudo
           </label>
-          <div className="tab-content">
+          <div className="step__content">
             <p>
               Para crear y editar tu primer embudo de ventas, sigue los
               siguientes pasos:
@@ -52,12 +52,12 @@ function OnboardingSteps() {
           </div>
         </div>
         {/* Third item */}
-        <div className="tab">
+        <div className="step">
           <input type="radio" id="rd3" name="rd" />
-          <label className="tab-label" for="rd3">
+          <label className="step__title" for="rd3">
             🛠 &nbsp; Configuración
           </label>
-          <div className="tab-content">
+          <div className="step__content">
             <p>
               Para crear y editar tu primer embudo de ventas, sigue los
               siguientes pasos:
@@ -76,12 +76,12 @@ function OnboardingSteps() {
           </div>
         </div>
         {/* Fourth item */}
-        <div className="tab">
+        <div className="step">
           <input type="radio" id="rd4" name="rd" />
-          <label className="tab-label" for="rd4">
+          <label className="step__title" for="rd4">
             📃 &nbsp; Mi primera plantilla{" "}
           </label>
-          <div className="tab-content">
+          <div className="step__content">
             <p>
               Para crear y editar tu primer embudo de ventas, sigue los
               siguientes pasos:
