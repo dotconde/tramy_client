@@ -17,7 +17,10 @@ function Navbar() {
       </section>
       <hr />
       <section className="navbar__menu">
+        {/* Profile quick info */}
         <Profile />
+
+        {/* Navigation options */}
         <ul className="navbar__list">
           <li>
             <HomeIcon />

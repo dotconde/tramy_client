@@ -6,11 +6,14 @@ import checkIcon from "../../assets/icons/check.svg";
 function Feed() {
   return (
     <div className="feed">
+      {/* Feed Welcome */}
       <section className="feed__welcome">
         <h3>Hola, Deyvi 👋 </h3>
         <p>¡Bienvenido a Tramy!</p>
         <hr />
       </section>
+
+      {/* Feed list of integrated channels */}
       <section className="feed__channel">
         <h4>Canales Integrados</h4>
         <article className="channel">
