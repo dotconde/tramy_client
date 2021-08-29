@@ -3,7 +3,7 @@ import "./styles.css";
 import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp.svg";
 import checkIcon from "../../assets/icons/check.svg";
 
-function DetailedProduct() {
+function Feed() {
   return (
     <div className="home">
       <section className="home__welcome">
@@ -11,7 +11,7 @@ function DetailedProduct() {
         <p>¡Bienvenido a Tramy!</p>
         <hr />
       </section>
-      <section className="home__channels">
+      <section className="channel-list">
         <h4>Canales Integrados</h4>
         <article className="channel">
           <div className="channel__icon">
@@ -32,4 +32,4 @@ function DetailedProduct() {
   );
 }
 
-export default DetailedProduct;
+export default Feed;

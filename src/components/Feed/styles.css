@@ -29,13 +29,13 @@ hr {
   border: none;
 }
 
-.home__channels {
+.channel-list {
   display: block;
   justify-content: flex-start;
   align-items: center;
 }
 
-.home__channels h4 {
+.channel-list h4 {
   font-weight: 600;
   font-size: 1.25rem;
   color: #5a5a5a;
