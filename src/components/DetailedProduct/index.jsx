@@ -5,23 +5,23 @@ import checkIcon from "../../assets/icons/check.svg";
 
 function DetailedProduct() {
   return (
-    <div className="detailed_product_container">
-      <section className="intro_container">
+    <div className="home">
+      <section className="home__welcome">
         <h3>Hola, Deyvi 👋 </h3>
         <p>¡Bienvenido a Tramy!</p>
         <hr />
       </section>
-      <section className="channels_container">
+      <section className="home__channels">
         <h4>Canales Integrados</h4>
-        <article className="article_container">
-          <div className="social_network_icon">
+        <article className="channel">
+          <div className="channel__icon">
             <WhatsappIcon />
           </div>
-          <div className="social_network_description">
+          <div className="channel__description">
             <h5>WhatsApp Business (Integración Oficial)</h5>
             <p>Envía y recibe mensajes de WhatsApp a través de Tramy</p>
           </div>
-          <div className="social_network_status">
+          <div className="channel__status">
             {/* Wrap checkIcon within img for compatibility purposes */}
             <img src={checkIcon} alt="check icon" />
             <p>Conectado</p>

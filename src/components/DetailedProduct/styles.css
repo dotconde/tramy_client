@@ -1,23 +1,23 @@
-.detailed_product_container {
+.home {
   margin: 0 1.09rem 2.18rem 2.18rem;
   padding: 1.5rem;
   background-color: #ffffff;
 }
 
-.intro_container {
+.home__welcome {
   display: block;
   justify-content: flex-start;
   align-items: center;
 }
 
-.intro_container h3 {
+.home__welcome h3 {
   font-weight: 500;
   font-size: 2.19rem;
   color: #5a5a5a;
   margin: 2.19rem 0 0;
 }
 
-.intro_container p {
+.home__welcome p {
   font-size: 1.25rem;
   color: #9a9a9a;
   margin: 0 0 1.5rem;
@@ -29,20 +29,20 @@ hr {
   border: none;
 }
 
-.channels_container {
+.home__channels {
   display: block;
   justify-content: flex-start;
   align-items: center;
 }
 
-.channels_container h4 {
+.home__channels h4 {
   font-weight: 600;
   font-size: 1.25rem;
   color: #5a5a5a;
   margin: 1.5rem 0;
 }
 
-.article_container {
+.channel {
   display: grid;
   grid-template-columns: 1fr 3.5fr 1.5fr;
   background-color: #fafafa;
@@ -50,48 +50,48 @@ hr {
   box-shadow: 0 0.18rem 0.625rem rgb(0 0 0 / 0.2);
 }
 
-.social_network_icon {
+.channel__icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.social_network_icon img {
+.channel__icon img {
   width: 3.25rem;
   padding: 1rem;
 }
 
-.social_network_description {
+.channel__description {
   display: block;
   justify-content: flex-start;
   align-items: center;
 }
 
-.social_network_description h5 {
+.channel__description h5 {
   font-weight: 600;
   font-size: 0.94rem;
   color: #5a5a5a;
   margin: 1.2rem 0 0.3rem;
 }
 
-.social_network_description p {
+.channel__description p {
   font-size: 0.65rem;
   color: #9a9a9a;
   margin: 0 0 1.2rem;
 }
 
-.social_network_status {
+.channel__status {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-right: 1.25rem;
 }
 
-.social_network_status img {
+.channel__status img {
   width: 1.5rem;
 }
 
-.social_network_status p {
+.channel__status p {
   font-size: 0.95rem;
   color: #32ae7a;
   padding-left: 0.5rem;
