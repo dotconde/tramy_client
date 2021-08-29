@@ -6,8 +6,8 @@ import OnboardingInfo from "../Onboarding";
 function Home() {
   return (
     <div className="home_container">
-      <DetailedProduct></DetailedProduct>
-      <OnboardingInfo></OnboardingInfo>
+      <DetailedProduct />
+      <OnboardingInfo />
     </div>
   );
 }

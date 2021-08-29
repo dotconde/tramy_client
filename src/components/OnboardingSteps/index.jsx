@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles.css";
 
-function index() {
+function OnboardingSteps() {
   return (
-    <div className="accordion_container">
-      <div className="tabs">
+    <div className="onboarding-accordion">
+      <div className="onboarding-accordion__tabs">
         {/* First item */}
         <div className="tab">
           <input type="radio" id="rd1" name="rd" />
@@ -104,4 +104,4 @@ function index() {
   );
 }
 
-export default index;
+export default OnboardingSteps;

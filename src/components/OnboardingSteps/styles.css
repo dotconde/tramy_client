@@ -1,6 +1,6 @@
-.accordion_container{
+.onboarding-accordion {
   background-color: #ffff;
-  color: #9A9A9A;
+  color: #9a9a9a;
 }
 
 input {
@@ -10,13 +10,13 @@ input {
 }
 
 /* Accordion styles */
-.tabs {
+.onboarding-accordion__tabs {
   overflow: hidden;
 }
 
 .tab {
   width: 100%;
-  color: #9A9A9A;
+  color: #9a9a9a;
   overflow: hidden;
 }
 
@@ -29,8 +29,8 @@ input {
 }
 
 /* Icon */
-.tab label:hover{
-  background-color: #6C6C6C;
+.tab label:hover {
+  background-color: #6c6c6c;
   color: #ffff;
 }
 
@@ -39,45 +39,45 @@ input {
   width: 1em;
   height: 1em;
   text-align: center;
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
-.tab-content{
+.tab-content {
   max-height: 0;
   padding: 0 1em;
   font-size: 0.9rem;
   font-weight: 400;
   border-bottom: 1px solid rgb(167, 167, 167, 0.2);
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
-.tab-content p{
+.tab-content p {
   margin: 0;
   padding: 0.5rem 1.25rem;
 }
 
-.tab-content ol{
+.tab-content ol {
   margin: 0.63rem 0;
 }
 
-.tab-content li{
+.tab-content li {
   margin: 0;
   padding-left: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #9A9A9A;
+  color: #9a9a9a;
 }
 
 /* :checked */
-input:checked + .tab-label{
-  background: #6C6C6C;
+input:checked + .tab-label {
+  background: #6c6c6c;
   color: #ffff;
 }
 
-input:checked + .tab-label::after{
+input:checked + .tab-label::after {
   transform: rotate(90deg);
 }
 
-input:checked ~  .tab-content {
+input:checked ~ .tab-content {
   max-height: 100vh;
   padding: 1em;
 }
