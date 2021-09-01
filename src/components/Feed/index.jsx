@@ -28,7 +28,17 @@ function Feed({ firstName = "Deyvi", channelStatus = false }) {
           <div className="channel__status">
             {/* Wrap checkIcon within img for compatibility purposes */}
 
-            <p>{channelStatus ? (<div className="channel-active"><CheckIcon /> Conectado</div>) : (<div className="channel-inactive"><CrossIcon /> No conectado</div>)}</p>
+            <p>
+              {channelStatus ? (
+                <div className="channel-active">
+                  <CheckIcon /> Conectado
+                </div>
+              ) : (
+                <div className="channel-inactive">
+                  <CrossIcon /> No conectado
+                </div>
+              )}
+            </p>
           </div>
         </article>
       </section>

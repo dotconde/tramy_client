@@ -1,21 +1,21 @@
-import React from 'react'
+import React from "react";
 import "./styles.css";
 import { ReactComponent as SearchIcon } from "../../../assets/icons/search.svg";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-function Search({placeholder}) {
+function Search({ placeholder }) {
   return (
     <div className="search">
       <button className="search__icon">
-      <SearchIcon />
+        <SearchIcon />
       </button>
-      <input type="text" className="search__input" placeholder={placeholder}/>
+      <input type="text" className="search__input" placeholder={placeholder} />
     </div>
-  )
+  );
 }
 
 Search.propTypes = {
-  placeholder: PropTypes.string.isRequired
-}
+  placeholder: PropTypes.string.isRequired,
+};
 
-export default Search
+export default Search;

@@ -3,7 +3,6 @@ import Home from "../View/Home";
 import Team from "../View/Team";
 import Client from "../View/Client";
 
-
 function MainView() {
   return (
     <div>
