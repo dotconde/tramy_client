@@ -1,13 +1,13 @@
 import React from "react";
-import Home from "../View/Home";
-import Team from "../View/Team";
-import Client from "../View/Client";
+import Home from "../Views/Home";
+import Team from "../Views/Team";
+import Client from "../Views/Clients";
 
 function MainView() {
   return (
     <div>
-      <Home />
-      {/* <Team/> */}
+      {/* <Home /> */}
+      <Team />
       {/* <Client/> */}
       {/* <Chat></Chat>
       <Funnel></Funnel>
