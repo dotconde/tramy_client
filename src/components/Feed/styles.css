@@ -85,14 +85,25 @@ hr {
   justify-content: flex-end;
   align-items: center;
   margin-right: 1.25rem;
+  font-size: 0.9rem;
 }
 
-.channel__status img {
+.channel__status svg {
   width: 1.5rem;
+  height: 1.5rem;
+  padding-right: 0.6rem;
 }
 
-.channel__status p {
-  font-size: 0.95rem;
+.channel-active {
+  display: flex;
+  align-items: center;
   color: #32ae7a;
-  padding-left: 0.5rem;
+  fill: #32ae7a;
+}
+
+.channel-inactive {
+  display: flex;
+  align-items: center;
+  color: red;
+  fill: red;
 }
