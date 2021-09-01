@@ -3,21 +3,21 @@ import "./styles.css";
 import Search from "../../UI/Search";
 import Button from "../../UI/Button";
 import Filter from "../../Filter";
-import Table from "../../Table";
+import Table from "../../UI/Table";
 
-function Team() {
+function Clients() {
   return (
-    <div className="team">
-      <Search placeholder={"Buscar por nombre, cargo o permiso"} />
-      <Button content={"Añadir Usuario"} />
+    <div className="clients">
+      <Search placeholder={"Buscar por nombre, asesor o estado"} />
+      <Button content={"Añadir cliente"} />
       <Filter />
       <Table
         headers={[
           "Nombre",
           "Teléfono",
           "Email",
-          "Cargo",
-          "Permiso",
+          "Asesor",
+          "Estado",
           "Última conexión",
           "Acciones",
         ]}
@@ -26,4 +26,4 @@ function Team() {
   );
 }
 
-export default Team;
+export default Clients;

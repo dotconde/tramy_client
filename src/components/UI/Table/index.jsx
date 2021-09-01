@@ -1,8 +1,8 @@
 import React from "react";
 import "./styles.css";
-import photoProfile from "../../assets/img/photo.jpg";
-import { ReactComponent as PencilIcon } from "../../assets/icons/pencil.svg";
-import { ReactComponent as TrashIcon } from "../../assets/icons/trash.svg";
+import photoProfile from "../../../assets/img/photo.jpg";
+import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
+import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 
 function Table({ headers, data }) {
   return (
