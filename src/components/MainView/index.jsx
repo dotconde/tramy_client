@@ -6,8 +6,8 @@ import Client from "../Views/Clients";
 function MainView() {
   return (
     <div>
-      <Home />
-      {/* <Team/> */}
+      {/* <Home /> */}
+      <Team />
       {/* <Client/> */}
       {/* <Chat></Chat>
       <Funnel></Funnel>
