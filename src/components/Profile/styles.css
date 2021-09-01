@@ -46,9 +46,8 @@
 }
 
 .account__photo img {
-  width: 2.8125rem;
-  height: 2.8125rem;
-  border-radius: 1.40625rem;
+  width: 2.8rem;
+  border-radius: 50%;
 }
 
 .account__info h5 {
