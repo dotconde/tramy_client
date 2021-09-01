@@ -1,0 +1,56 @@
+.table{
+  background-color: #ffff;
+  margin: 0 2rem;
+}
+
+table{
+  width: 100%;
+  padding: 0 2rem;
+  position: relative;
+  border-collapse: collapse;
+  max-width: 100%;
+  margin: auto;
+}
+
+thead[class="categories"]
+tr>th {
+  border-bottom: 1px solid rgb(167, 167, 167, 0.25);
+}
+
+th,td {
+  font-size: 0.83rem;
+  font-weight: 400;
+  text-align: left;
+  padding: 0.8rem 1.5rem;
+}
+
+th{
+  color: #99a6b7;
+}
+
+td {
+  color: #323c48;
+}
+
+tr{
+  border-bottom: 1px solid #ddd;
+}
+
+.name{
+  display: flex;
+  align-items: center;
+}
+
+.name img {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  padding-right: 0.5rem;
+}
+
+.tools svg {
+  padding-right: 0.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: #4D4D4D;
+}

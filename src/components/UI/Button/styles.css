@@ -1,0 +1,23 @@
+.add-user{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 2rem 2rem 0 0;
+}
+
+.add-user button {
+  display: flex;
+  align-items: center;
+  background-color: #109CF1;
+  color: #ffff;
+  padding: 0 1.5em;
+  border-radius: 0.3em;
+  border: none;
+  cursor: pointer;
+}
+
+.add-user p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  padding-left: 0.5rem;
+}

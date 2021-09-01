@@ -1,0 +1,10 @@
+.filter{
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  color: #6A707E;
+  margin: 0 0 1rem 2rem;
+}
+
+.filter a{
+  color: #127BBB;
+}
