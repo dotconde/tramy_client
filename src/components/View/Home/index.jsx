@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
-import Feed from "../Feed";
-import Onboarding from "../Onboarding";
+import Feed from "../../Feed";
+import Onboarding from "../../Onboarding";
 
 function Home() {
   return (

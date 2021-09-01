@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles.css";
 
-function OnboardingSteps() {
+function Usage() {
   return (
-    <div className="onboarding-accordion">
-      <div className="onboarding-accordion__steps">
+    <div className="usage">
+      <div className="usage__accordion">
         {/* First step: Add a member */}
         <div className="step">
           <input type="radio" id="rd1" name="rd" />
@@ -104,4 +104,4 @@ function OnboardingSteps() {
   );
 }
 
-export default OnboardingSteps;
+export default Usage;

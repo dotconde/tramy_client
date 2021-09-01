@@ -1,0 +1,7 @@
+.team{
+  display: flex;
+  flex-direction: column;
+  background-color: #E5E5E5;
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+}

@@ -1,0 +1,30 @@
+.search {
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 0.5fr 12fr;
+  padding: 1rem;
+}
+
+.search__icon{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #FFFFFF;
+  cursor:pointer;
+}
+
+.search__icon:hover{
+  background-color: #E5E5E5;
+}
+
+.search__input {
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+}
+
+::placeholder {
+  color: #90A0B7;
+}

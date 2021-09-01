@@ -1,9 +1,10 @@
 import React from "react";
 import "./styles.css";
 import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp.svg";
-import checkIcon from "../../assets/icons/check.svg";
+import { ReactComponent as CheckIcon } from "../../assets/icons/check.svg";
+import { ReactComponent as CrossIcon } from "../../assets/icons/cross.svg";
 
-function Feed({ firstName = "Deyvi", whatsappIsActive = false }) {
+function Feed({ firstName = "Deyvi", channelStatus = false }) {
   return (
     <div className="feed">
       {/* Feed Welcome */}
@@ -26,8 +27,18 @@ function Feed({ firstName = "Deyvi", whatsappIsActive = false }) {
           </div>
           <div className="channel__status">
             {/* Wrap checkIcon within img for compatibility purposes */}
-            <img src={checkIcon} alt="check icon" />
-            <p>{whatsappIsActive ? "Conectado" : "No conectado"}</p>
+
+            <p>
+              {channelStatus ? (
+                <div className="channel-active">
+                  <CheckIcon /> Conectado
+                </div>
+              ) : (
+                <div className="channel-inactive">
+                  <CrossIcon /> No conectado
+                </div>
+              )}
+            </p>
           </div>
         </article>
       </section>
