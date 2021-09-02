@@ -15,7 +15,7 @@ function Clients() {
         iconColor={"white"}
         content={"Añadir Cliente"}
         backgroundColor={"#109CF1"}
-        textColor={"white"}
+        contentColor={"white"}
         borderColor={"transparent"}
       />
       <Filter />

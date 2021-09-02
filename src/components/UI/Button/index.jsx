@@ -5,7 +5,7 @@ function Button({
   icon,
   content,
   backgroundColor,
-  textColor,
+  contentColor,
   borderColor,
   iconColor,
 }) {
@@ -14,7 +14,7 @@ function Button({
       <button
         style={{
           backgroundColor: backgroundColor,
-          color: textColor,
+          color: contentColor,
           borderColor: borderColor,
         }}
       >

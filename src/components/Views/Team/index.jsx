@@ -15,7 +15,7 @@ function Team() {
         iconColor={"white"}
         content={"Añadir Usuario"}
         backgroundColor={"#109CF1"}
-        textColor={"white"}
+        contentColor={"white"}
         borderColor={"transparent"}
       />
       <Filter />
