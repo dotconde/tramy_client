@@ -1,13 +1,13 @@
 import React from "react";
 import "./styles.css";
-import PypelineSelector from "../../PylineSelector";
-import Pypeline from "../../Pypeline";
+import PipelineSelector from "../../PipelineSelector";
+import Pipeline from "../../Pipeline";
 
 function Funnel() {
   return (
     <div className="funnel">
-      <PypelineSelector />
-      <Pypeline />
+      <PipelineSelector />
+      <Pipeline />
     </div>
   );
 }

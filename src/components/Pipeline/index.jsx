@@ -2,13 +2,13 @@ import React from "react";
 import StageHeader from "../StageHeader";
 import StageBody from "../StageBody";
 
-function Pypeline() {
+function Pipeline() {
   return (
-    <div className="pypeline">
+    <div className="pipeline">
       <StageHeader />
       <StageBody />
     </div>
   );
 }
 
-export default Pypeline;
+export default Pipeline;

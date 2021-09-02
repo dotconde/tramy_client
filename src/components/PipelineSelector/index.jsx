@@ -4,9 +4,9 @@ import { ReactComponent as MoreIcon } from "../../assets/icons/more.svg";
 import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as OpenMessageIcon } from "../../assets/icons/open-message.svg";
 
-function PypelineSelector() {
+function PipelineSelector() {
   return (
-    <div className="pypeline-selector">
+    <div className="pipeline-selector">
       <div className="custom-select">
         <FilterIcon />
         <select>
@@ -27,4 +27,4 @@ function PypelineSelector() {
   );
 }
 
-export default PypelineSelector;
+export default PipelineSelector;
