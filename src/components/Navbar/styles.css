@@ -48,11 +48,13 @@ hr {
 
 .navbar__list svg {
   width: 1rem;
+  height: 1rem;
   padding-right: 0.625rem;
+  fill: white;
 }
 
 li:hover path,
 li:hover {
-  stroke: #2a97d9;
+  fill: #2a97d9;
   color: #2a97d9;
 }

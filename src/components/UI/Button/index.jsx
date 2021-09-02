@@ -1,7 +1,14 @@
 import React from "react";
 import "./styles.css";
 
-function Button({ icon, content, backgroundColor, textColor, borderColor }) {
+function Button({
+  icon,
+  content,
+  backgroundColor,
+  textColor,
+  borderColor,
+  iconColor,
+}) {
   return (
     <div className="add-user">
       <button
@@ -11,7 +18,13 @@ function Button({ icon, content, backgroundColor, textColor, borderColor }) {
           borderColor: borderColor,
         }}
       >
-        <span>{icon}</span>
+        <span
+          style={{
+            fill: iconColor,
+          }}
+        >
+          {icon}
+        </span>
         <p>{content}</p>
       </button>
     </div>
