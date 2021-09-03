@@ -8,52 +8,67 @@ import { ReactComponent as ClientIcon } from "../../assets/icons/client.svg";
 import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as TeamIcon } from "../../assets/icons/team.svg";
 import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="navbar">
-      <section className="navbar__logo">
-        <img src={tramyLogo} alt="Tramy logo" />
-      </section>
-      <hr />
-      <section className="navbar__menu">
-        {/* Profile quick info */}
-        <Profile />
+    <Router>
+      <div className="navbar">
+        <section className="navbar__logo">
+          <img src={tramyLogo} alt="Tramy logo" />
+        </section>
+        <hr />
+        <section className="navbar__menu">
+          {/* Profile quick info */}
+          <Profile />
 
-        {/* Navigation options */}
-        <ul className="navbar__list">
-          <li>
-            <HomeIcon />
-            Inicio
-          </li>
-          <li>
-            <ChatIcon />
-            Chat
-          </li>
-          <li>
-            <ClientIcon />
-            Clientes
-          </li>
-          <li>
-            <FilterIcon />
-            Embudo de Ventas
-          </li>
-        </ul>
-      </section>
-      <hr />
-      <section>
-        <ul className="navbar__list">
-          <li>
-            <TeamIcon />
-            Equipo
-          </li>
-          <li>
-            <SetupIcon />
-            Configuración
-          </li>
-        </ul>
-      </section>
-    </div>
+          {/* Navigation options */}
+          <ul className="navbar__list">
+            <li>
+              <NavLink to="/">
+                <HomeIcon />
+                Inicio
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/chat">
+                <ChatIcon />
+                Chat
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/clients">
+                <ClientIcon />
+                Clientes
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/funnel">
+                <FilterIcon />
+                Embudo de Ventas
+              </NavLink>
+            </li>
+          </ul>
+        </section>
+        <hr />
+        <section>
+          <ul className="navbar__list">
+            <li>
+              <NavLink to="/team">
+                <TeamIcon />
+                Equipo
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/setup">
+                <SetupIcon />
+                Configuración
+              </NavLink>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </Router>
   );
 }
 
