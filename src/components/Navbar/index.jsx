@@ -8,6 +8,7 @@ import { ReactComponent as ClientIcon } from "../../assets/icons/client.svg";
 import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as TeamIcon } from "../../assets/icons/team.svg";
 import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -23,20 +24,28 @@ function Navbar() {
         {/* Navigation options */}
         <ul className="navbar__list">
           <li>
-            <HomeIcon />
-            Inicio
+            <NavLink to="/">
+              <HomeIcon />
+              Inicio
+            </NavLink>
           </li>
           <li>
-            <ChatIcon />
-            Chat
+            <NavLink to="/chat">
+              <ChatIcon />
+              Chat
+            </NavLink>
           </li>
           <li>
-            <ClientIcon />
-            Clientes
+            <NavLink to="/clients">
+              <ClientIcon />
+              Clientes
+            </NavLink>
           </li>
           <li>
-            <FilterIcon />
-            Embudo de Ventas
+            <NavLink to="/funnel">
+              <FilterIcon />
+              Embudo de Ventas
+            </NavLink>
           </li>
         </ul>
       </section>
@@ -44,12 +53,16 @@ function Navbar() {
       <section>
         <ul className="navbar__list">
           <li>
-            <TeamIcon />
-            Equipo
+            <NavLink to="/team">
+              <TeamIcon />
+              Equipo
+            </NavLink>
           </li>
           <li>
-            <SetupIcon />
-            Configuración
+            <NavLink to="/setup">
+              <SetupIcon />
+              Configuración
+            </NavLink>
           </li>
         </ul>
       </section>

@@ -1,9 +1,9 @@
-.table{
+.table {
   background-color: #ffff;
   margin: 0 2rem;
 }
 
-table{
+table {
   width: 100%;
   padding: 0 2rem;
   position: relative;
@@ -12,19 +12,19 @@ table{
   margin: auto;
 }
 
-thead[class="categories"]
-tr>th {
+thead[class="categories"] tr > th {
   border-bottom: 1px solid rgb(167, 167, 167, 0.25);
 }
 
-th,td {
+th,
+td {
   font-size: 0.83rem;
   font-weight: 400;
   text-align: left;
   padding: 0.8rem 1.5rem;
 }
 
-th{
+th {
   color: #99a6b7;
 }
 
@@ -32,11 +32,11 @@ td {
   color: #323c48;
 }
 
-tr{
+tr {
   border-bottom: 1px solid #ddd;
 }
 
-.name{
+.name {
   display: flex;
   align-items: center;
 }
@@ -52,5 +52,5 @@ tr{
   padding-right: 0.6rem;
   width: 1.2rem;
   height: 1.2rem;
-  fill: #4D4D4D;
+  fill: #4d4d4d;
 }

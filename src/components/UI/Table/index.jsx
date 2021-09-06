@@ -8,7 +8,7 @@ function Table({ headers, data }) {
   return (
     <div className="table">
       <table>
-        <thead class="categories">
+        <thead className="categories">
           <tr>
             {headers.map((header) => (
               <th>{header}</th>
