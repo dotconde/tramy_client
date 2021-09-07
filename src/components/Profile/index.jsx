@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import photoProfile from "../../assets/img/photo.jpg";
+import photoProfile from "../../assets/img/profile.png";
 import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
 
 function Profile({
