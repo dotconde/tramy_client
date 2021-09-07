@@ -23,7 +23,7 @@
   margin: 0 0 1.5rem;
 }
 
-hr {
+.feed__welcome hr {
   height: 0.0625rem;
   background-color: rgb(167, 167, 167, 0.25);
   border: none;
