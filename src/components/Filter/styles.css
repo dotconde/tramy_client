@@ -1,10 +1,19 @@
-.filter{
+.filter {
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
-  color: #6A707E;
+  color: #6a707e;
   margin: 0 0 1rem 2rem;
 }
 
-.filter a{
-  color: #127BBB;
+.filter label {
+  padding-right: 0.5rem;
+}
+
+.filter select {
+  font-size: 0.75rem;
+  background: #f1f3f4;
+  font-family: "Poppins", sans-serif;
+  color: #2a97d9;
+  border: 0;
+  outline: 0;
 }
