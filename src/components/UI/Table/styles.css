@@ -18,7 +18,7 @@ thead[class="categories"] tr > th {
 
 th,
 td {
-  font-size: 0.83rem;
+  font-size: 0.75rem;
   font-weight: 400;
   text-align: left;
   padding: 0.8rem 1.5rem;
@@ -33,24 +33,17 @@ td {
 }
 
 tr {
-  border-bottom: 1px solid #ddd;
-}
-
-.name {
-  display: flex;
-  align-items: center;
-}
-
-.name img {
-  width: 1.7rem;
-  height: 1.7rem;
-  border-radius: 50%;
-  padding-right: 0.5rem;
+  border-bottom: 1px solid rgb(167, 167, 167, 0.25);
 }
 
 .tools svg {
-  padding-right: 0.6rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  padding-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
   fill: #4d4d4d;
+}
+
+.tools svg:hover {
+  fill: #2a97d9;
+  cursor: pointer;
 }

@@ -4,20 +4,25 @@ import Search from "../../UI/Search";
 import Button from "../../UI/Button";
 import Filter from "../../Filter";
 import Table from "../../UI/Table";
+import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
+import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
+import { ReactComponent as MessageIcon } from "../../../assets/icons/message.svg";
 import { ReactComponent as AddUserIcon } from "../../../assets/icons/add-user.svg";
 
 function Clients() {
   return (
     <div className="clients">
       <Search placeholder={"Buscar por nombre, asesor o estado"} />
-      <Button
-        icon={<AddUserIcon />}
-        iconColor={"white"}
-        content={"Añadir Cliente"}
-        backgroundColor={"#109CF1"}
-        contentColor={"white"}
-        borderColor={"transparent"}
-      />
+      <div className="add-user">
+        <Button
+          icon={<AddUserIcon />}
+          iconColor={"white"}
+          content={"Añadir Cliente"}
+          backgroundColor={"#109CF1"}
+          contentColor={"white"}
+          borderColor={"transparent"}
+        />
+      </div>
       <Filter />
       <Table
         headers={[
@@ -29,6 +34,25 @@ function Clients() {
           "Última conexión",
           "Acciones",
         ]}
+        data={[
+          {
+            phone: "+51943313390",
+            name: "Jefferson Cahuana",
+            email: "d.conde.cahuana@trammy.io",
+            agent: "Alberto Suarez",
+            status: "Pagado",
+            lastActive: "12/06/2021 , 14:10",
+          },
+          {
+            name: "Jefferson Cahuana",
+            phone: "+51943313390",
+            email: "d.conde.cahuana@trammy.io",
+            agent: "Alberto Suarez",
+            status: "Contactado",
+            lastActive: "12/06/2021 , 14:10",
+          },
+        ]}
+        tools={[<MessageIcon />, <PencilIcon />, <TrashIcon />]}
       />
     </div>
   );
