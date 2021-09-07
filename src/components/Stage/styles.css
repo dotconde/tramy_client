@@ -1,0 +1,52 @@
+.stage {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.stage__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 5rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.header__triangle {
+  position: absolute;
+  right: -1.2rem;
+  top: 2rem;
+  z-index: 1;
+}
+
+.header__triangle svg {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__content p {
+  font-size: 1rem;
+  color: white;
+}
+
+.notification__box {
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: white;
+  padding: 0.25rem 1.4rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+}
+
+.stage__body {
+  height: 37.5rem;
+  overflow-y: scroll;
+}

@@ -7,19 +7,27 @@ import { ReactComponent as OpenMessageIcon } from "../../assets/icons/open-messa
 function PipelineSelector() {
   return (
     <div className="pipeline-selector">
+      {/* Pipeline Selector */}
       <div className="custom-select">
         <FilterIcon />
         <select>
-          <option value="">Embudo de ventas #1</option>
-          <option value="">Nuevo Embudo</option>
+          <optgroup label="Seleccione embudo">
+            <option value="">Embudo de ventas #1</option>
+            <option value="">Embudo de ventas #2</option>
+          </optgroup>
         </select>
       </div>
+
+      {/* Agent Selector */}
       <div className="custom-select">
         <OpenMessageIcon />
         <select>
-          <option value="">Diego Montes</option>
-          <option value="">Renzo Trujillo</option>
-          <option value="">Andy Yarieque</option>
+          <optgroup label="Seleccione asesor">
+            <option value="">Diego Montes</option>
+            <option value="">Renzo Trujillo</option>
+            <option value="">Andy Yarieque</option>
+            <option value="">Christian Meier</option>
+          </optgroup>
         </select>
       </div>
       <MoreIcon />
