@@ -10,7 +10,7 @@ function Button({
   iconColor,
 }) {
   return (
-    <div className="add-user">
+    <div className="trammy-button">
       <button
         style={{
           backgroundColor: backgroundColor,
