@@ -1,8 +1,9 @@
-// import { useRef, useState } from "react";
+import { BASE_URL, ENDPOINTS } from "../../config";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import "./styles.css";
 
-function Login() {
+function Login({ setToken }) {
   const {
     register,
     handleSubmit,
@@ -10,8 +11,24 @@ function Login() {
     reset,
   } = useForm();
 
+  async function loginUser(user) {
+    return axios
+      .post(
+        `${BASE_URL}/${ENDPOINTS.LOGIN}`,
+        { user },
+        {
+          headers: {},
+        }
+      )
+      .then((response) => {
+        const token = response.headers.authorization.split(" ")[1];
+        return token;
+      });
+  }
+
   const onSubmit = async (data) => {
-    await console.log(data);
+    const token = await loginUser(data);
+    setToken(token);
     reset();
   };
 
@@ -24,7 +41,14 @@ function Login() {
         id="email"
         {...register("email", {
           required: true,
-          maxLength: 254,
+          minLength: {
+            value: 5,
+            message: "El email debe tener al menos 5 caracteres",
+          },
+          maxLength: {
+            value: 254,
+            message: "El email debe tener como máximo 254 caracteres",
+          },
           pattern: {
             value: /\S+@\S+\.\S+/,
             message:
@@ -44,6 +68,10 @@ function Login() {
           minLength: {
             value: 5,
             message: "La contraseña debe tener al menos 5 caracteres",
+          },
+          maxLength: {
+            value: 30,
+            message: "La contraseña debe tener como máximo 30 caracteres",
           },
         })}
         type="password"
