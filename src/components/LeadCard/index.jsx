@@ -1,8 +1,8 @@
 import React from "react";
 import "./styles.css";
-import photoProfile from "../../assets/img/profile.png";
+import defaultProfile from "../../assets/img/default-profile.png";
 
-function LeadCard({ photoUrl = photoProfile, fullName, agent }) {
+function LeadCard({ photoUrl = defaultProfile, fullName, agent }) {
   return (
     <div className="lead-card">
       <img src={photoUrl} alt="" />
