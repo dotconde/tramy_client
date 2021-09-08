@@ -2,6 +2,9 @@ import { BASE_URL, ENDPOINTS } from "../../config";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./styles.css";
+import { ReactComponent as TrammyLogo } from "../../assets/logo/tramy_logo.svg";
+import { ReactComponent as BlackTrammyLogo } from "../../assets/logo/black_trammy_logo.svg";
+import TrammyLoginWallpaper from "../../assets/img/trammy_login_wallpaper.svg";
 
 function Login({ setToken }) {
   const {
@@ -33,52 +36,64 @@ function Login({ setToken }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <h1>Tramy Login</h1>
-      {/* Email */}
-      <label htmlFor="email">Email</label>
-      <input
-        id="email"
-        {...register("email", {
-          required: true,
-          minLength: {
-            value: 5,
-            message: "El email debe tener al menos 5 caracteres",
-          },
-          maxLength: {
-            value: 254,
-            message: "El email debe tener como máximo 254 caracteres",
-          },
-          pattern: {
-            value: /\S+@\S+\.\S+/,
-            message:
-              "El email ingresado no coincide con el formato válido de Tramy",
-          },
-        })}
-        type="email"
-      />
-      {errors.email && <span role="alert">{errors.email.message}</span>}
+    <div className="login">
+      <section className="login__form">
+        <TrammyLogo />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* Email */}
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            {...register("email", {
+              required: true,
+              minLength: {
+                value: 5,
+                message: "El email debe tener al menos 5 caracteres",
+              },
+              maxLength: {
+                value: 254,
+                message: "El email debe tener como máximo 254 caracteres",
+              },
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message:
+                  "El email ingresado no coincide con el formato válido de Tramy",
+              },
+            })}
+            type="email"
+          />
+          {errors.email && <span role="alert">{errors.email.message}</span>}
 
-      {/* Password */}
-      <label htmlFor="password">Contraseña</label>
-      <input
-        id="password"
-        {...register("password", {
-          required: true,
-          minLength: {
-            value: 5,
-            message: "La contraseña debe tener al menos 5 caracteres",
-          },
-          maxLength: {
-            value: 30,
-            message: "La contraseña debe tener como máximo 30 caracteres",
-          },
-        })}
-        type="password"
-      />
-      {errors.password && <span role="alert">{errors.password.message}</span>}
-      <button type="submit">Login</button>
-    </form>
+          {/* Password */}
+          <label htmlFor="password">Contraseña</label>
+          <input
+            id="password"
+            {...register("password", {
+              required: true,
+              minLength: {
+                value: 5,
+                message: "La contraseña debe tener al menos 5 caracteres",
+              },
+              maxLength: {
+                value: 30,
+                message: "La contraseña debe tener como máximo 30 caracteres",
+              },
+            })}
+            type="password"
+          />
+          {errors.password && (
+            <span role="alert">{errors.password.message}</span>
+          )}
+          <button type="submit">Inicia Sesión</button>
+        </form>
+      </section>
+      <section className="login__welcome">
+        <p>
+          Bienvenidos a&nbsp; <BlackTrammyLogo />
+        </p>
+        <img src={TrammyLoginWallpaper} alt="imagen de fondo de Trammy" />
+      </section>
+    </div>
   );
 }
 
