@@ -1,0 +1,69 @@
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+  color: white;
+  font-size: 0.9rem;
+  padding: 2rem;
+}
+
+.login__form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form svg {
+  margin-bottom: 2.5rem;
+}
+
+#email,
+#password {
+  width: 25rem;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.login__form button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #109cf1;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem;
+  margin-top: 2rem;
+}
+
+.login__welcome {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login__welcome p {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  font-size: 1.5rem;
+}
+
+.login__welcome img {
+  width: 95%;
+}
