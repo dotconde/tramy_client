@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-function Filter() {
+function ClientFilter({ agentList, stageList }) {
   return (
     <div className="filter">
       <label for="filter">Filtro:</label>
@@ -13,21 +13,19 @@ function Filter() {
         </optgroup>
 
         <optgroup label="Asesor">
-          <option value="">Todos</option>
-          <option value="">Diego Torres</option>
-          <option value="">Pedro Suarez</option>
-          <option value="">Christian Meier</option>
+          {agentList.map((agent) => (
+            <option value="">{agent.name}</option>
+          ))}
         </optgroup>
 
         <optgroup label="Estado">
-          <option value="">Todos</option>
-          <option value="">Contactado</option>
-          <option value="">Cotizado</option>
-          <option value="">Pagado</option>
+          {stageList.map((stage) => (
+            <option value="">{stage.title}</option>
+          ))}
         </optgroup>
       </select>
     </div>
   );
 }
 
-export default Filter;
+export default ClientFilter;

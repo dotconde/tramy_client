@@ -12,7 +12,10 @@ function Funnel() {
             name: "Deyvi Conde",
           },
           {
-            name: "Jeff Bezos",
+            name: "Diego Montes",
+          },
+          {
+            name: "Renzo Trujillo",
           },
         ]}
       />
