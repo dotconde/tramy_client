@@ -8,7 +8,7 @@ function Usage() {
         {/* First step: Add a member */}
         <div className="step">
           <input type="radio" id="rd1" name="rd" />
-          <label className="step__title" for="rd1">
+          <label className="step__title" htmlFor="rd1">
             😃 &nbsp; Agrega un miembro
           </label>
           <div className="step__content">
@@ -30,7 +30,7 @@ function Usage() {
         {/* Second step: Your first pipeline */}
         <div className="step">
           <input type="radio" id="rd2" name="rd" />
-          <label className="step__title" for="rd2">
+          <label className="step__title" htmlFor="rd2">
             🚀 &nbsp; Tu primer embudo
           </label>
           <div className="step__content">
@@ -54,7 +54,7 @@ function Usage() {
         {/* Third step: Setup */}
         <div className="step">
           <input type="radio" id="rd3" name="rd" />
-          <label className="step__title" for="rd3">
+          <label className="step__title" htmlFor="rd3">
             🛠 &nbsp; Configuración
           </label>
           <div className="step__content">
@@ -78,7 +78,7 @@ function Usage() {
         {/* Fourth step: My first template */}
         <div className="step">
           <input type="radio" id="rd4" name="rd" />
-          <label className="step__title" for="rd4">
+          <label className="step__title" htmlFor="rd4">
             📃 &nbsp; Mi primera plantilla{" "}
           </label>
           <div className="step__content">
