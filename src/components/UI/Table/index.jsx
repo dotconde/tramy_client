@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css";
 
 function Table({ headers, data, tools }) {
-  console.log(data);
   return (
     <div className="table">
       <table>
