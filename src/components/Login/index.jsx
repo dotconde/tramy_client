@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./styles.css";
 import { ReactComponent as TrammyLogo } from "../../assets/logo/tramy_logo.svg";
-import { ReactComponent as BlackTrammyLogo } from "../../assets/logo/trammy_blacklogo.svg";
-import tramyImg1 from "../../assets/img/trammy-img1.svg";
+import { ReactComponent as BlackTrammyLogo } from "../../assets/logo/black_trammy_logo.svg";
+import TrammyLoginWallpaper from "../../assets/img/trammy_login_wallpaper.svg";
 
 function Login({ setToken }) {
   const {
@@ -91,7 +91,7 @@ function Login({ setToken }) {
         <p>
           Bienvenidos a&nbsp; <BlackTrammyLogo />
         </p>
-        <img src={tramyImg1} alt="imagen de fondo de Trammy" />
+        <img src={TrammyLoginWallpaper} alt="imagen de fondo de Trammy" />
       </section>
     </div>
   );
