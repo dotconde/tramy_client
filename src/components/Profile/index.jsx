@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import photoProfile from "../../assets/img/photo.jpg";
+import defaultProfile from "../../assets/img/default-profile.png";
 import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
 
 function Profile({
@@ -13,7 +13,7 @@ function Profile({
       <div className="account">
         {/* Photo */}
         <section className="account__photo">
-          <img src={photoProfile} alt="profile" />
+          <img src={defaultProfile} alt="profile" />
         </section>
         {/* Profile/account info */}
         <section className="account__info">

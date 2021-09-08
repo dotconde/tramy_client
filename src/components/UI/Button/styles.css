@@ -1,11 +1,10 @@
-.add-user {
+.trammy-button {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 2rem 2rem 0 0;
 }
 
-.add-user button {
+.trammy-button button {
   display: flex;
   align-items: center;
   padding: 0 1.5em;
@@ -13,12 +12,12 @@
   cursor: pointer;
 }
 
-.add-user span svg {
+.trammy-button span svg {
   width: 1rem;
   height: 1rem;
 }
 
-.add-user p {
+.trammy-button p {
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   padding-left: 0.5rem;

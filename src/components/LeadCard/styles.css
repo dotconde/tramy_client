@@ -1,0 +1,34 @@
+.lead-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
+}
+
+.lead-card img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.lead-card__info b {
+  font-weight: 600;
+}
+
+.lead-card__info h1 {
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 1rem;
+  color: #6a6a6a;
+  font-weight: 600;
+}
+
+.lead-card__info p {
+  font-size: 0.75rem;
+  margin: 0;
+  padding-left: 1rem;
+  color: #6a6a6a;
+}

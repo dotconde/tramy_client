@@ -1,25 +1,32 @@
 import React from "react";
 import "./styles.css";
 import { ReactComponent as MoreIcon } from "../../assets/icons/more.svg";
-import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
+// import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as OpenMessageIcon } from "../../assets/icons/open-message.svg";
 
-function PipelineSelector() {
+function PipelineSelector({ agentList }) {
   return (
     <div className="pipeline-selector">
-      <div className="custom-select">
+      {/* Pipeline Selector */}
+      {/* <div className="custom-select">
         <FilterIcon />
-        <select>
-          <option value="">Embudo de ventas #1</option>
-          <option value="">Nuevo Embudo</option>
+        <select disabled>
+          <optgroup label="Seleccione embudo">
+            <option value="">Embudo de ventas #1</option>
+            <option value="">Embudo de ventas #2</option>
+          </optgroup>
         </select>
-      </div>
+      </div> */}
+
+      {/* Agent Selector */}
       <div className="custom-select">
         <OpenMessageIcon />
         <select>
-          <option value="">Diego Montes</option>
-          <option value="">Renzo Trujillo</option>
-          <option value="">Andy Yarieque</option>
+          <optgroup label="Seleccione asesor">
+            {agentList.map((agent) => (
+              <option value="">{agent.name}</option>
+            ))}
+          </optgroup>
         </select>
       </div>
       <MoreIcon />

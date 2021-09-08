@@ -6,7 +6,19 @@ import Pipeline from "../../Pipeline";
 function Funnel() {
   return (
     <div className="funnel">
-      <PipelineSelector />
+      <PipelineSelector
+        agentList={[
+          {
+            name: "Deyvi Conde",
+          },
+          {
+            name: "Diego Montes",
+          },
+          {
+            name: "Renzo Trujillo",
+          },
+        ]}
+      />
       <Pipeline />
     </div>
   );

@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.7rem 2rem;
 }
 
 .pipeline-selector svg {
@@ -13,7 +13,7 @@
   fill: white;
 }
 
-select {
+.custom-select select {
   font-size: 0.8rem;
   padding: 0 0.8em;
   background: #ebebeb;
