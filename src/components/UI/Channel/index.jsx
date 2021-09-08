@@ -19,13 +19,13 @@ function Channel({ icon, title, content, channelStatus = false }) {
 
           <p>
             {channelStatus ? (
-              <div className="channel-active">
+              <span className="channel-active">
                 <CheckIcon /> Conectado
-              </div>
+              </span>
             ) : (
-              <div className="channel-inactive">
+              <span className="channel-inactive">
                 <CrossIcon /> No conectado
-              </div>
+              </span>
             )}
           </p>
         </div>
