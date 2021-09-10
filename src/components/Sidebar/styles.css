@@ -46,8 +46,7 @@
   font-size: 0.93rem;
 }
 
-.sidebar__list li a svg,
-.logout svg {
+.sidebar__list li a svg {
   width: 1rem;
   height: 1rem;
   padding-right: 0.6rem;
@@ -62,27 +61,6 @@
 .sidebar__list li a:hover:not(.active) {
   fill: #2a97d9;
   color: #2a97d9;
-}
-
-/* Logout button */
-.logout {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  font-family: "Poppins", sans-serif;
-  color: white;
-  border: none;
-  outline: none;
-  padding: 0.7rem 1.25rem;
-  font-size: 0.93rem;
-  cursor: pointer;
-}
-
-button:hover path,
-button:hover {
-  color: #2a97d9;
-  fill: #2a97d9;
 }
 
 /* Collapse button */

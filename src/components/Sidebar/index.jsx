@@ -80,11 +80,6 @@ function Sidebar() {
               Cerrar sesión
             </NavLink>
           </li>
-          {/* <li>
-            <button className="logout">
-              <LogoutIcon /> Cerrar Sesión
-            </button>
-          </li> */}
         </ul>
       </section>
       <section className="sidebar__collapse">
