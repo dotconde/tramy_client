@@ -1,0 +1,112 @@
+.sidebar {
+  background-color: #1a1a1a;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+.sidebar hr {
+  height: 0.06rem;
+  background-color: #383838;
+  border: none;
+}
+
+.sidebar__logo {
+  padding: 1.5rem 0 0.2rem 1.25rem;
+}
+
+.sidebar__logo img {
+  width: 5rem;
+}
+
+.sidebar__menu {
+  margin-bottom: 5rem;
+}
+
+/* Navigation options styles */
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar__list li {
+  width: 100%;
+}
+
+.sidebar__list li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.7rem 1.25rem;
+  color: #ffffff;
+  font-size: 0.93rem;
+}
+
+.sidebar__list li a svg,
+.logout svg {
+  width: 1rem;
+  height: 1rem;
+  padding-right: 0.6rem;
+  fill: white;
+}
+
+.active {
+  background-color: #474747;
+}
+
+.sidebar__list li a:hover:not(.active) path,
+.sidebar__list li a:hover:not(.active) {
+  fill: #2a97d9;
+  color: #2a97d9;
+}
+
+/* Logout button */
+.logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.93rem;
+  cursor: pointer;
+}
+
+button:hover path,
+button:hover {
+  color: #2a97d9;
+  fill: #2a97d9;
+}
+
+/* Collapse button */
+
+.sidebar__collapse {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17rem;
+  height: 4rem;
+  background-color: #0a0a0a;
+  cursor: pointer;
+}
+
+.sidebar__collapse svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: white;
+}
+
+.sidebar__collapse svg:hover {
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: #1f1f1f;
+}
