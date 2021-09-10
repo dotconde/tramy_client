@@ -15,7 +15,7 @@ function Button({
         style={{
           backgroundColor: backgroundColor,
           color: contentColor,
-          borderColor: borderColor,
+          border: borderColor,
         }}
       >
         <span

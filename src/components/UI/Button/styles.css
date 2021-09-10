@@ -1,9 +1,3 @@
-.trammy-button {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
 .trammy-button button {
   display: flex;
   align-items: center;
