@@ -8,4 +8,7 @@
 
 .add-client {
   padding: 1.5rem 2rem 1.5rem 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
