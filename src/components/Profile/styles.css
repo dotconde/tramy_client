@@ -1,6 +1,6 @@
 .account {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 3.5fr 0.5fr;
   height: 5rem;
   margin: 1.25rem;
 }
@@ -52,13 +52,13 @@
 }
 
 .account__info h5 {
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   margin: 0;
-  padding: 0 0 0 0.9375rem;
+  padding: 0 0.9rem;
 }
 
 .account__info p {
   font-size: 0.75rem;
   margin: 0;
-  padding: 0.3125rem 0 0 0.9375rem;
+  padding: 0.31rem 0.9rem 0 0.9rem;
 }

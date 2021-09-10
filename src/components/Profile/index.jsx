@@ -4,7 +4,7 @@ import defaultProfile from "../../assets/img/default-profile.png";
 import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
 
 function Profile({
-  fullName = "Deyvi Conde",
+  fullName = "Deyvi Condeman",
   notificationCount = 0,
   email = "deyvi@tramy.io",
 }) {
