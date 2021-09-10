@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./styles.css";
 import Profile from "../Profile";
 import tramyLogo from "../../assets/logo/tramy_logo.svg";
@@ -13,6 +14,13 @@ import { ReactComponent as BidirectionalArrowIcon } from "../../assets/icons/bid
 import { NavLink } from "react-router-dom";
 
 function Sidebar() {
+  const history = useHistory();
+
+  const handleLogout = () => {
+    localStorage.clear("token");
+    history.push("/login");
+    window.location.reload(false);
+  };
   return (
     <div className="sidebar">
       <section className="sidebar__logo">
@@ -67,10 +75,16 @@ function Sidebar() {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/logout" onClick={handleLogout}>
+              <LogoutIcon />
+              Cerrar sesión
+            </NavLink>
+          </li>
+          {/* <li>
             <button className="logout">
               <LogoutIcon /> Cerrar Sesión
             </button>
-          </li>
+          </li> */}
         </ul>
       </section>
       <section className="sidebar__collapse">
