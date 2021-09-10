@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./styles.css";
 import Profile from "../Profile";
 import tramyLogo from "../../assets/logo/tramy_logo.svg";
@@ -11,6 +12,13 @@ import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  const history = useHistory();
+
+  const handleLogout = () => {
+    localStorage.clear("token");
+    history.push("/login");
+    window.location.reload(false);
+  };
   return (
     <div className="navbar">
       <section className="navbar__logo">
@@ -62,6 +70,10 @@ function Navbar() {
             <NavLink to="/setup">
               <SetupIcon />
               Configuración
+            </NavLink>
+            <NavLink to="/logout" onClick={handleLogout}>
+              <SetupIcon />
+              Cerrar sesión
             </NavLink>
           </li>
         </ul>
