@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as MoreIcon } from "../../assets/icons/more.svg";
 // import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as OpenMessageIcon } from "../../assets/icons/open-message.svg";
@@ -8,15 +9,18 @@ function PipelineSelector({ agentList }) {
   return (
     <div className="pipeline-selector">
       {/* Pipeline Selector */}
-      {/* <div className="custom-select">
+      <div className="custom-select">
         <FilterIcon />
-        <select disabled>
+        <select>
           <optgroup label="Seleccione embudo">
             <option value="">Embudo de ventas #1</option>
             <option value="">Embudo de ventas #2</option>
           </optgroup>
+          <optgroup label="Nuevo">
+            <option value="">Agregar embudo</option>
+          </optgroup>
         </select>
-      </div> */}
+      </div>
 
       {/* Agent Selector */}
       <div className="custom-select">
@@ -29,7 +33,7 @@ function PipelineSelector({ agentList }) {
           </optgroup>
         </select>
       </div>
-      <MoreIcon />
+      {/* <MoreIcon /> */}
     </div>
   );
 }
