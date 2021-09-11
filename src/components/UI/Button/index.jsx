@@ -10,24 +10,23 @@ function Button({
   iconColor,
 }) {
   return (
-    <div className="trammy-button">
-      <button
+    <button
+      className="trammy-button"
+      style={{
+        backgroundColor: backgroundColor,
+        color: contentColor,
+        border: borderColor,
+      }}
+    >
+      <span
         style={{
-          backgroundColor: backgroundColor,
-          color: contentColor,
-          border: borderColor,
+          fill: iconColor,
         }}
       >
-        <span
-          style={{
-            fill: iconColor,
-          }}
-        >
-          {icon}
-        </span>
-        <p>{content}</p>
-      </button>
-    </div>
+        {icon}
+      </span>
+      <p>{content}</p>
+    </button>
   );
 }
 
