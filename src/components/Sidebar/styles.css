@@ -2,6 +2,9 @@
   background-color: #1a1a1a;
   font-family: "Poppins", sans-serif;
   color: #ffffff;
+  overflow: auto;
+  /* Relative height with toggle icon
+  height: calc(100vh - 64px);*/
 }
 
 .sidebar hr {
@@ -71,7 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 17rem;
+  width: 16rem;
   height: 4rem;
   background-color: #0a0a0a;
   cursor: pointer;

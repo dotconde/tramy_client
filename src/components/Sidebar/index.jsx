@@ -10,7 +10,7 @@ import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as TeamIcon } from "../../assets/icons/team.svg";
 import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/icons/logout.svg";
-import { ReactComponent as BidirectionalArrowIcon } from "../../assets/icons/bidirectional-arrow.svg";
+import { ReactComponent as ToggleIcon } from "../../assets/icons/toggle.svg";
 import { NavLink } from "react-router-dom";
 
 function Sidebar() {
@@ -82,9 +82,9 @@ function Sidebar() {
           </li>
         </ul>
       </section>
-      <section className="sidebar__collapse">
-        <BidirectionalArrowIcon />
-      </section>
+      {/* <section className="sidebar__collapse">
+        <ToggleIcon />
+      </section> */}
     </div>
   );
 }
