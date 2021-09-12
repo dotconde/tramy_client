@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Tramy Custom UI:
+
+- Select: Need at least 1 object, icons are optional, placeholder is mandatory. We expect to receive the following structure:
+
+```js
+options = [
+  {
+    label: "My first group",
+    children: [
+      { label: "Label 1", value: "Value 1" },
+      { label: "Label 2", value: "Value 2" },
+    ],
+  },
+];
+```

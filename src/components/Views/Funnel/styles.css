@@ -5,3 +5,11 @@
   font-family: "Poppins", sans-serif;
   height: 100%;
 }
+
+.pipeline__selectors {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+}

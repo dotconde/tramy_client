@@ -9,9 +9,11 @@ import { ReactComponent as ClientIcon } from "../../assets/icons/client.svg";
 import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as TeamIcon } from "../../assets/icons/team.svg";
 import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
+import { ReactComponent as LogoutIcon } from "../../assets/icons/logout.svg";
+import { ReactComponent as ToggleIcon } from "../../assets/icons/toggle.svg";
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
+function Sidebar() {
   const history = useHistory();
 
   const handleLogout = () => {
@@ -20,37 +22,37 @@ function Navbar() {
     window.location.reload(false);
   };
   return (
-    <div className="navbar">
-      <section className="navbar__logo">
+    <div className="sidebar">
+      <section className="sidebar__logo">
         <img src={tramyLogo} alt="Tramy logo" />
       </section>
       <hr />
-      <section className="navbar__menu">
+      <section className="sidebar__menu">
         {/* Profile quick info */}
         <Profile />
 
         {/* Navigation options */}
-        <ul className="navbar__list">
+        <ul className="sidebar__list">
           <li>
-            <NavLink to="/">
+            <NavLink exact activeClassName="active" to="/">
               <HomeIcon />
               Inicio
             </NavLink>
           </li>
           <li>
-            <NavLink to="/chat">
+            <NavLink activeClassName="active" to="/chat">
               <ChatIcon />
               Chat
             </NavLink>
           </li>
           <li>
-            <NavLink to="/clients">
+            <NavLink activeClassName="active" to="/chat" to="/clients">
               <ClientIcon />
               Clientes
             </NavLink>
           </li>
           <li>
-            <NavLink to="/funnel">
+            <NavLink activeClassName="active" to="/chat" to="/funnel">
               <FilterIcon />
               Embudo de Ventas
             </NavLink>
@@ -58,28 +60,33 @@ function Navbar() {
         </ul>
       </section>
       <hr />
-      <section>
-        <ul className="navbar__list">
-          <li>
+      <section className="sidebar__settings">
+        <ul className="sidebar__list">
+          {/* <li>
             <NavLink to="/team">
               <TeamIcon />
               Equipo
             </NavLink>
-          </li>
+          </li> */}
           <li>
-            <NavLink to="/setup">
+            <NavLink activeClassName="active" to="/setup">
               <SetupIcon />
               Configuración
             </NavLink>
+          </li>
+          <li>
             <NavLink to="/logout" onClick={handleLogout}>
-              <SetupIcon />
+              <LogoutIcon />
               Cerrar sesión
             </NavLink>
           </li>
         </ul>
       </section>
+      {/* <section className="sidebar__collapse">
+        <ToggleIcon />
+      </section> */}
     </div>
   );
 }
 
-export default Navbar;
+export default Sidebar;

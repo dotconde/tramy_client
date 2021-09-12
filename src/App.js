@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import MainView from "./components/MainView";
 import Login from "./components/Login";
 import useToken from "./hooks/useToken";
@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Sidebar />
         <MainView />
       </div>
     </Router>
