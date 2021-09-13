@@ -5,6 +5,8 @@ import { ReactComponent as BusinessIcon } from "../../../assets/icons/business.s
 import { ReactComponent as TeamIcon } from "../../../assets/icons/team.svg";
 import { ReactComponent as ChannelsIcon } from "../../../assets/icons/channels.svg";
 import { ReactComponent as AccountStatusIcon } from "../../../assets/icons/dollar-symbol.svg";
+import Team from "../../Team";
+import Channels from "../../Channels";
 
 function Setup() {
   return (
@@ -77,16 +79,16 @@ function Setup() {
         </section>
 
         <section id="team-tab" className="tab-panel">
-          <span>component team</span>
+          <Team />
         </section>
 
         <section id="channels-tab" className="tab-panel">
-          <span>component channels</span>
+          <Channels />
         </section>
 
-        <section id="accountstatus-tab" className="tab-panel">
+        {/* <section id="accountstatus-tab" className="tab-panel">
           <span>component account stat</span>
-        </section>
+        </section> */}
       </div>
     </div>
   );
