@@ -1,21 +1,21 @@
 .search {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: grid;
   grid-template-columns: 0.5fr 12fr;
-  padding: 1rem;
+  padding: 0.85rem;
 }
 
-.search__icon{
+.search__icon {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   border: none;
-  background-color: #FFFFFF;
-  cursor:pointer;
+  background-color: #ffffff;
+  cursor: pointer;
 }
 
-.search__icon:hover{
-  background-color: #E5E5E5;
+.search__icon:hover {
+  background-color: #e5e5e5;
 }
 
 .search__input {
@@ -26,5 +26,5 @@
 }
 
 ::placeholder {
-  color: #90A0B7;
+  color: #90a0b7;
 }
