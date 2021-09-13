@@ -18,7 +18,7 @@ function Usage() {
             </p>
             <ol>
               <li>
-                Ve al apartado de <b>Equipo.</b>{" "}
+                Ve al apartado de <b>Equipo.</b>
               </li>
               <li>
                 Dale click a <b>Añadir usuario.</b>
@@ -40,7 +40,7 @@ function Usage() {
             </p>
             <ol>
               <li>
-                Ve al apartado <b>Embudo de Ventas</b>{" "}
+                Ve al apartado <b>Embudo de Ventas</b>
               </li>
               <li>
                 Dale click al <b>nombre del embudo.</b>
@@ -64,7 +64,7 @@ function Usage() {
             </p>
             <ol>
               <li>
-                Ve al apartado <b>Embudo de Ventas</b>{" "}
+                Ve al apartado <b>Embudo de Ventas</b>
               </li>
               <li>
                 Dale click al <b>nombre del embudo.</b>
@@ -88,7 +88,7 @@ function Usage() {
             </p>
             <ol>
               <li>
-                Ve al apartado <b>Embudo de Ventas</b>{" "}
+                Ve al apartado <b>Embudo de Ventas</b>
               </li>
               <li>
                 Dale click al <b>nombre del embudo.</b>

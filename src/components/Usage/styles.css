@@ -68,16 +68,16 @@
 }
 
 /* :checked */
-input:checked + .step__title {
+.step input:checked + .step__title {
   background: #6c6c6c;
   color: #ffff;
 }
 
-input:checked + .step__title::after {
+.step input:checked + .step__title::after {
   transform: rotate(90deg);
 }
 
-input:checked ~ .step__content {
+.step input:checked ~ .step__content {
   max-height: 100vh;
   padding: 1em;
 }
