@@ -2,7 +2,7 @@
   background-color: #1a1a1a;
   font-family: "Poppins", sans-serif;
   color: #ffffff;
-  overflow: auto;
+  height: 100%;
   /* Relative height with toggle icon
   height: calc(100vh - 64px);*/
 }
@@ -68,7 +68,7 @@
 
 /* Collapse button */
 
-.sidebar__collapse {
+/* .sidebar__collapse {
   position: absolute;
   bottom: 0;
   display: flex;
@@ -90,4 +90,4 @@
   padding: 0.8rem;
   border-radius: 50%;
   background-color: #1f1f1f;
-}
+} */
