@@ -12,7 +12,7 @@ function Channels() {
           icon={<WhatsappIcon />}
           title={"WhatsApp Business (Integración Oficial)"}
           content={"Envía y recibe mensajes de WhatsApp a través de Tramy"}
-          channelStatus={false}
+          conectionStatus={true}
         />
       </section>
       <section className="templates">
@@ -22,7 +22,6 @@ function Channels() {
           title={"Número de celular"}
           subtitle={"+51 9325478412"}
           content={"Gestiona las plantillas de mensajes de Whatsapp Business"}
-          channelStatus={false}
         />
       </section>
     </div>

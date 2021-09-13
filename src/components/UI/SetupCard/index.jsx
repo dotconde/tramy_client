@@ -10,8 +10,29 @@ function SetupCard({
   title,
   subtitle,
   content,
-  connexionStatus = false,
+  conectionStatus = undefined,
 }) {
+  let displayStatus;
+
+  switch (conectionStatus) {
+    case true:
+      displayStatus = (
+        <span className="status-active">
+          <CheckIcon /> Conectado
+        </span>
+      );
+      break;
+    case false:
+      displayStatus = (
+        <span className="status-inactive">
+          <CrossIcon /> No conectado
+        </span>
+      );
+      break;
+    default:
+      displayStatus = "";
+  }
+
   return (
     <div>
       <article className="setup-card">
@@ -26,19 +47,7 @@ function SetupCard({
           <p>{content}</p>
         </div>
         <div className="setup-card__status">
-          {/* Wrap checkIcon within img for compatibility purposes */}
-
-          <p>
-            {connexionStatus ? (
-              <span className="status-active">
-                <CheckIcon /> Conectado
-              </span>
-            ) : (
-              <span className="status-inactive">
-                <CrossIcon /> No conectado
-              </span>
-            )}
-          </p>
+          <p>{displayStatus}</p>
         </div>
         <div className="setup-card__button">
           <Button
