@@ -21,12 +21,12 @@ function Profile({
           <p>{email}</p>
         </section>
         {/* Notification Center */}
-        <section className="notification-center">
+        {/* <section className="notification-center">
           <div className="notification">
             <NotificationIcon />
             <div className="notification__number">{notificationCount}</div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
