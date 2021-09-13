@@ -1,16 +1,14 @@
 import React from "react";
 import "./styles.css";
-import Search from "../../UI/Search";
-import Button from "../../UI/Button";
-import Table from "../../UI/Table";
-import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
-import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
-import { ReactComponent as AddUserIcon } from "../../../assets/icons/add-user.svg";
+import Button from "../UI/Button";
+import Table from "../UI/Table";
+import { ReactComponent as PencilIcon } from "../../assets/icons/pencil.svg";
+import { ReactComponent as TrashIcon } from "../../assets/icons/trash.svg";
+import { ReactComponent as AddUserIcon } from "../../assets/icons/add-user.svg";
 
 function Team() {
   return (
     <div className="team">
-      <Search placeholder={"Buscar por nombre, cargo o permiso"} />
       <div className="add-client">
         <Button
           icon={<AddUserIcon />}
