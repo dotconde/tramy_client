@@ -1,27 +1,30 @@
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #1a1a1a;
   font-family: "Poppins", sans-serif;
   color: #ffffff;
   height: 100%;
-  /* Relative height with toggle icon
-  height: calc(100vh - 64px);*/
 }
 
 .sidebar hr {
   height: 0.06rem;
+  width: 100%;
   background-color: #383838;
   border: none;
 }
 
 .sidebar__logo {
-  padding: 1.5rem 0 0.2rem 1.25rem;
+  padding: 1.4rem 0 0.25rem 1.25rem;
 }
 
 .sidebar__logo img {
   width: 5rem;
 }
 
-.sidebar__menu {
+.sidebar__menu,
+.sidebar__settings {
   margin-bottom: 5rem;
 }
 
@@ -66,28 +69,65 @@
   color: #2a97d9;
 }
 
-/* Collapse button */
+/* Logout button */
 
-/* .sidebar__collapse {
-  position: absolute;
-  bottom: 0;
+.sidebar__logout {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 16rem;
   height: 4rem;
   background-color: #0a0a0a;
   cursor: pointer;
 }
 
-.sidebar__collapse svg {
+.sidebar__logout svg {
   width: 1.2rem;
   height: 1.2rem;
   fill: white;
 }
 
-.sidebar__collapse svg:hover {
+.sidebar__logout svg:hover {
   padding: 0.8rem;
   border-radius: 50%;
   background-color: #1f1f1f;
-} */
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(154, 154, 154, 0.2);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(154, 154, 154, 0.2) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
