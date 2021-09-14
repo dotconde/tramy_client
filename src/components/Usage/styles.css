@@ -78,6 +78,6 @@
 }
 
 .step input:checked ~ .step__content {
-  max-height: 100vh;
+  max-height: fit-content;
   padding: 1em;
 }

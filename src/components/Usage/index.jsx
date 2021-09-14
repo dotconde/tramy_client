@@ -13,7 +13,7 @@ function Usage() {
           </label>
           <div className="step__content">
             <p>
-              Para agregar a un nuevo miembro a tu equipo, sigue los siguientes
+              Para agregar un nuevo miembro a tu equipo, sigue los siguientes
               pasos:
             </p>
             <ol>
@@ -21,7 +21,7 @@ function Usage() {
                 Ve al apartado de <b>Equipo.</b>
               </li>
               <li>
-                Dale click a <b>Añadir usuario.</b>
+                Dale click en <b>Añadir usuario.</b>
               </li>
               <li>Rellena la información del nuevo usuario. </li>
             </ol>
