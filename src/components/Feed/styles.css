@@ -1,7 +1,6 @@
 .feed {
-  margin: 0 1.09rem 2.18rem 2.18rem;
-  padding: 1.5rem;
-  background-color: #ffffff;
+  margin: 2rem 3rem;
+  color: #5a5a5a;
 }
 
 .feed__welcome {
@@ -13,31 +12,66 @@
 .feed__welcome h3 {
   font-weight: 500;
   font-size: 2.19rem;
-  color: #5a5a5a;
-  margin: 2.19rem 0 0;
+  margin: 0;
 }
 
 .feed__welcome p {
   font-size: 1.25rem;
   color: #9a9a9a;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
 }
 
 .feed__welcome hr {
-  height: 0.0625rem;
+  height: 0.06rem;
   background-color: rgb(167, 167, 167, 0.25);
   border: none;
 }
 
-.feed__channel {
-  display: block;
-  justify-content: flex-start;
-  align-items: center;
+/* Feed Blogs */
+.blogs__main-new {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fafafa;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.18rem 0.625rem rgb(0 0 0 / 0.2);
+  padding: 2rem;
+  margin-top: 1.5rem;
 }
 
-.feed__channel h4 {
+.main-new__video {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 1.5rem;
+}
+
+.main-new__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main-new__info h2 {
+  font-size: 1.4rem;
   font-weight: 600;
-  font-size: 1.25rem;
-  color: #5a5a5a;
-  margin: 1.5rem 0;
+  margin: 0;
+}
+
+.main-new__info p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0.3rem 0 0 0;
+}
+
+.blogs__posts h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+  text-align: start;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
 }
