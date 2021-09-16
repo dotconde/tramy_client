@@ -6,8 +6,8 @@ function Pipeline() {
   return (
     <div className="pipeline">
       <Stage
-        color={"#13538A"}
-        title={"1. Nuevo Lead"}
+        color={"#ED3A4C"}
+        title={"1. Nuevo Prospecto"}
         notificationCount={"10"}
         leads={[
           { fullName: "Pepe Lucho", agent: "Diego Montes" },
@@ -23,8 +23,8 @@ function Pipeline() {
         ]}
       />
       <Stage
-        color={"#2C92D5"}
-        title={"2. Atención"}
+        color={"#F07539"}
+        title={"2. Contactado"}
         notificationCount={"5"}
         leads={[
           { fullName: "Pepe Aguirre", agent: "Diego Montes" },
@@ -32,8 +32,8 @@ function Pipeline() {
         ]}
       />
       <Stage
-        color={"#37C9EF"}
-        title={"3. Conversión"}
+        color={"#F6B243"}
+        title={"3. Convertido"}
         notificationCount={"22"}
         leads={[
           { fullName: "Pepe Aguirre", agent: "Diego Montes" },
@@ -41,8 +41,8 @@ function Pipeline() {
         ]}
       />
       <Stage
-        color={"#3EDAD8"}
-        title={"4. Fidelizar"}
+        color={"#53BC9E"}
+        title={"4. Cierre"}
         notificationCount={"9"}
         leads={[
           { fullName: "Pepe Aguirre", agent: "Diego Montes" },
