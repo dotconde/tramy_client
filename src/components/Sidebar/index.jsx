@@ -46,13 +46,13 @@ function Sidebar() {
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/chat" to="/clients">
+              <NavLink activeClassName="active" to="/clients">
                 <ClientIcon />
                 Clientes
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/chat" to="/funnel">
+              <NavLink activeClassName="active" to="/funnel">
                 <FilterIcon />
                 Embudo de Ventas
               </NavLink>
