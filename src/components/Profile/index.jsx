@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import defaultProfile from "../../assets/img/default-profile.png";
-import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
+// import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
 
 function Profile({
   fullName = "Deyvi Condezo",
