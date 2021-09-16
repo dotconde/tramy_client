@@ -1,32 +1,50 @@
-.tabset > input[type="radio"] {
+.setup__tabset > input[type="radio"] {
   position: absolute;
   left: -200vw;
 }
 
-.tabset .tab-panel {
+.setup__tabset .setup__tab-panel {
   display: none;
 }
 
-.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
-.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
-.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+.setup__tabset
+  > input:first-child:checked
+  ~ .setup__tab-panels
+  > .setup__tab-panel:first-child,
+.setup__tabset
+  > input:nth-child(3):checked
+  ~ .setup__tab-panels
+  > .setup__tab-panel:nth-child(2),
+.setup__tabset
+  > input:nth-child(5):checked
+  ~ .setup__tab-panels
+  > .setup__tab-panel:nth-child(3),
+.setup__tabset
+  > input:nth-child(7):checked
+  ~ .setup__tab-panels
+  > .setup__tab-panel:nth-child(4),
+.setup__tabset
+  > input:nth-child(9):checked
+  ~ .setup__tab-panels
+  > .setup__tab-panel:nth-child(5),
+.setup__tabset
+  > input:nth-child(11):checked
+  ~ .setup__tab-panels
+  > .setup__tab-panel:nth-child(6) {
   display: block;
 }
 
 /*
  Styling
 */
-.tabset {
+.setup__tabset {
   height: 100%;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-.tabset label svg {
+.setup__tabset label svg {
   height: 1rem;
   width: 1rem;
   padding-right: 0.35rem;
@@ -34,7 +52,7 @@
   fill: #9a9a9a;
 }
 
-.tabset > label {
+.setup__tabset > label {
   position: relative;
   display: inline-block;
   padding: 1.7rem 0 1.3rem 0;
@@ -45,7 +63,7 @@
   color: #9a9a9a;
 }
 
-.tabset > label::after {
+.setup__tabset > label::after {
   content: "";
   position: absolute;
   left: 0;
@@ -56,31 +74,31 @@
 }
 
 /* Hover Tab */
-.tabset label:hover path,
-.tabset label:hover {
+.setup__tabset label:hover path,
+.setup__tabset label:hover {
   color: #61bbf1;
   fill: #61bbf1;
 }
 
 /* Selected Tab */
-.tabset > input:checked + label::after {
+.setup__tabset > input:checked + label::after {
   background: #61bbf1;
 }
 
-.tabset > input:checked + label {
+.setup__tabset > input:checked + label {
   color: #61bbf1;
 }
 
-.tabset > input:checked + label svg {
+.setup__tabset > input:checked + label svg {
   fill: #61bbf1;
 }
 
 /* Contents */
-.tab-panels {
+.setup__tab-panels {
   background-color: #f0f0f0;
   height: calc(100% - 66px);
 }
 
-.tab-panel {
+.setup__tab-panel {
   height: 100%;
 }

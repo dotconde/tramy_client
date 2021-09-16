@@ -4,22 +4,22 @@ import { ReactComponent as ProfileIcon } from "../../../assets/icons/profile.svg
 import { ReactComponent as BusinessIcon } from "../../../assets/icons/business.svg";
 import { ReactComponent as TeamIcon } from "../../../assets/icons/team.svg";
 import { ReactComponent as ChannelsIcon } from "../../../assets/icons/channels.svg";
-import { ReactComponent as AccountStatusIcon } from "../../../assets/icons/dollar-symbol.svg";
+// import { ReactComponent as AccountStatusIcon } from "../../../assets/icons/dollar-symbol.svg";
 import Team from "../../Team";
 import Channels from "../../Channels";
 
 function Setup() {
   return (
-    <div className="tabset">
+    <div className="setup__tabset">
       {/* Profile Tab */}
       <input
         type="radio"
-        name="tabset"
-        id="tab1"
+        name="setup__tabset"
+        id="profile-tab"
         aria-controls="profile-tab"
         defaultChecked={true}
       />
-      <label for="tab1">
+      <label for="profile-tab">
         <ProfileIcon />
         <span>Mi perfil</span>
       </label>
@@ -27,18 +27,23 @@ function Setup() {
       {/* Business Tab */}
       <input
         type="radio"
-        name="tabset"
-        id="tab2"
+        name="setup__tabset"
+        id="business-tab"
         aria-controls="business-tab"
       />
-      <label for="tab2">
+      <label for="business-tab">
         <BusinessIcon />
         <span>Mi negocio</span>
       </label>
 
       {/* Team Tab */}
-      <input type="radio" name="tabset" id="tab3" aria-controls="team-tab" />
-      <label for="tab3">
+      <input
+        type="radio"
+        name="setup__tabset"
+        id="team-tab"
+        aria-controls="team-tab"
+      />
+      <label for="team-tab">
         <TeamIcon />
         <span>Mi equipo</span>
       </label>
@@ -46,11 +51,11 @@ function Setup() {
       {/* Channels Tab */}
       <input
         type="radio"
-        name="tabset"
-        id="tab4"
+        name="setup__tabset"
+        id="channels-tab"
         aria-controls="channels-tab"
       />
-      <label for="tab4">
+      <label for="channels-tab">
         <div className="align">
           <ChannelsIcon />
           <span>Canales</span>
@@ -59,35 +64,35 @@ function Setup() {
 
       {/* <input
         type="radio"
-        name="tabset"
-        id="tab5"
+        name="setup__tabset"
+        id="accountstatus-tab"
         aria-controls="accountstatus-tab"
       />
-      <label for="tab5">
+      <label for="accountstatus-tab">
         <AccountStatusIcon />
         <span>Estado de Cuenta</span>
       </label> */}
 
       {/* Contents */}
-      <div class="tab-panels">
-        <section id="profile-tab" className="tab-panel">
+      <div class="setup__tab-panels">
+        <section id="profile-tab" className="setup__tab-panel">
           <span>component profile</span>
         </section>
 
-        <section id="business-tab" className="tab-panel">
+        <section id="business-tab" className="setup__tab-panel">
           <span>component business</span>
         </section>
 
-        <section id="team-tab" className="tab-panel">
+        <section id="team-tab" className="setup__tab-panel">
           <Team />
         </section>
 
-        <section id="channels-tab" className="tab-panel">
+        <section id="channels-tab" className="setup__tab-panel">
           <Channels />
         </section>
 
-        {/* <section id="accountstatus-tab" className="tab-panel">
-          <span>component account stat</span>
+        {/* <section id="accountstatus-tab" className="setup__tab-panel">
+          <span>component account status</span>
         </section> */}
       </div>
     </div>
