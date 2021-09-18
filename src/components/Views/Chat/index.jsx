@@ -18,7 +18,7 @@ function Chat() {
       />
       <label for="unassigned__tab">
         <UnasignedIcon />
-        <span>Sin asignar Test</span>
+        <span>Sin asignar</span>
       </label>
 
       {/* Mis asignados Tab */}
