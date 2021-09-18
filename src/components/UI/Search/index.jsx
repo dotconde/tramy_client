@@ -3,9 +3,14 @@ import "./styles.css";
 import { ReactComponent as SearchIcon } from "../../../assets/icons/search.svg";
 import PropTypes from "prop-types";
 
-function Search({ placeholder }) {
+function Search({ placeholder, borderColor }) {
   return (
-    <div className="search">
+    <div
+      className="search"
+      style={{
+        border: borderColor,
+      }}
+    >
       <button className="search__icon">
         <SearchIcon />
       </button>
