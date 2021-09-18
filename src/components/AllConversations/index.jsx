@@ -33,7 +33,7 @@ function AllConversations({
             messagePreview={"Hola Benito, te saluda Trammy"}
             agent={"Diego Montes"}
             funnelStage={"Nuevo Lead"}
-            FunnelStageColor={"#ed3a4c"}
+            funnelStageColor={"#ed3a4c"}
             time={"4:40pm"}
           />
 
@@ -42,7 +42,7 @@ function AllConversations({
             messagePreview={"Hola Benito, te saluda Trammy"}
             agent={"Diego Montes"}
             funnelStage={"Nuevo Lead"}
-            FunnelStageColor={"#ed3a4c"}
+            funnelStageColor={"#ed3a4c"}
             time={"4:40pm"}
           />
 
@@ -51,7 +51,7 @@ function AllConversations({
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
             funnelStage={"Contactado"}
-            FunnelStageColor={"#F07539"}
+            funnelStageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
@@ -59,7 +59,7 @@ function AllConversations({
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
             funnelStage={"Contactado"}
-            FunnelStageColor={"#F07539"}
+            funnelStageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
@@ -67,7 +67,7 @@ function AllConversations({
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
             funnelStage={"Contactado"}
-            FunnelStageColor={"#F07539"}
+            funnelStageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
@@ -75,7 +75,7 @@ function AllConversations({
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
             funnelStage={"Contactado"}
-            FunnelStageColor={"#F07539"}
+            funnelStageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
@@ -83,7 +83,7 @@ function AllConversations({
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
             funnelStage={"Contactado"}
-            FunnelStageColor={"#F07539"}
+            funnelStageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
@@ -91,7 +91,7 @@ function AllConversations({
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
             funnelStage={"Contactado"}
-            FunnelStageColor={"#F07539"}
+            funnelStageColor={"#F07539"}
             time={"5:25pm"}
           />
         </section>
@@ -110,19 +110,20 @@ function AllConversations({
           </div>
           <div className="chat__options">
             <Select
+              icon={<AgentIcon />}
+              color={"#969696"}
+              borderColor={"#dfdfdf"}
+              backgroundColor={"white"}
+              placeholder={"Diego Montes"}
+            />
+            <Select
               icon={<FilterIcon />}
               color={"#969696"}
               borderColor={"#dfdfdf"}
               backgroundColor={"white"}
               placeholder={"Nuevo Lead"}
             />
-            <Select
-              icon={<AgentIcon />}
-              color={"#969696"}
-              borderColor={"#dfdfdf"}
-              backgroundColor={"white"}
-              placeholder={"Diego Ramos"}
-            />
+
             <Button
               icon={<NoteIcon />}
               iconColor={"#969696"}

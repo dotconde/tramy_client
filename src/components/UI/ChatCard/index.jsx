@@ -8,7 +8,7 @@ function ChatCard({
   messagePreview,
   agent,
   funnelStage,
-  FunnelStageColor,
+  funnelStageColor,
   time,
 }) {
   return (
@@ -23,7 +23,7 @@ function ChatCard({
           </li>
           <li
             className="tag"
-            style={{ borderColor: FunnelStageColor, color: FunnelStageColor }}
+            style={{ borderColor: funnelStageColor, color: funnelStageColor }}
           >
             {funnelStage}
           </li>
