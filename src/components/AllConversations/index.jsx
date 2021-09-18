@@ -32,8 +32,8 @@ function AllConversations({
             fullname={"Benito Juarez"}
             messagePreview={"Hola Benito, te saluda Trammy"}
             agent={"Diego Montes"}
-            funnelStage={"Nuevo Lead"}
-            funnelStageColor={"#ed3a4c"}
+            stageName={"Nuevo Lead"}
+            stageColor={"#ed3a4c"}
             time={"4:40pm"}
           />
 
@@ -41,8 +41,8 @@ function AllConversations({
             fullname={"Benito Juarez"}
             messagePreview={"Hola Benito, te saluda Trammy"}
             agent={"Diego Montes"}
-            funnelStage={"Nuevo Lead"}
-            funnelStageColor={"#ed3a4c"}
+            stageName={"Nuevo Lead"}
+            stageColor={"#ed3a4c"}
             time={"4:40pm"}
           />
 
@@ -50,48 +50,48 @@ function AllConversations({
             fullname={"Carla Soliz"}
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
-            funnelStage={"Contactado"}
-            funnelStageColor={"#F07539"}
+            stageName={"Contactado"}
+            stageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
             fullname={"Carla Soliz"}
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
-            funnelStage={"Contactado"}
-            funnelStageColor={"#F07539"}
+            stageName={"Contactado"}
+            stageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
             fullname={"Carla Soliz"}
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
-            funnelStage={"Contactado"}
-            funnelStageColor={"#F07539"}
+            stageName={"Contactado"}
+            stageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
             fullname={"Carla Soliz"}
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
-            funnelStage={"Contactado"}
-            funnelStageColor={"#F07539"}
+            stageName={"Contactado"}
+            stageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
             fullname={"Carla Soliz"}
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
-            funnelStage={"Contactado"}
-            funnelStageColor={"#F07539"}
+            stageName={"Contactado"}
+            stageColor={"#F07539"}
             time={"5:25pm"}
           />
           <ChatCard
             fullname={"Carla Soliz"}
             messagePreview={"Hola Carla, te saluda Trammy"}
             agent={"Deyvi Conde"}
-            funnelStage={"Contactado"}
-            funnelStageColor={"#F07539"}
+            stageName={"Contactado"}
+            stageColor={"#F07539"}
             time={"5:25pm"}
           />
         </section>
