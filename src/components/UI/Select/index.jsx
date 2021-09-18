@@ -1,11 +1,36 @@
 import React from "react";
 import "./styles.css";
 
-function Select({ icon, placeholder, options = [] }) {
+function Select({
+  icon,
+  color,
+  borderColor,
+  backgroundColor,
+  placeholder,
+  options = [],
+}) {
   return (
-    <div className="select">
-      <span>{icon}</span>
-      <select name="trammy-select">
+    <div
+      className="select"
+      style={{
+        backgroundColor: backgroundColor,
+        borderColor: borderColor,
+      }}
+    >
+      <span
+        style={{
+          fill: color,
+        }}
+      >
+        {icon}
+      </span>
+      <select
+        name="trammy-select"
+        style={{
+          backgroundColor: backgroundColor,
+          color: color,
+        }}
+      >
         <option disabled="disabled" selected="selected">
           {placeholder}
         </option>
