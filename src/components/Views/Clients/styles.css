@@ -16,11 +16,3 @@
 .clients button {
   margin: 1.05rem 0;
 }
-
-.clients .clients__header {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4.2rem;
-}
