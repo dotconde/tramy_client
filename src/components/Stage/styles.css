@@ -47,6 +47,6 @@
 }
 
 .stage__body {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 180px);
   overflow-y: auto;
 }
