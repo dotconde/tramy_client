@@ -4,12 +4,6 @@ switch (process.env.NODE_ENV) {
   case "production":
     BASE_URL = "https://tramyback.herokuapp.com";
     break;
-  case "test":
-    BASE_URL = "https://staging.tramyback.herokuapp.com";
-    break;
-  case "development":
-    BASE_URL = "http://localhost:3000";
-    break;
   default:
     BASE_URL = "http://localhost:3000";
     break;
@@ -17,6 +11,7 @@ switch (process.env.NODE_ENV) {
 
 const ENDPOINTS = {
   LOGIN: "login",
+  PROFILE: "my_profile",
 };
 
 export { BASE_URL, ENDPOINTS };

@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./styles.css";
-import Profile from "../Profile";
+import ProfileSummary from "../ProfileSummary";
 import tramyLogo from "../../assets/logo/tramy_logo.svg";
 import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
 import { ReactComponent as ChatIcon } from "../../assets/icons/chat.svg";
@@ -28,8 +28,8 @@ function Sidebar() {
         <hr />
 
         <section className="sidebar__menu">
-          {/* Profile quick info */}
-          <Profile />
+          {/* Profile summary info */}
+          <ProfileSummary />
 
           {/* Navigation options */}
           <ul className="sidebar__list">

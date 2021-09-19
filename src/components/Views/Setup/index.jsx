@@ -5,6 +5,7 @@ import { ReactComponent as BusinessIcon } from "../../../assets/icons/business.s
 import { ReactComponent as TeamIcon } from "../../../assets/icons/team.svg";
 import { ReactComponent as ChannelsIcon } from "../../../assets/icons/channels.svg";
 // import { ReactComponent as AccountStatusIcon } from "../../../assets/icons/dollar-symbol.svg";
+import ProfileDetail from "../../ProfileDetail";
 import Team from "../../Team";
 import Channels from "../../Channels";
 
@@ -19,7 +20,7 @@ function Setup() {
         aria-controls="profile-tab"
         defaultChecked={true}
       />
-      <label for="profile-tab">
+      <label htmlFor="profile-tab">
         <ProfileIcon />
         <span>Mi perfil</span>
       </label>
@@ -31,7 +32,7 @@ function Setup() {
         id="business-tab"
         aria-controls="business-tab"
       />
-      <label for="business-tab">
+      <label htmlFor="business-tab">
         <BusinessIcon />
         <span>Mi negocio</span>
       </label>
@@ -43,7 +44,7 @@ function Setup() {
         id="team-tab"
         aria-controls="team-tab"
       />
-      <label for="team-tab">
+      <label htmlFor="team-tab">
         <TeamIcon />
         <span>Mi equipo</span>
       </label>
@@ -55,7 +56,7 @@ function Setup() {
         id="channels-tab"
         aria-controls="channels-tab"
       />
-      <label for="channels-tab">
+      <label htmlFor="channels-tab">
         <div className="align">
           <ChannelsIcon />
           <span>Canales</span>
@@ -68,15 +69,15 @@ function Setup() {
         id="accountstatus-tab"
         aria-controls="accountstatus-tab"
       />
-      <label for="accountstatus-tab">
+      <label htmlFor="accountstatus-tab">
         <AccountStatusIcon />
         <span>Estado de Cuenta</span>
       </label> */}
 
       {/* Contents */}
-      <div class="setup__tab-panels">
+      <div className="setup__tab-panels">
         <section id="profile-tab" className="setup__tab-panel">
-          <span>component profile</span>
+          <ProfileDetail />
         </section>
 
         <section id="business-tab" className="setup__tab-panel">
