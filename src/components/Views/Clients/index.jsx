@@ -12,7 +12,9 @@ import { ReactComponent as AddUserIcon } from "../../../assets/icons/add-user.sv
 function Clients() {
   return (
     <div className="clients">
-      <Search placeholder={"Buscar por nombre, asesor o estado"} />
+      <div className="search__container">
+        <Search placeholder={"Buscar por nombre, asesor o estado"} />
+      </div>
       <div className="add-user">
         <Button
           icon={<AddUserIcon />}

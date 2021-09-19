@@ -1,0 +1,139 @@
+.all-conversations {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+}
+
+/* Chat List */
+
+.chat__list {
+  box-shadow: 5px 0 5px -5px #ccc;
+}
+
+.chat__list .search__container {
+  margin: 3rem 1rem;
+}
+
+.search__container input {
+  font-size: 0.7rem;
+}
+
+.chat__container {
+  border-top: 1px solid rgb(167, 167, 167, 0.25);
+  height: calc(100vh - 205px);
+  overflow-y: auto;
+}
+
+/* Chat Window */
+
+.chat__window {
+  display: grid;
+  grid-template-rows: 8.25rem 5fr 8.25rem;
+}
+
+.chat__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 1.5rem;
+}
+
+.chat__about {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: start;
+}
+
+.chat__about img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.chat__about h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5a5a5a;
+  margin: 0 0.7rem;
+}
+
+.chat__about h3 {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #b1b1b1;
+  margin: 0 0.7rem;
+}
+
+.chat__options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.chat__options button {
+  margin-left: 1rem;
+  height: 2.7rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.chat__options div {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.chat__messages {
+  background-image: url(../../assets/img/chatbg.png);
+  background-color: #f5ece3;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.chat__textbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat__textbox button {
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chat__textbox svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #b6b6b6;
+}
+
+.chat__textbox .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4d4d4d;
+  border-radius: 0.8rem;
+  padding: 1.5rem 1rem;
+  margin-left: 1rem;
+}
+
+.chat__textbox .container textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  width: 30rem;
+  height: 1.3rem;
+  padding-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  background-color: #4d4d4d;
+  color: white;
+}
+
+.chat__textbox .container textarea::-webkit-input-placeholder {
+  line-height: 1.3rem;
+}

@@ -76,21 +76,21 @@
 /* Hover Tab */
 .setup__tabset label:hover path,
 .setup__tabset label:hover {
-  color: #61bbf1;
-  fill: #61bbf1;
+  color: #109cf1;
+  fill: #109cf1;
 }
 
 /* Selected Tab */
 .setup__tabset > input:checked + label::after {
-  background: #61bbf1;
+  background: #109cf1;
 }
 
 .setup__tabset > input:checked + label {
-  color: #61bbf1;
+  color: #109cf1;
 }
 
 .setup__tabset > input:checked + label svg {
-  fill: #61bbf1;
+  fill: #109cf1;
 }
 
 /* Contents */

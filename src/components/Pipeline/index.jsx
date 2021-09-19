@@ -7,7 +7,7 @@ function Pipeline() {
     <div className="pipeline">
       <Stage
         color={"#ED3A4C"}
-        title={"1. Nuevo Prospecto"}
+        title={"1. Nuevo Lead"}
         notificationCount={"10"}
         leads={[
           { fullName: "Pepe Lucho", agent: "Diego Montes" },

@@ -3,6 +3,7 @@ import "./styles.css";
 import { ReactComponent as UnasignedIcon } from "../../../assets/icons/remove-user.svg";
 import { ReactComponent as AssignedToMeIcon } from "../../../assets/icons/group.svg";
 import { ReactComponent as BuzonIcon } from "../../../assets/icons/buzon.svg";
+import AllConversations from "../../AllConversations";
 
 function Chat() {
   return (
@@ -55,7 +56,7 @@ function Chat() {
         </section>
 
         <section id="all-conversations__tab" className="chat__tab-panel">
-          <span>component 3</span>
+          <AllConversations />
         </section>
       </div>
     </div>
