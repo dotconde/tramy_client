@@ -1,14 +1,14 @@
 import React from "react";
 import "./styles.css";
 
-function ClientFilter({ agentList, stageList }) {
+function ClientFilter({ placeholder, agentList, stageList }) {
   return (
     <div className="filter">
       <label for="filter">Filtro:</label>
       <select name="browser">
         <optgroup>
           <option value="" selected>
-            Sin Filtrar
+            {placeholder}
           </option>
         </optgroup>
 
