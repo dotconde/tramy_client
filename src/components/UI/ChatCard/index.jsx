@@ -3,23 +3,23 @@ import "./styles.css";
 import defaultProfile from "../../../assets/img/default-profile.png";
 
 function ChatCard({
-  photoUrl = defaultProfile,
-  fullname,
+  clientPhoto = defaultProfile,
+  clientFullName,
   messagePreview,
-  agent,
+  agentFullName,
   stageName,
   stageColor,
   time,
 }) {
   return (
     <div className="chat-card">
-      <img src={photoUrl} alt="" />
+      <img src={clientPhoto} alt="" />
       <section className="chat-card__info">
-        <h2>{fullname}</h2>
+        <h2>{clientFullName}</h2>
         <h3>{messagePreview}</h3>
         <ul className="tags">
           <li className="tag">
-            Asesor: <b>{agent}</b>
+            Asesor: <b>{agentFullName}</b>
           </li>
           <li
             className="tag"
