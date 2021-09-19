@@ -12,10 +12,22 @@ import { ReactComponent as AddUserIcon } from "../../../assets/icons/add-user.sv
 function Clients() {
   return (
     <div className="clients">
-      <div className="search__container">
-        <Search placeholder={"Buscar por nombre, asesor o estado"} />
-      </div>
-      <div className="add-user">
+      <Search placeholder={"Buscar por nombre, asesor o estado"} />
+      <div className="clients__options">
+        <ClientFilter
+          placeholder={"Sin Filtrar"}
+          agentList={[
+            { name: "Deyvi Conde" },
+            { name: "Diego Montes" },
+            { name: "Renzo Trujillo" },
+          ]}
+          stageList={[
+            { title: "Nuevo lead" },
+            { title: "Atención" },
+            { title: "Conversión" },
+            { title: "Fidelizar" },
+          ]}
+        />
         <Button
           icon={<AddUserIcon />}
           iconColor={"white"}
@@ -25,19 +37,6 @@ function Clients() {
           borderColor={"transparent"}
         />
       </div>
-      <ClientFilter
-        agentList={[
-          { name: "Deyvi Conde" },
-          { name: "Diego Montes" },
-          { name: "Renzo Trujillo" },
-        ]}
-        stageList={[
-          { title: "Nuevo lead" },
-          { title: "Atención" },
-          { title: "Conversión" },
-          { title: "Fidelizar" },
-        ]}
-      />
       <Table
         headers={[
           "Nombre",

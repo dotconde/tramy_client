@@ -1,14 +1,14 @@
 .team {
-  display: flex;
-  flex-direction: column;
+  display: block;
   background-color: #f5f5f5;
   font-family: "Poppins", sans-serif;
   height: 100%;
 }
 
-.add-client {
-  padding: 1.5rem 2rem 1.5rem 0;
+.team__options {
+  padding: 1.5rem 2rem;
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
 }

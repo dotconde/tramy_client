@@ -1,22 +1,26 @@
 .clients {
-  display: flex;
-  flex-direction: column;
+  display: block;
   background-color: #f5f5f5;
   font-family: "Poppins", sans-serif;
   height: 100%;
 }
 
-.clients .search__container {
+.clients .clients__options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 2rem;
+}
+
+.clients button {
+  margin: 1.05rem 0;
+}
+
+.clients .clients__header {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 4.2rem;
-}
-
-.add-user {
-  padding: 1.5rem 2rem 0 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
 }

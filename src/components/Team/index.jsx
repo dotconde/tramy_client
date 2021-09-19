@@ -9,7 +9,7 @@ import { ReactComponent as AddUserIcon } from "../../assets/icons/add-user.svg";
 function Team() {
   return (
     <div className="team">
-      <div className="add-client">
+      <div className="team__options">
         <Button
           icon={<AddUserIcon />}
           iconColor={"white"}
