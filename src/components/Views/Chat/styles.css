@@ -1,105 +1,155 @@
-.chat__tabset > input[type="radio"] {
-  position: absolute;
-  left: -200vw;
-}
-
-.chat__tabset .chat__tab-panel {
-  display: none;
-}
-
-.chat__tabset
-  > input:first-child:checked
-  ~ .chat__tab-panels
-  > .chat__tab-panel:first-child,
-.chat__tabset
-  > input:nth-child(3):checked
-  ~ .chat__tab-panels
-  > .chat__tab-panel:nth-child(2),
-.chat__tabset
-  > input:nth-child(5):checked
-  ~ .chat__tab-panels
-  > .chat__tab-panel:nth-child(3),
-.chat__tabset
-  > input:nth-child(7):checked
-  ~ .chat__tab-panels
-  > .chat__tab-panel:nth-child(4),
-.chat__tabset
-  > input:nth-child(9):checked
-  ~ .chat__tab-panels
-  > .chat__tab-panel:nth-child(5),
-.chat__tabset
-  > input:nth-child(11):checked
-  ~ .chat__tab-panels
-  > .chat__tab-panel:nth-child(6) {
-  display: block;
-}
-
-/*
- Styling
-*/
-.chat__tabset {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-.chat__tabset label svg {
-  height: 1rem;
-  width: 1rem;
-  padding-right: 0.35rem;
-  vertical-align: top;
-  fill: #9a9a9a;
-}
-
-.chat__tabset > label {
-  position: relative;
-  display: inline-block;
-  padding: 1.7rem 0 1.3rem 0;
-  margin: 0 2.5rem;
-  cursor: pointer;
+.chat {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
   font-family: "Poppins", sans-serif;
-  font-size: 0.8rem;
-  color: #9a9a9a;
-}
-
-.chat__tabset > label::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 0.3rem;
-  background: transparent;
-}
-
-/* Hover Tab */
-.chat__tabset label:hover path,
-.chat__tabset label:hover {
-  color: #109cf1;
-  fill: #109cf1;
-}
-
-/* Selected Tab */
-.chat__tabset > input:checked + label::after {
-  background: #109cf1;
-}
-
-.chat__tabset > input:checked + label {
-  color: #109cf1;
-}
-
-.chat__tabset > input:checked + label svg {
-  fill: #109cf1;
-}
-
-/* Contents */
-.chat__tab-panels {
-  background-color: white;
-  height: calc(100% - 66px);
-  box-shadow: inset 0px 11px 8px -10px #ccc;
-}
-
-.chat__tab-panel {
   height: 100%;
+}
+
+/* Chat List */
+
+.chat__list {
+  box-shadow: 5px 0 5px -5px #ccc;
+}
+
+.chat__list-options {
+  margin: 1.65rem 1rem;
+}
+
+.chat__list-options input {
+  font-size: 0.72rem;
+}
+
+.chat__list-filter {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.72rem;
+  color: #6a707e;
+  margin: 1.5rem 0;
+}
+
+.chat__list-filter select {
+  font-size: 0.72rem;
+  font-family: "Poppins", sans-serif;
+  color: #109cf1;
+  border: 0;
+  outline: 0;
+  padding: 0 0.3rem 0 0.2rem;
+}
+
+.chat__list-contacts {
+  border-top: 1px solid rgb(167, 167, 167, 0.25);
+  height: calc(100vh - 135px);
+  overflow-y: auto;
+}
+
+/* Chat Window */
+
+.chat__window {
+  display: grid;
+  grid-template-rows: 8.25rem 5fr 8.25rem;
+}
+
+.chat__window-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 1.5rem;
+}
+
+.chat__window-about {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: start;
+}
+
+.chat__window-about img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.chat__window-about h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5a5a5a;
+  margin: 0 0.7rem;
+}
+
+.chat__window-about h3 {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #b1b1b1;
+  margin: 0 0.7rem;
+}
+
+.chat__window-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.chat__window-options button {
+  margin-left: 1rem;
+  height: 2.7rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.chat__window-options div {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.chat__window-messages {
+  background-image: url(../../../assets/img/chatbg.png);
+  background-color: #f5ece3;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.chat__window-textbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat__window-textbox button {
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chat__window-textbox svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #b6b6b6;
+}
+
+.chat__window-textbox .message-write {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4d4d4d;
+  border-radius: 0.8rem;
+  padding: 1.5rem 1rem;
+  margin-left: 1rem;
+}
+
+.chat__window-textbox .message-write textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  width: 30rem;
+  height: 1.3rem;
+  padding-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  background-color: #4d4d4d;
+  color: white;
+}
+
+.chat__window-textbox .message-write textarea::-webkit-input-placeholder {
+  line-height: 1.3rem;
 }
