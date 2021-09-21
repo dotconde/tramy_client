@@ -12,6 +12,7 @@ switch (process.env.NODE_ENV) {
 const ENDPOINTS = {
   LOGIN: "login",
   PROFILE: "my_profile",
+  ORGANIZATION: "my_organization",
 };
 
 export { BASE_URL, ENDPOINTS };
