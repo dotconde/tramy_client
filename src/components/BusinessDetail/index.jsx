@@ -1,12 +1,12 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { BASE_URL, ENDPOINTS } from "../../config";
 import useToken from "../../hooks/useToken";
-import { ProfileForm } from "./ProfileForm";
+import { BusinessForm } from "./BusinessForm";
 
 import axios from "axios";
 
-function ProfileDetail() {
-  const endpoint = `${BASE_URL}/${ENDPOINTS.PROFILE}`;
+function BusinessDetail() {
+  const endpoint = `${BASE_URL}/${ENDPOINTS.ORGANIZATION}`;
   const { token } = useToken();
   const config = {
     headers: { Authorization: `Bearer ${token}` },
@@ -14,25 +14,25 @@ function ProfileDetail() {
 
   const [data, setData] = useState(null);
 
-  const fetchProfile = () => {
+  const fetchOrganization = () => {
     axios.get(endpoint, config).then((response) => setData(response.data));
   };
 
   useEffect(() => {
     async function fetchData() {
-      await fetchProfile();
+      await fetchOrganization();
     }
     fetchData();
   }, []);
 
   return data ? (
     <Fragment>
-      <h1>Mi perfil</h1>
-      <ProfileForm preloadedValues={data} />
+      <h1>Mi organización</h1>
+      <BusinessForm preloadedValues={data} />
     </Fragment>
   ) : (
     <div>Loading ...</div>
   );
 }
 
-export default ProfileDetail;
+export default BusinessDetail;
