@@ -12,7 +12,7 @@ table {
   margin: auto;
 }
 
-thead[class="categories"] tr > th {
+thead[className="categories"] tr > th {
   border-bottom: 1px solid rgb(167, 167, 167, 0.25);
 }
 

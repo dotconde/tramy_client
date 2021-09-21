@@ -4,7 +4,7 @@ import "./styles.css";
 function ClientFilter({ placeholder, agentList, stageList }) {
   return (
     <div className="filter">
-      <label for="filter">Filtro:</label>
+      <label htmlFor="filter">Filtro:</label>
       <select name="browser">
         <optgroup>
           <option value="" selected>

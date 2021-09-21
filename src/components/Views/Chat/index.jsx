@@ -27,7 +27,7 @@ function Chat({
             borderColor={"1px solid #dfdfdf"}
           />
           <div className="chat__list-filter">
-            <label for="chat__list-filter">Filtro:</label>
+            <label htmlFor="chat__list-filter">Filtro:</label>
             <select name="browser">
               <option value="" selected>
                 Todas las conversaciones

@@ -3,10 +3,10 @@ import "./styles.css";
 import defaultProfile from "../../assets/img/default-profile.png";
 // import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
 
-function Profile({
-  fullName = "Deyvi Condezo",
+function ProfileSummary({
+  fullName = "Pepe Jeans",
   notificationCount = 0,
-  email = "deyvi@tramy.io",
+  email = "pepe@jeans.io",
 }) {
   return (
     <div>
@@ -32,4 +32,4 @@ function Profile({
   );
 }
 
-export default Profile;
+export default ProfileSummary;
