@@ -88,7 +88,6 @@ export function ProfileForm({ preloadedValues }) {
         type="text"
         disabled
         {...register("organizationName", {
-          required: true,
           minLength: {
             value: 1,
             message: "Su organización debe tener al menos 1 caracter",
@@ -99,7 +98,7 @@ export function ProfileForm({ preloadedValues }) {
           },
         })}
       />
-      <button>Guardar cambios</button>
+      <button type="submit">Guardar cambios</button>
     </form>
   );
 }
