@@ -3,7 +3,7 @@ import "./styles.css";
 import Search from "../../UI/Search";
 import Button from "../../UI/Button";
 import ClientFilter from "../../ClientFilter";
-import Table from "../../UI/Table";
+import ClientTable from "../../ClientTable";
 import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 import { ReactComponent as MessageIcon } from "../../../assets/icons/message.svg";
@@ -37,32 +37,32 @@ function Clients() {
           borderColor={"transparent"}
         />
       </div>
-      <Table
+      <ClientTable
         headers={[
           "Nombre",
           "Teléfono",
           "Email",
           "Asesor",
           "Estado",
-          "Última conexión",
+          "Fecha de creación",
           "Acciones",
         ]}
         data={[
           {
             phone: "+51943313390",
-            name: "Jefferson Cahuana",
-            email: "d.conde.cahuana@trammy.io",
+            name: "Jhon Doe",
+            email: "jhon@tramy.io",
             agent: "Alberto Suarez",
             status: "Pagado",
-            lastActive: "12/06/2021 , 14:10",
+            createdAt: "12/06/2021 , 14:10",
           },
           {
-            name: "Jefferson Cahuana",
-            phone: "+51943313390",
-            email: "d.conde.cahuana@trammy.io",
+            name: "Deyvi Conde",
+            phone: "+51943313391",
+            email: "deyvi@tramy.io",
             agent: "Alberto Suarez",
             status: "Contactado",
-            lastActive: "12/06/2021 , 14:10",
+            createdAt: "12/06/2021 , 14:10",
           },
         ]}
         tools={[<MessageIcon />, <PencilIcon />, <TrashIcon />]}
