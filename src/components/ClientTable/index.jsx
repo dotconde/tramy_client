@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-function Table({ headers, data, tools }) {
+function ClientTable({ headers, data, tools }) {
   return (
     <div className="table">
       <table>
@@ -32,4 +32,4 @@ function Table({ headers, data, tools }) {
   );
 }
 
-export default Table;
+export default ClientTable;
