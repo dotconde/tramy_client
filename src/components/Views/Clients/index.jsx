@@ -3,7 +3,7 @@ import "./styles.css";
 import Search from "../../UI/Search";
 import Button from "../../UI/Button";
 import ClientFilter from "../../ClientFilter";
-import Table from "../../UI/Table";
+import ClientTable from "../../ClientTable";
 import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 import { ReactComponent as MessageIcon } from "../../../assets/icons/message.svg";
@@ -37,7 +37,7 @@ function Clients() {
           borderColor={"transparent"}
         />
       </div>
-      <Table
+      <ClientTable
         headers={[
           "Nombre",
           "Teléfono",
