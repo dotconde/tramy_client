@@ -17,6 +17,7 @@ export function ProfileForm({ preloadedValues }) {
 
   const onSubmit = async (data) => {
     await updateProfile(humps.decamelizeKeys(data));
+    window.location.reload();
   };
 
   function updateProfile(data) {

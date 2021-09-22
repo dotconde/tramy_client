@@ -17,6 +17,7 @@ export function BusinessForm({ preloadedValues }) {
 
   const onSubmit = async (data) => {
     await updateBusiness(humps.decamelizeKeys(data));
+    window.location.reload();
   };
 
   function updateBusiness(data) {
