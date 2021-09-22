@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BASE_URL, ENDPOINTS } from "../../config";
 import useToken from "../../hooks/useToken";
 import "./styles.css";
-// import ClientTable from "../ClientTable";
+import TeamTable from "../TeamTable";
 import axios from "axios";
 
 function Team() {
@@ -28,11 +28,10 @@ function Team() {
     <div className="team">
       <div className="team__options">{/*  */}</div>
       {team ? (
-        // <Table
-        //   headers={["Nombre", "Teléfono", "Email", "Rol", "Estado"]}
-        //   data={team}
-        // />
-        <p>No iTable</p>
+        <TeamTable
+          headers={["Nombre", "Email", "Rol", "Activo", "Acciones"]}
+          data={team}
+        />
       ) : (
         <p>Cargando ...</p>
       )}
