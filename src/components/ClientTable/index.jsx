@@ -20,9 +20,9 @@ function ClientTable({ headers, data, tools }) {
               </td>
               <td>{row.phone}</td>
               <td>{row.email}</td>
-              <td>{row.role || row.agent}</td>
-              <td>{row.permission || row.status}</td>
-              <td>{row.lastActive}</td>
+              <td>{row.agent}</td>
+              <td>{row.status}</td>
+              <td>{row.createdAt}</td>
               <td className="tools">{tools}</td>
             </tr>
           ))}
