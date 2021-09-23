@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 2fr 4fr;
   font-family: "Poppins", sans-serif;
-  height: 100%;
 }
 
 /* Chat List */
@@ -12,21 +11,25 @@
 }
 
 .chat__list-options {
-  margin: 1.65rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 8.25rem;
+  padding: 0 0.8rem;
 }
 
 .chat__list-options input {
   font-size: 0.72rem;
 }
 
-.chat__list-filter {
+.chat__list-options .chat__list-filter {
   font-family: "Poppins", sans-serif;
   font-size: 0.72rem;
   color: #6a707e;
-  margin: 1.5rem 0;
+  padding-top: 1.5rem;
 }
 
-.chat__list-filter select {
+.chat__list-options .chat__list-filter select {
   font-size: 0.72rem;
   font-family: "Poppins", sans-serif;
   color: #109cf1;
@@ -37,20 +40,21 @@
 
 .chat__list-contacts {
   border-top: 1px solid rgb(167, 167, 167, 0.25);
-  height: calc(100vh - 135px);
   overflow-y: auto;
+  height: calc(100vh - 8.25rem);
 }
 
 /* Chat Window */
 
 .chat__window {
-  display: grid;
-  grid-template-rows: 8.25rem 5fr 8.25rem;
+  display: block;
+  overflow: hidden;
 }
 
 .chat__window-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 8.25rem;
   padding: 0 1.5rem;
 }
 
@@ -105,9 +109,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  overflow-y: auto;
+  padding: 1rem;
+  height: calc(100vh - 18.5rem);
 }
 
 .chat__window-textbox {
+  height: 8.25rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -132,6 +140,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 80%;
   background-color: #4d4d4d;
   border-radius: 0.8rem;
   padding: 1.5rem 1rem;
@@ -142,14 +151,10 @@
   resize: none;
   border: none;
   outline: none;
-  width: 30rem;
-  height: 1.3rem;
-  padding-left: 1rem;
+  width: 100%;
+  height: 2rem;
+  padding: 0 0.8rem;
   font-family: "Poppins", sans-serif;
   background-color: #4d4d4d;
   color: white;
-}
-
-.chat__window-textbox .message-write textarea::-webkit-input-placeholder {
-  line-height: 1.3rem;
 }
