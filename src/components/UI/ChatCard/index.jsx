@@ -10,6 +10,7 @@ function ChatCard({
   stageName,
   stageColor,
   time,
+  // notificationCount = 0,
 }) {
   return (
     <div className="chat-card">
@@ -29,7 +30,11 @@ function ChatCard({
           </li>
         </ul>
       </section>
-      <section className="chat-card__time">{time}</section>
+      <section>
+        <span className="chat-card__time">{time}</span>
+        {/* <div className="chat-card__notification">
+         {notificationCount}</div> */}
+      </section>
     </div>
   );
 }
