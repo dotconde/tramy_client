@@ -1,7 +1,7 @@
 .chat-card {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
-  padding: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
   border-bottom: 1px solid rgb(167, 167, 167, 0.25);
 }
 
@@ -61,6 +61,7 @@
   border-radius: 0.3rem;
   padding: 0.2rem;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 0.65rem;
 }
 
