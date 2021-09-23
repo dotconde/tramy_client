@@ -14,6 +14,7 @@ const ENDPOINTS = {
   PROFILE: "my_profile",
   ORGANIZATION: "my_organization",
   ACCOUNT: "accounts",
+  LEAD: "leads",
 };
 
 export { BASE_URL, ENDPOINTS };

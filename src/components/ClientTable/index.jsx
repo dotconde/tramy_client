@@ -16,14 +16,15 @@ function ClientTable({ headers, data, tools }) {
           {data.map((row) => (
             <tr>
               <td>
-                <b>{row.name}</b>
+                <b>{row?.attributes?.name || "-"}</b>
               </td>
-              <td>{row.phone}</td>
-              <td>{row.email}</td>
-              <td>{row.agent}</td>
-              <td>{row.status}</td>
-              <td>{row.createdAt}</td>
-              <td className="tools">{tools}</td>
+              <td>{row?.attributes?.phone || "-"}</td>
+              <td>{row?.attributes?.email || "-"}</td>
+              <td>{row?.attributes?.agent || "No disponible"}</td>
+              <td>{row?.attributes?.stage?.name || "-"}</td>
+              <td>{row?.attributes?.created_at || "-"}</td>
+              {/* <td className="tools">{tools}</td> */}
+              <td className="tools">{"No disponible"}</td>
             </tr>
           ))}
         </tbody>
