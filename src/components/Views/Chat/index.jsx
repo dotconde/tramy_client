@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
+import ChatMsg from "../../UI/ChatMsg";
 import Select from "../../UI/Select";
 import Button from "../../UI/Button";
 import defaultProfile from "../../../assets/img/default-profile.png";
@@ -144,7 +145,48 @@ function Chat({
             />
           </div>
         </section>
-        <section className="chat__window-messages"></section>
+        <section className="chat__window-messages">
+          <ChatMsg
+            alignMessage={"flex-start"}
+            backgroundMessage={"white"}
+            content={
+              "Hola, este es el número de Trammy? Quisiera comunicarme con un asesor de clientes."
+            }
+            time={"11/09/2021 10:35 a.m."}
+            statusMessage={"sent"}
+          />
+          <ChatMsg
+            alignMessage={"flex-end"}
+            backgroundMessage={"#dcf8c6"}
+            content={"Hola Benito, te saluda Trammy"}
+            time={"11/09/2021 10:38 a.m."}
+            statusMessage={"read"}
+          />
+
+          <ChatMsg
+            alignMessage={"flex-start"}
+            backgroundMessage={"white"}
+            content={
+              "Hola, este es el número de Trammy? Quisiera comunicarme con un asesor de clientes."
+            }
+            time={"11/09/2021 10:35 a.m."}
+            statusMessage={"delivered"}
+          />
+          <ChatMsg
+            alignMessage={"flex-end"}
+            backgroundMessage={"#dcf8c6"}
+            content={"Hola Benito, te saluda Trammy"}
+            time={"11/09/2021 10:38 a.m."}
+            statusMessage={"failed"}
+          />
+          <ChatMsg
+            alignMessage={"flex-end"}
+            backgroundMessage={"#dcf8c6"}
+            content={"Hola Benito, te saluda Trammy"}
+            time={"11/09/2021 10:38 a.m."}
+            statusMessage={"deleted"}
+          />
+        </section>
         <section className="chat__window-textbox">
           <button>
             <EmojiIcon />
