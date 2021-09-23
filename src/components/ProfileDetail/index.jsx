@@ -31,7 +31,7 @@ function ProfileDetail() {
       <ProfileForm preloadedValues={data} />
     </Fragment>
   ) : (
-    <div>Loading ...</div>
+    <div>Cargando ...</div>
   );
 }
 

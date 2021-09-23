@@ -1,21 +1,44 @@
-import React from "react";
-import "./styles.css";
+import React, { useState, useEffect } from "react";
+import { BASE_URL, ENDPOINTS } from "../../../config";
+import useToken from "../../../hooks/useToken";
+import { tableHeaders } from "../../../constants/client";
 import Search from "../../UI/Search";
 import Button from "../../UI/Button";
 import ClientFilter from "../../ClientFilter";
-import Table from "../../UI/Table";
+import ClientTable from "../../ClientTable";
 import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 import { ReactComponent as MessageIcon } from "../../../assets/icons/message.svg";
 import { ReactComponent as AddUserIcon } from "../../../assets/icons/add-user.svg";
+import axios from "axios";
+import "./styles.css";
 
 function Clients() {
-  return (
+  const [clients, setClients] = useState(null);
+
+  const endpoint = `${BASE_URL}/${ENDPOINTS.LEAD}`;
+  const { token } = useToken();
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+
+  const fetchClients = () => {
+    axios.get(endpoint, config).then((response) => setClients(response.data));
+  };
+
+  useEffect(() => {
+    async function fetchData() {
+      await fetchClients();
+    }
+    fetchData();
+  }, []);
+
+  return clients ? (
     <div className="clients">
       <Search placeholder={"Buscar por nombre, asesor o estado"} />
       <div className="clients__options">
         <ClientFilter
-          placeholder={"Sin Filtrar"}
+          placeholder={"Sin filtrar"}
           agentList={[
             { name: "Deyvi Conde" },
             { name: "Diego Montes" },
@@ -37,37 +60,14 @@ function Clients() {
           borderColor={"transparent"}
         />
       </div>
-      <Table
-        headers={[
-          "Nombre",
-          "Teléfono",
-          "Email",
-          "Asesor",
-          "Estado",
-          "Última conexión",
-          "Acciones",
-        ]}
-        data={[
-          {
-            phone: "+51943313390",
-            name: "Jefferson Cahuana",
-            email: "d.conde.cahuana@trammy.io",
-            agent: "Alberto Suarez",
-            status: "Pagado",
-            lastActive: "12/06/2021 , 14:10",
-          },
-          {
-            name: "Jefferson Cahuana",
-            phone: "+51943313390",
-            email: "d.conde.cahuana@trammy.io",
-            agent: "Alberto Suarez",
-            status: "Contactado",
-            lastActive: "12/06/2021 , 14:10",
-          },
-        ]}
+      <ClientTable
+        headers={tableHeaders}
+        data={clients}
         tools={[<MessageIcon />, <PencilIcon />, <TrashIcon />]}
       />
     </div>
+  ) : (
+    <p>Cargando ...</p>
   );
 }
 

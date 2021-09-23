@@ -5,7 +5,7 @@ switch (process.env.NODE_ENV) {
     BASE_URL = "https://tramyback.herokuapp.com";
     break;
   default:
-    BASE_URL = "http://localhost:3000";
+    BASE_URL = "https://tramyback.herokuapp.com";
     break;
 }
 
@@ -13,6 +13,8 @@ const ENDPOINTS = {
   LOGIN: "login",
   PROFILE: "my_profile",
   ORGANIZATION: "my_organization",
+  ACCOUNT: "accounts",
+  LEAD: "leads",
 };
 
 export { BASE_URL, ENDPOINTS };
