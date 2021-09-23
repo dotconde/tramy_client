@@ -6,7 +6,7 @@ import { ReactComponent as ReadIcon } from "../../../assets/icons/double-check.s
 import { ReactComponent as FailedIcon } from "../../../assets/icons/exclamation.svg";
 import { ReactComponent as DeletedIcon } from "../../../assets/icons/stop.svg";
 
-function ChatMsg({
+function ChatMessage({
   alignMessage,
   backgroundMessage,
   content,
@@ -55,19 +55,19 @@ function ChatMsg({
   }
   return (
     <div
-      className="chat-msg"
+      className="chat-message"
       style={{
         alignItems: alignMessage,
       }}
     >
       <div
-        className="chat-msg__box"
+        className="chat-message__box"
         style={{
           backgroundColor: backgroundMessage,
         }}
       >
         <p>{content}</p>
-        <div className="chat-msg__data">
+        <div className="chat-message__data">
           <span>{time}</span>
           {displayStatus}
         </div>
@@ -76,4 +76,4 @@ function ChatMsg({
   );
 }
 
-export default ChatMsg;
+export default ChatMessage;

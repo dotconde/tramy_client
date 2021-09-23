@@ -1,9 +1,9 @@
-.chat-msg {
+.chat-message {
   display: flex;
   flex-direction: column;
 }
 
-.chat-msg__box {
+.chat-message__box {
   max-width: 60%;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -11,14 +11,14 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: rgb(85, 85, 85);
 }
-.chat-msg p {
+.chat-message p {
   margin: 0;
   padding-bottom: 0.4rem;
   font-size: 0.75rem;
   font-weight: 500;
 }
 
-.chat-msg__data {
+.chat-message__data {
   display: flex;
   justify-content: flex-end;
   align-items: center;

@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
-import ChatMsg from "../../UI/ChatMsg";
+import ChatMessage from "../../UI/ChatMessage";
 import Select from "../../UI/Select";
 import Button from "../../UI/Button";
 import defaultProfile from "../../../assets/img/default-profile.png";
@@ -146,7 +146,7 @@ function Chat({
           </div>
         </section>
         <section className="chat__window-messages">
-          <ChatMsg
+          <ChatMessage
             alignMessage={"flex-start"}
             backgroundMessage={"white"}
             content={
@@ -155,7 +155,7 @@ function Chat({
             time={"11/09/2021 10:35 a.m."}
             statusMessage={"sent"}
           />
-          <ChatMsg
+          <ChatMessage
             alignMessage={"flex-end"}
             backgroundMessage={"#dcf8c6"}
             content={"Hola Benito, te saluda Trammy"}
@@ -163,7 +163,7 @@ function Chat({
             statusMessage={"read"}
           />
 
-          <ChatMsg
+          <ChatMessage
             alignMessage={"flex-start"}
             backgroundMessage={"white"}
             content={
@@ -172,14 +172,14 @@ function Chat({
             time={"11/09/2021 10:35 a.m."}
             statusMessage={"delivered"}
           />
-          <ChatMsg
+          <ChatMessage
             alignMessage={"flex-end"}
             backgroundMessage={"#dcf8c6"}
             content={"Hola Benito, te saluda Trammy"}
             time={"11/09/2021 10:38 a.m."}
             statusMessage={"failed"}
           />
-          <ChatMsg
+          <ChatMessage
             alignMessage={"flex-end"}
             backgroundMessage={"#dcf8c6"}
             content={"Hola Benito, te saluda Trammy"}
