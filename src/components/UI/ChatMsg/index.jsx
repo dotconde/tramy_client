@@ -4,7 +4,7 @@ import { ReactComponent as SentIcon } from "../../../assets/icons/sent.svg";
 import { ReactComponent as DeliveredIcon } from "../../../assets/icons/double-check.svg";
 import { ReactComponent as ReadIcon } from "../../../assets/icons/double-check.svg";
 import { ReactComponent as FailedIcon } from "../../../assets/icons/exclamation.svg";
-import { ReactComponent as DeletedIcon } from "../../../assets/icons/no-stopping.svg";
+import { ReactComponent as DeletedIcon } from "../../../assets/icons/stop.svg";
 
 function ChatMsg({
   alignMessage,
