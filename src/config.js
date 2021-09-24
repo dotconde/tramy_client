@@ -16,6 +16,8 @@ const ENDPOINTS = {
   ACCOUNT: "accounts",
   LEAD: "leads",
   CHAT: "chats",
+  CHAT_ASSIGNED_TO_ME: "chats_assigned_to_me",
+  CHAT_NOT_ASSIGNED: "chats_not_assigned",
 };
 
 export { BASE_URL, ENDPOINTS };
