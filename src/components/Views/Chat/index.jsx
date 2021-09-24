@@ -14,7 +14,7 @@ import { ReactComponent as AgentIcon } from "../../../assets/icons/agent.svg";
 import { useQuery } from "react-query";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
-import { tramyFormat } from "../../../helpers/dateFormat";
+import { toHourMinute } from "../../../helpers/dateFormat";
 
 function Chat({
   clientPhoto = defaultProfile,
@@ -67,18 +67,10 @@ function Chat({
               messagePreview={chatCard?.attributes?.last_message?.text?.body}
               agentFullName={chatCard?.attributes?.attended_by?.first_name}
               stageName={chatCard?.attributes?.current_stage?.name}
-              stageColor={"#ed3a4c"}
-              time={tramyFormat(chatCard?.attributes?.last_message?.timestamp)}
+              stageColor={""}
+              time={toHourMinute(chatCard?.attributes?.last_message?.timestamp)}
             />
           ))}
-          {/* <ChatCard
-            clientFullName={"Benito Juarez"}
-            messagePreview={"Hola Benito, te saluda Trammy"}
-            agentFullName={"Diego Montes"}
-            stageName={"Nuevo Lead"}
-            stageColor={"#ed3a4c"}
-            time={"4:40pm"}
-          /> */}
         </section>
       </div>
       {/* End Chat List */}
