@@ -14,7 +14,7 @@
 .chat-message p {
   margin: 0;
   padding-bottom: 0.4rem;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -22,7 +22,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: rgb(85, 85, 85, 0.6);
 }
@@ -63,6 +63,6 @@
 .deleted svg {
   width: 0.85rem;
   height: 0.85rem;
-  padding: 0 0.3rem 0 1rem;
+  padding-left: 0.5rem;
   fill: rgb(85, 85, 85, 0.6);
 }

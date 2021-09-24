@@ -19,16 +19,16 @@
 }
 
 .lead-card__info h1 {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   margin: 0;
   padding-left: 1rem;
-  color: #6a6a6a;
+  color: #5a5a5a;
   font-weight: 600;
 }
 
 .lead-card__info p {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   margin: 0;
   padding-left: 1rem;
-  color: #6a6a6a;
+  color: #5a5a5a;
 }
