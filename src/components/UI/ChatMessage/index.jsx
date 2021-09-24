@@ -47,7 +47,7 @@ function ChatMessage({
     case "deleted":
       displayStatus = (
         <span className="status-message deleted">
-          <DeletedIcon /> Se eliminó este mensaje
+          <DeletedIcon /> &nbsp; Se eliminó este mensaje
         </span>
       );
       break;
