@@ -22,7 +22,7 @@ function TeamTable({ headers, data, tools }) {
               <td>
                 <b>{row.attributes.role}</b>
               </td>
-              <td>{row.attributes.active ? "Sí" : "No"}</td>
+              <td>{row.attributes.active ? "Sí 🟢" : "No 🔴"}</td>
               <td>{"-"}</td>
             </tr>
           ))}
