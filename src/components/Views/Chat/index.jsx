@@ -16,11 +16,7 @@ import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
 import { toHourMinute } from "../../../helpers/dateFormat";
 
-function Chat({
-  clientPhoto = defaultProfile,
-  clientFullName = "Benito Juarez",
-  clientPhone = "954314490",
-}) {
+function Chat() {
   const { token } = useToken();
   const config = {
     headers: { Authorization: `Bearer ${token}` },
@@ -79,10 +75,10 @@ function Chat({
       <div className="chat__window">
         <section className="chat__window-header">
           <div className="chat__window-about">
-            <img src={clientPhoto} alt="" />
+            <img src={defaultProfile} alt="" />
             <div>
-              <h2>{clientFullName}</h2>
-              <h3>{clientPhone}</h3>
+              <h2>{"Benito Juarez"}</h2>
+              <h3>{"954314490"}</h3>
             </div>
           </div>
           <div className="chat__window-options">
