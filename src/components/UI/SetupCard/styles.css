@@ -1,7 +1,6 @@
 .setup-card {
-  width: 50rem;
   display: grid;
-  grid-template-columns: 0.5fr 3fr 1.5fr 1fr;
+  grid-template-columns: 5.5rem 1fr 10rem 12rem;
   background-color: #fafafa;
   border-radius: 0.75rem;
   box-shadow: 0 0.18rem 0.625rem rgb(0 0 0 / 0.2);
@@ -35,20 +34,20 @@
 
 .setup-card__description h5 {
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: 0.85rem;
   color: #5a5a5a;
   margin: 0 0.5rem 0 0;
 }
 
 .setup-card__description h2 {
   font-weight: 400;
-  font-size: 0.94rem;
+  font-size: 0.85rem;
   color: #969696;
   margin: 0;
 }
 
 .setup-card__description p {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: #9a9a9a;
   margin: 0 0 1.2rem;
 }
@@ -57,14 +56,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 1.5rem;
-  font-size: 0.85rem;
+  margin: 0 auto;
+  font-size: 0.8rem;
 }
 
 .setup-card__status svg {
-  width: 1.2rem;
-  height: 1.2rem;
-  padding-right: 0.6rem;
+  width: 1rem;
+  height: 1rem;
+  padding-right: 0.45rem;
 }
 
 .status-active {

@@ -15,7 +15,7 @@ function Channels() {
           conectionStatus={true}
         />
       </section>
-      <section className="templates">
+      {/* <section className="templates">
         <h4>Mis plantillas</h4>
         <SetupCard
           icon={<WhatsappIcon />}
@@ -23,7 +23,7 @@ function Channels() {
           subtitle={"+51 9325478412"}
           content={"Gestiona las plantillas de mensajes de Whatsapp Business"}
         />
-      </section>
+      </section> */}
     </div>
   );
 }

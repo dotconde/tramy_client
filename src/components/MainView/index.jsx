@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.css";
 import Home from "../Views/Home";
 import Chat from "../Views/Chat";
 import Clients from "../Views/Clients";
@@ -8,7 +9,7 @@ import { Route, Switch } from "react-router-dom";
 
 function MainView() {
   return (
-    <div>
+    <div className="mainview">
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/chat" component={Chat} />

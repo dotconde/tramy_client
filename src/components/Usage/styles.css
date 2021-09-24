@@ -45,7 +45,7 @@
 .step__content {
   max-height: 0;
   padding: 0 1em;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 400;
   border-bottom: 1px solid rgb(167, 167, 167, 0.2);
   transition: all 0.35s;

@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import { BASE_URL, ENDPOINTS } from "../../config";
 import useToken from "../../hooks/useToken";
 import { ProfileForm } from "./ProfileForm";
+import "./styles.css";
 
 import axios from "axios";
 
@@ -26,10 +27,16 @@ function ProfileDetail() {
   }, []);
 
   return data ? (
-    <Fragment>
-      <h1>Mi perfil</h1>
-      <ProfileForm preloadedValues={data} />
-    </Fragment>
+    <div className="profile-detail">
+      <div className="profile-detail__form">
+        <h1>Mi perfil</h1>
+        <ProfileForm preloadedValues={data} />
+      </div>
+      <span className="profile-detail__contact">
+        Para editar tus datos, u otras consultas, &nbsp;
+        <a href="mailto:deyvi@tramy.io">contáctanos.</a>
+      </span>
+    </div>
   ) : (
     <div>Cargando ...</div>
   );

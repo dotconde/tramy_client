@@ -1,0 +1,60 @@
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.profile-form label {
+  text-align: start;
+  color: #9a9a9a;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.profile-form .input-container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #dfdfdf;
+  border-radius: 0.2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.profile-form input {
+  width: calc(100% - 1.5rem);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #5a5a5a;
+  border: none;
+  outline: none;
+}
+
+.profile-form input:disabled,
+.profile-form .disabled {
+  background-color: #e5e5e5;
+}
+
+.profile-form input,
+.profile-form .enabled {
+  background-color: white;
+}
+
+.profile-form svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: #9a9a9a;
+}
+
+.profile-form button {
+  margin: auto;
+  padding: 0.5rem 1.5em;
+  border-radius: 0.3em;
+  background-color: #131313;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

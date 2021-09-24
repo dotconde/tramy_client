@@ -3,7 +3,7 @@ import "./styles.css";
 
 function ClientTable({ headers, data, tools }) {
   return (
-    <div className="table">
+    <div className="client-table">
       <table>
         <thead className="categories">
           <tr>
