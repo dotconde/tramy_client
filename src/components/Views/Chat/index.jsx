@@ -12,12 +12,31 @@ import { ReactComponent as SendIcon } from "../../../assets/icons/send.svg";
 import { ReactComponent as NoteIcon } from "../../../assets/icons/note.svg";
 import { ReactComponent as FilterIcon } from "../../../assets/icons/filter.svg";
 import { ReactComponent as AgentIcon } from "../../../assets/icons/agent.svg";
+import { useQuery } from "react-query";
+import useToken from "../../../hooks/useToken";
+import * as api from "../../../services/api/chat";
+import { toHourMinute } from "../../../helpers/dateFormat";
 
-function Chat({
-  clientPhoto = defaultProfile,
-  clientFullName = "Benito Juarez",
-  clientPhone = "954314490",
-}) {
+function Chat() {
+  const { token } = useToken();
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+
+  const {
+    data: chats,
+    isLoading,
+    isError,
+  } = useQuery("chats", async () => api.getChats(config), { retry: 3 });
+
+  if (isLoading) {
+    return <p>Cargando ...</p>;
+  }
+
+  if (isError) {
+    return <p>Ups, ocurrió un error ...</p>;
+  }
+
   return (
     <div className="chat">
       {/* Start Chat List */}
@@ -39,72 +58,16 @@ function Chat({
           </div>
         </section>
         <section className="chat__list-contacts">
-          <ChatCard
-            clientFullName={"Benito Juarez"}
-            messagePreview={"Hola Benito, te saluda Trammy"}
-            agentFullName={"Diego Montes"}
-            stageName={"Nuevo Lead"}
-            stageColor={"#ed3a4c"}
-            time={"4:40pm"}
-          />
-
-          <ChatCard
-            clientFullName={"Benito Juarez"}
-            messagePreview={"Hola Benito, te saluda Trammy"}
-            agentFullName={"Diego Montes"}
-            stageName={"Nuevo Lead"}
-            stageColor={"#ed3a4c"}
-            time={"4:40pm"}
-          />
-
-          <ChatCard
-            clientFullName={"Carla Soliz"}
-            messagePreview={"Hola Carla, te saluda Trammy"}
-            agentFullName={"Deyvi Conde"}
-            stageName={"Contactado"}
-            stageColor={"#F07539"}
-            time={"5:25pm"}
-          />
-          <ChatCard
-            clientFullName={"Carla Soliz"}
-            messagePreview={"Hola Carla, te saluda Trammy"}
-            agentFullName={"Deyvi Conde"}
-            stageName={"Contactado"}
-            stageColor={"#F07539"}
-            time={"5:25pm"}
-          />
-          <ChatCard
-            clientFullName={"Carla Soliz"}
-            messagePreview={"Hola Carla, te saluda Trammy"}
-            agentFullName={"Deyvi Conde"}
-            stageName={"Contactado"}
-            stageColor={"#F07539"}
-            time={"5:25pm"}
-          />
-          <ChatCard
-            clientFullName={"Carla Soliz"}
-            messagePreview={"Hola Carla, te saluda Trammy"}
-            agentFullName={"Deyvi Conde"}
-            stageName={"Contactado"}
-            stageColor={"#F07539"}
-            time={"5:25pm"}
-          />
-          <ChatCard
-            clientFullName={"Carla Soliz"}
-            messagePreview={"Hola Carla, te saluda Trammy"}
-            agentFullName={"Deyvi Conde"}
-            stageName={"Contactado"}
-            stageColor={"#F07539"}
-            time={"5:25pm"}
-          />
-          <ChatCard
-            clientFullName={"Carla Soliz"}
-            messagePreview={"Hola Carla, te saluda Trammy"}
-            agentFullName={"Deyvi Conde"}
-            stageName={"Contactado"}
-            stageColor={"#F07539"}
-            time={"5:25pm"}
-          />
+          {chats.map((chatCard) => (
+            <ChatCard
+              clientFullName={chatCard?.attributes?.lead?.name}
+              messagePreview={chatCard?.attributes?.last_message?.text?.body}
+              agentFullName={chatCard?.attributes?.attended_by?.first_name}
+              stageName={chatCard?.attributes?.current_stage?.name}
+              stageColor={""}
+              time={toHourMinute(chatCard?.attributes?.last_message?.timestamp)}
+            />
+          ))}
         </section>
       </div>
       {/* End Chat List */}
@@ -113,10 +76,10 @@ function Chat({
       <div className="chat__window">
         <section className="chat__window-header">
           <div className="chat__window-about">
-            <img src={clientPhoto} alt="" />
+            <img src={defaultProfile} alt="" />
             <div>
-              <h2>{clientFullName}</h2>
-              <h3>{clientPhone}</h3>
+              <h2>{"Benito Juarez"}</h2>
+              <h3>{"954314490"}</h3>
             </div>
           </div>
           <div className="chat__window-options">

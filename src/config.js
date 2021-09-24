@@ -15,6 +15,7 @@ const ENDPOINTS = {
   ORGANIZATION: "my_organization",
   ACCOUNT: "accounts",
   LEAD: "leads",
+  CHAT: "chats",
 };
 
 export { BASE_URL, ENDPOINTS };

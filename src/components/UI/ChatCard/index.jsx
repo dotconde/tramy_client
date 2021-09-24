@@ -4,11 +4,11 @@ import defaultProfile from "../../../assets/img/default-profile.png";
 
 function ChatCard({
   clientPhoto = defaultProfile,
-  clientFullName,
-  messagePreview,
-  agentFullName,
-  stageName,
-  stageColor,
+  clientFullName = "Sin nombre",
+  messagePreview = "",
+  agentFullName = "Sin asignar",
+  stageName = "Sin etapa",
+  stageColor = "#8a8a8a",
   time,
   // notificationCount = 0,
 }) {
