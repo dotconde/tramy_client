@@ -1,0 +1,31 @@
+.profile-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.profile-detail__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-detail__form h1 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 2rem 0;
+  color: #5a5a5a;
+}
+
+.profile-detail__contact {
+  font-size: 0.8rem;
+  color: #5a5a5a;
+  text-align: start;
+  padding: 2rem;
+}
+
+.profile-detail__contact a {
+  color: #109cf1;
+}

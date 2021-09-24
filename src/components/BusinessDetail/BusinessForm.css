@@ -1,0 +1,56 @@
+.business-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.business-form label {
+  text-align: start;
+  color: #9a9a9a;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.business-form .input-container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #dfdfdf;
+  border-radius: 0.2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.business-form input {
+  width: calc(100% - 1.5rem);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #5a5a5a;
+  border: none;
+  outline: none;
+}
+
+.business-form input:disabled,
+.disabled {
+  background-color: #e5e5e5;
+}
+
+.business-form input,
+.business-form .enabled {
+  background-color: white;
+}
+
+.business-form svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: #9a9a9a;
+}
+
+.business-form button:disabled {
+  margin: auto;
+  padding: 0.5rem 1.5em;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+}
