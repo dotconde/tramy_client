@@ -3,7 +3,7 @@ import "./styles.css";
 
 function TeamTable({ headers, data, tools }) {
   return (
-    <div className="table">
+    <div className="team-table">
       <table>
         <thead className="categories">
           <tr>
