@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import defaultProfile from "../../../assets/img/default-profile.png";
+import { truncate } from "../../../helpers/messageFormat";
 
 function ChatCard({
   clientPhoto = defaultProfile,
@@ -22,7 +23,7 @@ function ChatCard({
       <img src={clientPhoto} alt="" />
       <section className="chat-card__info">
         <h2>{clientFullName}</h2>
-        <h3>{messagePreview}</h3>
+        <h3>{truncate(messagePreview, 30)}</h3>
         <ul className="tags">
           <li className="tag">
             Asesor: <b>{agentFullName}</b>
