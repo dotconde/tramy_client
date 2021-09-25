@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
@@ -22,8 +22,8 @@ function Chat() {
 
   const {
     data: currentChat,
-    isLoading: isLoadingCurrentChat,
-    isError: isErrorCurrentChat,
+    // isLoading: isLoadingCurrentChat,
+    // isError: isErrorCurrentChat,
   } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
     retry: 3,
     enabled: !!chatId,
