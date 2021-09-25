@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
@@ -9,22 +9,41 @@ import * as api from "../../../services/api/chat";
 import { toHourMinute } from "../../../helpers/dateFormat";
 
 function Chat() {
+  // Config
   const { token } = useToken();
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
 
-  const {
-    data: chats,
-    isLoading,
-    isError,
-  } = useQuery("chats", async () => api.getChats(config), { retry: 3 });
+  // States
+  const [chatId, setChatId] = useState(null);
 
-  if (isLoading) {
+  // Current chat
+
+  const {
+    data: currentChat,
+    isLoading: isLoadingCurrentChat,
+    isError: isErrorCurrentChat,
+  } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
+    retry: 3,
+    enabled: !!chatId,
+  });
+
+  // List chats
+  const {
+    data: chatList,
+    isLoading: isLoadingChats,
+    isError: isErrorChats,
+  } = useQuery("chatList", async () => api.getChats(config), {
+    retry: 3,
+    refetchInterval: 12000,
+  });
+
+  if (isLoadingChats) {
     return <p>Cargando ...</p>;
   }
 
-  if (isError) {
+  if (isErrorChats) {
     return <p>Ups, parece que algo salió mal ...</p>;
   }
 
@@ -49,7 +68,7 @@ function Chat() {
           </div>
         </section>
         <section className="chat__list-contacts">
-          {chats.map((chatCard) => (
+          {chatList.map((chatCard) => (
             <ChatCard
               clientFullName={chatCard?.attributes?.lead?.name}
               messagePreview={chatCard?.attributes?.last_message?.text?.body}
@@ -57,6 +76,8 @@ function Chat() {
               stageName={chatCard?.attributes?.current_stage?.name}
               stageColor={""}
               time={toHourMinute(chatCard?.attributes?.last_message?.timestamp)}
+              chatId={chatCard?.attributes?.id}
+              setChatId={setChatId}
             />
           ))}
         </section>
@@ -64,7 +85,7 @@ function Chat() {
       {/* End Chat List */}
 
       {/* Start Chat Window */}
-      <ChatWindow />
+      <ChatWindow chatData={currentChat} />
       {/* End Chat Window*/}
     </div>
   );
