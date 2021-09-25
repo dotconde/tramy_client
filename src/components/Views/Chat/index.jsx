@@ -27,6 +27,7 @@ function Chat() {
   } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
     retry: 3,
     enabled: !!chatId,
+    refetchInterval: 10000,
   });
 
   // List chats
@@ -36,7 +37,7 @@ function Chat() {
     isError: isErrorChats,
   } = useQuery("chatList", async () => api.getChats(config), {
     retry: 3,
-    refetchInterval: 12000,
+    refetchInterval: 10000,
   });
 
   if (isLoadingChats) {
