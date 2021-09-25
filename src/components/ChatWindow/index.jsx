@@ -10,15 +10,16 @@ import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
 import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import "./styles.css";
 
-function ChatWindow() {
+function ChatWindow({ chatData }) {
+  const attributes = chatData?.attributes;
   return (
     <div className="chat__window">
       <section className="chat__window-header">
         <div className="chat__window-about">
           <img src={defaultProfile} alt="" />
           <div>
-            <h2>{"Benito Juarez"}</h2>
-            <h3>{"954314490"}</h3>
+            <h2>{attributes?.lead?.name}</h2>
+            <h3>{attributes?.lead?.phone}</h3>
           </div>
         </div>
         <div className="chat__window-options">
@@ -48,46 +49,9 @@ function ChatWindow() {
         </div>
       </section>
       <section className="chat__window-messages">
-        <ChatMessage
-          alignMessage={"flex-start"}
-          backgroundMessage={"white"}
-          content={
-            "Hola, este es el número de Trammy? Quisiera comunicarme con un asesor de clientes."
-          }
-          time={"11/09/2021 10:35 a.m."}
-          statusMessage={"sent"}
-        />
-        <ChatMessage
-          alignMessage={"flex-end"}
-          backgroundMessage={"#dcf8c6"}
-          content={"Hola Benito, te saluda Trammy"}
-          time={"11/09/2021 10:38 a.m."}
-          statusMessage={"read"}
-        />
-
-        <ChatMessage
-          alignMessage={"flex-start"}
-          backgroundMessage={"white"}
-          content={
-            "Hola, este es el número de Trammy? Quisiera comunicarme con un asesor de clientes."
-          }
-          time={"11/09/2021 10:35 a.m."}
-          statusMessage={"delivered"}
-        />
-        <ChatMessage
-          alignMessage={"flex-end"}
-          backgroundMessage={"#dcf8c6"}
-          content={"Hola Benito, te saluda Trammy"}
-          time={"11/09/2021 10:38 a.m."}
-          statusMessage={"failed"}
-        />
-        <ChatMessage
-          alignMessage={"flex-end"}
-          backgroundMessage={"#dcf8c6"}
-          content={"Hola Benito, te saluda Trammy"}
-          time={"11/09/2021 10:38 a.m."}
-          statusMessage={"deleted"}
-        />
+        {attributes?.chat_data?.messages.map((message) => (
+          <ChatMessage messageData={message} />
+        ))}
       </section>
       <section className="chat__window-textbox">
         <button>
