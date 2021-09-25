@@ -53,6 +53,8 @@ function ChatWindow({ chatData }) {
           <ChatMessage messageData={message} />
         ))}
       </section>
+
+      {/* Chat Input Box */}
       <section className="chat__window-textbox">
         <button>
           <EmojiIcon />
@@ -61,7 +63,7 @@ function ChatWindow({ chatData }) {
           <button>
             <TemplateIcon />
           </button>
-          <textarea type="text" placeholder="Escribir mensaje..."></textarea>
+          <input type="text" placeholder="Escribir mensaje..."></input>
           <button type="submit">
             <SendIcon />
           </button>
