@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import defaultProfile from "../../../assets/img/default-profile.png";
-import { truncate } from "../../../helpers/messageFormat";
+import { truncate } from "../../../helpers/formatters/message";
 
 function ChatCard({
   clientPhoto = defaultProfile,

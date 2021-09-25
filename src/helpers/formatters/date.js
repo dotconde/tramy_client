@@ -1,4 +1,4 @@
-export function toHourMinute(timestamp) {
+export function timestampToTime(timestamp) {
   let date = new Date(parseInt(timestamp) * 1000);
   let finalFormat =
     date.getHours() +
@@ -8,7 +8,7 @@ export function toHourMinute(timestamp) {
   return finalFormat;
 }
 
-export function toDateTime(timestamp) {
+export function timestampToDateTime(timestamp) {
   let date = new Date(parseInt(timestamp) * 1000);
   let finalFormat =
     date.getDay() +

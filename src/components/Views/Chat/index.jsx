@@ -6,7 +6,7 @@ import ChatWindow from "../../ChatWindow";
 import { useQuery } from "react-query";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
-import { toHourMinute } from "../../../helpers/dateFormat";
+import { timestampToTime } from "../../../helpers/formatters/date";
 
 function Chat() {
   // Config
@@ -76,7 +76,9 @@ function Chat() {
               agentFullName={chatCard?.attributes?.attended_by?.first_name}
               stageName={chatCard?.attributes?.current_stage?.name}
               stageColor={""}
-              time={toHourMinute(chatCard?.attributes?.last_message?.timestamp)}
+              time={timestampToTime(
+                chatCard?.attributes?.last_message?.timestamp
+              )}
               chatId={chatCard?.attributes?.id}
               setChatId={setChatId}
             />
