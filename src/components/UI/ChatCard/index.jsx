@@ -10,10 +10,15 @@ function ChatCard({
   stageName = "Sin etapa",
   stageColor = "#8a8a8a",
   time,
+  chatId,
+  setChatId,
   // notificationCount = 0,
 }) {
+  const handleChatId = () => {
+    setChatId(chatId);
+  };
   return (
-    <div className="chat-card">
+    <div className="chat-card" onClick={handleChatId}>
       <img src={clientPhoto} alt="" />
       <section className="chat-card__info">
         <h2>{clientFullName}</h2>

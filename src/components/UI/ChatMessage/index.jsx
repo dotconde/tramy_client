@@ -5,17 +5,13 @@ import { ReactComponent as DeliveredIcon } from "../../../assets/icons/double-ch
 import { ReactComponent as ReadIcon } from "../../../assets/icons/double-check.svg";
 import { ReactComponent as FailedIcon } from "../../../assets/icons/exclamation.svg";
 import { ReactComponent as DeletedIcon } from "../../../assets/icons/stop.svg";
+import { toDateTime } from "../../../helpers/dateFormat";
+import { validateEmail } from "../../../helpers/validateEmail";
 
-function ChatMessage({
-  alignMessage,
-  backgroundMessage,
-  content,
-  time,
-  statusMessage,
-}) {
+function ChatMessage({ messageData }) {
   let displayStatus;
 
-  switch (statusMessage) {
+  switch (messageData?.status) {
     case "sent":
       displayStatus = (
         <span className="status-message sent">
@@ -57,18 +53,22 @@ function ChatMessage({
     <div
       className="chat-message"
       style={{
-        alignItems: alignMessage,
+        alignItems: validateEmail(messageData?.from)
+          ? "flex-end"
+          : "flex-start",
       }}
     >
       <div
         className="chat-message__box"
         style={{
-          backgroundColor: backgroundMessage,
+          backgroundColor: validateEmail(messageData?.from)
+            ? "#bce9bb"
+            : "white",
         }}
       >
-        <p>{content}</p>
+        <p>{messageData?.text?.body}</p>
         <div className="chat-message__data">
-          <span>{time}</span>
+          <span>{toDateTime(messageData?.timestamp)}</span>
           {displayStatus}
         </div>
       </div>
