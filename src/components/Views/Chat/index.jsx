@@ -3,30 +3,46 @@ import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
 import ChatWindow from "../../ChatWindow";
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
 import { timestampToTime } from "../../../helpers/formatters/date";
 
 function Chat() {
+  // States
+  const [chatId, setChatId] = useState(null);
+  const [inputMessage, setInputMessage] = useState("Hola TEST123");
+
   // Config
   const { token } = useToken();
   const config = {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
   };
 
-  // States
-  const [chatId, setChatId] = useState(null);
+  // Pusher function
+  function pushMessage() {
+    mutate();
+    if (isLoadingDeliveryMessage) {
+      return "Enviando mensaje ...";
+    }
+  }
+
+  const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
+    async () =>
+      api.postMessage(chatId, { type: "text", message: inputMessage }, config)
+  );
 
   // Current chat
-
   const {
     data: currentChat,
     // isLoading: isLoadingCurrentChat,
     // isError: isErrorCurrentChat,
   } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
     retry: 3,
-    enabled: !!chatId,
+    enabled: Boolean(chatId),
     refetchInterval: 10000,
   });
 
@@ -50,7 +66,7 @@ function Chat() {
 
   return (
     <div className="chat">
-      {/* Start Chat List */}
+      {/* Chat List */}
       <div className="chat__list">
         <section className="chat__list-options">
           <Search
@@ -85,11 +101,11 @@ function Chat() {
           ))}
         </section>
       </div>
-      {/* End Chat List */}
 
-      {/* Start Chat Window */}
-      <ChatWindow chatData={currentChat} />
-      {/* End Chat Window*/}
+      {/* Chat Window */}
+      <ChatWindow
+        {...{ currentChat, inputMessage, setInputMessage, pushMessage }}
+      />
     </div>
   );
 }
