@@ -1,4 +1,5 @@
-import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
+import { useRef, useEffect } from "react";
+// import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
 import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
@@ -16,6 +17,12 @@ function ChatWindow({
   setInputMessage,
   pushMessage,
 }) {
+  const hookDiv = useRef(null);
+
+  useEffect(() => {
+    hookDiv.current.scrollIntoView();
+  }, [currentChat?.attributes?.chat_data]);
+  // Wrap chat attributes
   const attributes = currentChat?.attributes;
 
   // When user press enter, then send message
@@ -65,6 +72,7 @@ function ChatWindow({
         {attributes?.chat_data?.messages.map((message) => (
           <ChatMessage messageData={message} />
         ))}
+        <div style={{ float: "right", clear: "both" }} ref={hookDiv}></div>
       </section>
 
       {/* Chat Input Box */}
