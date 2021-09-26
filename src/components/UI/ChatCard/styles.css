@@ -1,8 +1,9 @@
 .chat-card {
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
   padding: 1rem 1rem 0.5rem 1rem;
   border-bottom: 1px solid rgb(167, 167, 167, 0.25);
+  font-family: "Poppins", sans-serif;
 }
 
 .chat-card:hover {
@@ -10,23 +11,16 @@
   transition: all 0.3s ease-in-out;
 }
 
-.chat-card img {
-  width: 3rem;
-  height: 3rem;
-}
-
-.chat-card__info,
-.chat-card__time {
+.chat-card__info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
-  text-align: start;
-  font-family: "Poppins", sans-serif;
+  padding-left: 0.7rem;
 }
 
-.chat-card__info {
-  padding-left: 0.7rem;
+.chat-card__time {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .chat-card__info h2 {
