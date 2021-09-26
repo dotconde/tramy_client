@@ -11,7 +11,7 @@ import { timestampToTime } from "../../../helpers/formatters/date";
 function Chat() {
   // States
   const [chatId, setChatId] = useState(null);
-  const [inputMessage, setInputMessage] = useState("Hola TEST123");
+  const [inputMessage, setInputMessage] = useState("");
 
   // Config
   const { token } = useToken();
@@ -28,6 +28,7 @@ function Chat() {
     if (isLoadingDeliveryMessage) {
       return "Enviando mensaje ...";
     }
+    setInputMessage("");
   }
 
   const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
