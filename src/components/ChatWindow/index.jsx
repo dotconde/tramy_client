@@ -1,17 +1,37 @@
-import defaultProfile from "../../assets/img/default-profile.png";
-import Select from "../UI/Select";
-import Button from "../UI/Button";
-import ChatMessage from "../UI/ChatMessage";
+import { useRef, useEffect } from "react";
+// import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
+import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
-import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
-import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
+import defaultProfile from "../../assets/img/default-profile.png";
+import ChatMessage from "../UI/ChatMessage";
+import Select from "../UI/Select";
+import Button from "../UI/Button";
 import "./styles.css";
 
-function ChatWindow({ chatData }) {
-  const attributes = chatData?.attributes;
+function ChatWindow({
+  currentChat,
+  inputMessage,
+  setInputMessage,
+  pushMessage,
+}) {
+  const hookDiv = useRef(null);
+
+  useEffect(() => {
+    hookDiv.current.scrollIntoView();
+  }, [currentChat?.attributes?.chat_data]);
+  // Wrap chat attributes
+  const attributes = currentChat?.attributes;
+
+  // When user press enter, then send message
+  function handleKeyDown(event) {
+    if (event.key === "Enter" && inputMessage) {
+      pushMessage();
+    }
+  }
+
   return (
     <div className="chat__window">
       <section className="chat__window-header">
@@ -52,17 +72,27 @@ function ChatWindow({ chatData }) {
         {attributes?.chat_data?.messages.map((message) => (
           <ChatMessage messageData={message} />
         ))}
+        <div style={{ float: "right", clear: "both" }} ref={hookDiv}></div>
       </section>
+
+      {/* Chat Input Box */}
       <section className="chat__window-textbox">
         <button>
           <EmojiIcon />
         </button>
         <div className="message-write">
-          <button>
+          {/* TODO: Connect with template Tramy API */}
+          {/* <button>
             <TemplateIcon />
-          </button>
-          <textarea type="text" placeholder="Escribir mensaje..."></textarea>
-          <button type="submit">
+          </button> */}
+          <input
+            type="text"
+            placeholder="Escribir mensaje..."
+            value={inputMessage}
+            onChange={(event) => setInputMessage(event.target.value)}
+            onKeyDown={handleKeyDown}
+          ></input>
+          <button type="submit" onClick={pushMessage}>
             <SendIcon />
           </button>
         </div>

@@ -5,8 +5,8 @@ import { ReactComponent as DeliveredIcon } from "../../../assets/icons/double-ch
 import { ReactComponent as ReadIcon } from "../../../assets/icons/double-check.svg";
 import { ReactComponent as FailedIcon } from "../../../assets/icons/exclamation.svg";
 import { ReactComponent as DeletedIcon } from "../../../assets/icons/stop.svg";
-import { toDateTime } from "../../../helpers/dateFormat";
-import { validateEmail } from "../../../helpers/validateEmail";
+import { timestampToDateTime } from "../../../helpers/formatters/date";
+import { validateEmail } from "../../../helpers/validators/email";
 
 function ChatMessage({ messageData }) {
   let displayStatus;
@@ -68,7 +68,7 @@ function ChatMessage({ messageData }) {
       >
         <p>{messageData?.text?.body}</p>
         <div className="chat-message__data">
-          <span>{toDateTime(messageData?.timestamp)}</span>
+          <span>{timestampToDateTime(messageData?.timestamp)}</span>
           {displayStatus}
         </div>
       </div>
