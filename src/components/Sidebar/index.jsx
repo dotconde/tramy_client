@@ -16,7 +16,7 @@ function Sidebar() {
 
   const handleLogout = () => {
     localStorage.clear("token");
-    history.push("/login");
+    history.push("/");
     window.location.reload(false);
   };
   return (
