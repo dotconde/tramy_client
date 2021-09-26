@@ -4,14 +4,33 @@ import TrammyNews1 from "../../assets/img/trammy_news_1.svg";
 import TrammyNews2 from "../../assets/img/trammy_news_2.svg";
 import TrammyNews3 from "../../assets/img/trammy_news_3.svg";
 import PostCard from "../UI/PostCard";
+import { getProfile } from "../../services/api/profile";
+import { useQuery } from "react-query";
+import useToken from "../../hooks/useToken";
 
 function Feed({ firstName = "Deyvi" }) {
+  const { token } = useToken();
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  };
+
+  const { data: profile } = useQuery(
+    "profile",
+    async () => getProfile(config),
+    {
+      retry: 3,
+    }
+  );
   return (
     <div className="feed">
       {/* Feed Welcome */}
       <section className="feed__welcome">
-        <h3>Hola, {firstName} 👋 </h3>
-        <p>¡Bienvenido a Tramy!</p>
+        <h3>Hola, {profile?.first_name} 👋 </h3>
+        <p>¡Te damos la bienvenida a Tramy!</p>
         <hr />
       </section>
 

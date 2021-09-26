@@ -1,7 +1,5 @@
-import axios from "axios";
-import { BASE_URL, ENDPOINTS } from "../../config";
-
-const api = axios.create({ baseURL: BASE_URL });
+import { api } from "./baseApi";
+import { ENDPOINTS } from "../../config";
 
 export const getChats = (config) =>
   api.get(`${ENDPOINTS.CHAT}`, config).then((response) => response.data);
