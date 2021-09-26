@@ -5,7 +5,7 @@ import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
-import defaultProfile from "../../assets/img/default-profile.png";
+import ClientAvatar from "../ClientAvatar";
 import ChatMessage from "../UI/ChatMessage";
 import { Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
@@ -51,7 +51,7 @@ function ChatWindow({
     <div className="chat__window">
       <section className="chat__window-header">
         <div className="chat__window-about">
-          <img src={defaultProfile} alt="" />
+          <ClientAvatar firstName={attributes?.lead?.name} />
           <div>
             <h2>{attributes?.lead?.name}</h2>
             <h3>{attributes?.lead?.phone}</h3>

@@ -20,11 +20,6 @@
   text-align: start;
 }
 
-.chat__window-about img {
-  width: 3rem;
-  height: 3rem;
-}
-
 .chat__window-about h2 {
   font-size: 1rem;
   font-weight: 500;
