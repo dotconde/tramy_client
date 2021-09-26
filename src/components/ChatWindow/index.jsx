@@ -73,9 +73,10 @@ function ChatWindow({
           <EmojiIcon />
         </button>
         <div className="message-write">
-          <button>
+          {/* TODO: Connect with template Tramy API */}
+          {/* <button>
             <TemplateIcon />
-          </button>
+          </button> */}
           <input
             type="text"
             placeholder="Escribir mensaje..."
@@ -83,7 +84,7 @@ function ChatWindow({
             onChange={(event) => setInputMessage(event.target.value)}
             onKeyDown={handleKeyDown}
           ></input>
-          <button type="submit">
+          <button type="submit" onClick={pushMessage}>
             <SendIcon />
           </button>
         </div>

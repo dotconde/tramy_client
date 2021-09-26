@@ -21,6 +21,7 @@ function Chat() {
       "Content-Type": "application/json",
     },
   };
+  const data = { type: "text", message: inputMessage };
 
   // Pusher function
   function pushMessage() {
@@ -32,8 +33,7 @@ function Chat() {
   }
 
   const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
-    async () =>
-      api.postMessage(chatId, { type: "text", message: inputMessage }, config)
+    async () => api.postMessage(chatId, data, config)
   );
 
   // Current chat
