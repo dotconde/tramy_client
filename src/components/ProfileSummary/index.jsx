@@ -1,13 +1,28 @@
-import React from "react";
 import "./styles.css";
 import defaultProfile from "../../assets/img/default-profile.png";
+import { getProfile } from "../../services/api/profile";
+import { useQuery } from "react-query";
+import useToken from "../../hooks/useToken";
 // import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
 
-function ProfileSummary({
-  fullName = "Pepe Jeans",
-  notificationCount = 0,
-  email = "pepe@jeans.io",
-}) {
+function ProfileSummary() {
+  const { token } = useToken();
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  };
+
+  const { data: profile } = useQuery(
+    "profile",
+    async () => getProfile(config),
+    {
+      retry: 3,
+    }
+  );
+
   return (
     <div>
       <div className="account">
@@ -17,8 +32,8 @@ function ProfileSummary({
         </section>
         {/* Profile/account info */}
         <section className="account__info">
-          <h5>{fullName}</h5>
-          <p>{email}</p>
+          <h5>{`${profile?.first_name} ${profile?.last_name}`}</h5>
+          <p>{profile?.email}</p>
         </section>
         {/* Notification Center */}
         {/* <section className="notification-center">

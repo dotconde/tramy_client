@@ -19,6 +19,7 @@ function Sidebar() {
     history.push("/");
     window.location.reload(false);
   };
+
   return (
     <div className="sidebar">
       <div>
