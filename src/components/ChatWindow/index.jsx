@@ -99,9 +99,20 @@ function ChatWindow({
           <div>
             <Picker
               title="tramy-emojis"
-              emoji="wink"
+              emoji="heart_eyes"
               onSelect={appendEmoji}
-              style={{ position: "absolute", bottom: "8.25rem" }}
+              style={{
+                position: "absolute",
+                bottom: "8.25rem",
+                paddingTop: "10px",
+              }}
+              i18n={{
+                search: "Buscar tramy-emoji",
+                categories: {
+                  search: "Resultados de búsqueda",
+                  recent: "Recientes",
+                },
+              }}
             />
           </div>
         )}
