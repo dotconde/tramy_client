@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 // import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
 import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
@@ -7,6 +7,8 @@ import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
 import defaultProfile from "../../assets/img/default-profile.png";
 import ChatMessage from "../UI/ChatMessage";
+import { Picker } from "emoji-mart";
+import "emoji-mart/css/emoji-mart.css";
 import Select from "../UI/Select";
 import Button from "../UI/Button";
 import "./styles.css";
@@ -17,20 +19,33 @@ function ChatWindow({
   setInputMessage,
   pushMessage,
 }) {
+  // States
+  const [showEmojis, setShowEmojis] = useState(false);
+
+  // Ref to chat window bottom
   const hookDiv = useRef(null);
 
   useEffect(() => {
     hookDiv.current.scrollIntoView();
   }, [currentChat?.attributes?.chat_data]);
+
   // Wrap chat attributes
   const attributes = currentChat?.attributes;
 
-  // When user press enter, then send message
+  // When user press enter and inputMessage has a value, then push message
   function handleKeyDown(event) {
     if (event.key === "Enter" && inputMessage) {
       pushMessage();
     }
   }
+
+  const appendEmoji = (event) => {
+    let sym = event.unified.split("-");
+    let codesArray = [];
+    sym.forEach((el) => codesArray.push("0x" + el));
+    let emoji = String.fromCodePoint(...codesArray);
+    setInputMessage(inputMessage + emoji);
+  };
 
   return (
     <div className="chat__window">
@@ -77,9 +92,19 @@ function ChatWindow({
 
       {/* Chat Input Box */}
       <section className="chat__window-textbox">
-        <button>
+        <button onClick={() => setShowEmojis(!showEmojis)}>
           <EmojiIcon />
         </button>
+        {showEmojis && (
+          <div>
+            <Picker
+              title="tramy-emojis"
+              emoji="wink"
+              onSelect={appendEmoji}
+              style={{ position: "absolute", bottom: "8.25rem" }}
+            />
+          </div>
+        )}
         <div className="message-write">
           {/* TODO: Connect with template Tramy API */}
           {/* <button>
