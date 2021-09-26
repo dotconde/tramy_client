@@ -1,29 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
 import ChatWindow from "../../ChatWindow";
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
-import { toHourMinute } from "../../../helpers/dateFormat";
+import { timestampToTime } from "../../../helpers/formatters/date";
 
 function Chat() {
+  // States
+  const [chatId, setChatId] = useState(null);
+  const [inputMessage, setInputMessage] = useState("");
+
   // Config
   const { token } = useToken();
   const config = {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
   };
+  const data = { type: "text", message: inputMessage };
 
-  // States
-  const [chatId, setChatId] = useState(null);
+  // Pusher function
+  function pushMessage() {
+    mutate();
+    if (isLoadingDeliveryMessage) {
+      return "Enviando mensaje ...";
+    }
+    setInputMessage("");
+  }
+
+  const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
+    async () => api.postMessage(chatId, data, config)
+  );
 
   // Current chat
-
   const {
     data: currentChat,
-    isLoading: isLoadingCurrentChat,
-    isError: isErrorCurrentChat,
+    // isLoading: isLoadingCurrentChat,
+    // isError: isErrorCurrentChat,
   } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
     retry: 3,
     enabled: Boolean(chatId),
@@ -50,7 +67,7 @@ function Chat() {
 
   return (
     <div className="chat">
-      {/* Start Chat List */}
+      {/* Chat List */}
       <div className="chat__list">
         <section className="chat__list-options">
           <Search
@@ -76,18 +93,20 @@ function Chat() {
               agentFullName={chatCard?.attributes?.attended_by?.first_name}
               stageName={chatCard?.attributes?.current_stage?.name}
               stageColor={""}
-              time={toHourMinute(chatCard?.attributes?.last_message?.timestamp)}
+              time={timestampToTime(
+                chatCard?.attributes?.last_message?.timestamp
+              )}
               chatId={chatCard?.attributes?.id}
               setChatId={setChatId}
             />
           ))}
         </section>
       </div>
-      {/* End Chat List */}
 
-      {/* Start Chat Window */}
-      <ChatWindow chatData={currentChat} />
-      {/* End Chat Window*/}
+      {/* Chat Window */}
+      <ChatWindow
+        {...{ currentChat, inputMessage, setInputMessage, pushMessage }}
+      />
     </div>
   );
 }

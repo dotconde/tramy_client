@@ -101,7 +101,7 @@
   margin-left: 1rem;
 }
 
-.chat__window-textbox .message-write textarea {
+.chat__window-textbox .message-write input {
   resize: none;
   border: none;
   outline: none;
