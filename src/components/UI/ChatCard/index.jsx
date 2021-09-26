@@ -1,10 +1,9 @@
 import React from "react";
 import "./styles.css";
-import defaultProfile from "../../../assets/img/default-profile.png";
 import { truncate } from "../../../helpers/formatters/message";
+import ClientAvatar from "../../ClientAvatar";
 
 function ChatCard({
-  clientPhoto = defaultProfile,
   clientFullName = "Sin nombre",
   messagePreview = "",
   agentFullName = "Sin asignar",
@@ -20,7 +19,7 @@ function ChatCard({
   };
   return (
     <div className="chat-card" onClick={handleChatId}>
-      <img src={clientPhoto} alt="" />
+      <ClientAvatar firstName={clientFullName} />
       <section className="chat-card__info">
         <h2>{clientFullName}</h2>
         <h3>{truncate(messagePreview, 30)}</h3>
