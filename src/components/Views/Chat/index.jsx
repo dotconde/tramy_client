@@ -5,7 +5,7 @@ import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
 import Loader from "../../UI/Loader";
 import ChatWindow from "../../ChatWindow";
-import { useQuery, useMutation } from "react-query";
+import { useQuery, useMutation, useQueryClient } from "react-query";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
 
@@ -22,19 +22,42 @@ function Chat() {
       "Content-Type": "application/json",
     },
   };
-  const data = { type: "text", message: inputMessage };
 
   // Pusher function
   function pushMessage() {
-    mutate();
+    mutate({ type: "text", message: inputMessage });
     if (isLoadingDeliveryMessage) {
       return "Enviando mensaje ...";
     }
     setInputMessage("");
   }
 
+  const queryClient = useQueryClient();
+
   const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
-    async () => api.postMessage(chatId, data, config)
+    async (newMessage) => api.postMessage(chatId, newMessage, config),
+    {
+      onMutate: async (newMessage) => {
+        await queryClient.cancelQueries(["chat", chatId]);
+
+        const previousChat = queryClient.getQueryData(["chat", chatId]);
+
+        queryClient.setQueryData(["chat", chatId], (oldChat) => {
+          let oldChatCopy = oldChat;
+          oldChatCopy.attributes.chat_data.messages.push({
+            type: newMessage.type,
+            text: { body: newMessage.message },
+            id: new Date().toISOString(),
+            from: "agent@tramy.io",
+            status: "delivered",
+            timestamp: moment().unix(),
+          });
+          return oldChatCopy;
+        });
+
+        return { previousChat };
+      },
+    }
   );
 
   // Current chat
@@ -45,24 +68,24 @@ function Chat() {
   } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
     retry: 3,
     enabled: Boolean(chatId),
-    refetchInterval: 2000,
+    refetchInterval: 10000,
   });
 
   // List chats
   const {
     data: chatList,
-    isLoading: isLoadingChats,
-    isError: isErrorChats,
+    isLoading: isLoadingChatList,
+    isError: isErrorChatList,
   } = useQuery("chatList", async () => api.getChats(config), {
     retry: 3,
-    refetchInterval: 2000,
+    refetchInterval: 10000,
   });
 
-  if (isLoadingChats) {
+  if (isLoadingChatList) {
     return <Loader />;
   }
 
-  if (isErrorChats) {
+  if (isErrorChatList) {
     return <p>Ups, parece que algo salió mal ...</p>;
   }
 
