@@ -21,7 +21,6 @@ function Chat() {
       "Content-Type": "application/json",
     },
   };
-  const data = { type: "text", message: inputMessage };
 
   // Pusher function
   function pushMessage() {
@@ -50,7 +49,7 @@ function Chat() {
             id: new Date().toISOString(),
             from: "agent@tramy.io",
             status: "delivered",
-            // timestamp: new Date.
+            timestamp: moment().unix(),
           });
           console.log("oldCopy", oldCopy);
           return oldCopy;
