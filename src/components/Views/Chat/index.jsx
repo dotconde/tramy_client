@@ -25,7 +25,7 @@ function Chat() {
 
   // Pusher function
   function pushMessage() {
-    mutate();
+    mutate({ type: "text", message: inputMessage });
     if (isLoadingDeliveryMessage) {
       return "Enviando mensaje ...";
     }
@@ -35,7 +35,7 @@ function Chat() {
   const queryClient = useQueryClient();
 
   const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
-    async () => api.postMessage(chatId, data, config),
+    async (newMessage) => api.postMessage(chatId, newMessage, config),
     {
       onMutate: async (newMessage) => {
         await queryClient.cancelQueries(["chat", chatId]);
@@ -43,9 +43,17 @@ function Chat() {
         const previousChat = queryClient.getQueryData(["chat", chatId]);
 
         queryClient.setQueryData(["chat", chatId], (old) => {
-          console.log("old: ", old);
-          console.log("newMessage: ", newMessage);
-          return [...old, newMessage];
+          let oldCopy = old;
+          oldCopy.attributes.chat_data.messages.push({
+            type: newMessage.type,
+            text: { body: newMessage.message },
+            id: new Date().toISOString(),
+            from: "agent@tramy.io",
+            status: "delivered",
+            // timestamp: new Date.
+          });
+          console.log("oldCopy", oldCopy);
+          return oldCopy;
         });
 
         return { previousChat };
@@ -61,7 +69,7 @@ function Chat() {
   } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
     retry: 3,
     enabled: Boolean(chatId),
-    refetchInterval: 2000,
+    refetchInterval: 10000,
   });
 
   // List chats
@@ -71,7 +79,7 @@ function Chat() {
     isError: isErrorChatList,
   } = useQuery("chatList", async () => api.getChats(config), {
     retry: 3,
-    refetchInterval: 2000,
+    refetchInterval: 10000,
   });
 
   if (isLoadingChatList) {
