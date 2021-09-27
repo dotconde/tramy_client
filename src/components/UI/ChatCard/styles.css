@@ -1,30 +1,26 @@
 .chat-card {
   display: grid;
-  grid-template-columns: 1fr 5fr 1.5fr;
+  grid-template-columns: 2.8rem 14rem 4rem;
   padding: 1rem;
   border-bottom: 1px solid rgb(167, 167, 167, 0.25);
-  font-family: "Poppins", sans-serif;
   cursor: pointer;
-}
-
-.chat-card .client-avatar {
-  margin: auto 0;
 }
 
 .chat-card:hover {
   background: #efefef;
 }
 
+.chat-card .client-avatar {
+  margin: auto 0;
+}
+
 .chat-card__info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: block;
   padding-left: 0.7rem;
 }
 
 .chat-card__time {
-  display: flex;
-  justify-content: flex-end;
+  text-align: end;
 }
 
 .chat-card__info h2 {
@@ -35,17 +31,28 @@
   padding-bottom: 0.5rem;
 }
 
-.chat-card__info h3,
-.chat-card__time {
+.chat-card h3 {
   font-weight: 500;
   font-size: 0.7rem;
   color: #b1b1b1;
   margin: 0;
+  padding-bottom: 0.5rem;
 }
+
+.chat-card__info h2,
+.chat-card__info h3 {
+  width: 13.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Start Tags */
 
 .chat-card__info .tags {
   list-style: none;
   overflow: hidden;
+  text-align: center;
   margin: 0;
   padding: 0;
 }
@@ -55,13 +62,26 @@
 }
 
 .chat-card__info .tag {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border: 1px solid #8a8a8a;
   color: #8a8a8a;
   border-radius: 0.3rem;
   padding: 0.2rem;
-  margin: 0.5rem 0.5rem 0 0;
   font-size: 0.7rem;
 }
+
+.chat-card__info .agent {
+  width: 7rem;
+  margin-right: 0.5rem;
+}
+
+.chat-card__info .funnel-stage {
+  width: 4.75rem;
+}
+
+/* End Tags */
 
 .chat-card hr {
   width: 100%;

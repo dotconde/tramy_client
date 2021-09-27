@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { truncate } from "../../../helpers/formatters/message";
+// import { truncate } from "../../../helpers/formatters/message";
 import ClientAvatar from "../../ClientAvatar";
 
 function ChatCard({
@@ -22,13 +22,13 @@ function ChatCard({
       <ClientAvatar firstName={clientFullName} />
       <section className="chat-card__info">
         <h2>{clientFullName}</h2>
-        <h3>{truncate(messagePreview, 30)}</h3>
+        <h3>{messagePreview}</h3>
         <ul className="tags">
-          <li className="tag">
+          <li className="tag agent">
             Asesor: <b>{agentFullName}</b>
           </li>
           <li
-            className="tag"
+            className="tag funnel-stage"
             style={{ borderColor: stageColor, color: stageColor }}
           >
             {stageName}
@@ -36,7 +36,7 @@ function ChatCard({
         </ul>
       </section>
       <section>
-        <span className="chat-card__time">{time}</span>
+        <h3 className="chat-card__time">{time}</h3>
         {/* <div className="chat-card__notification">
          {notificationCount}</div> */}
       </section>
