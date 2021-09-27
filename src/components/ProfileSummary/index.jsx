@@ -3,7 +3,6 @@ import defaultProfile from "../../assets/img/default-profile.png";
 import { getProfile } from "../../services/api/profile";
 import { useQuery } from "react-query";
 import useToken from "../../hooks/useToken";
-// import { ReactComponent as NotificationIcon } from "../../assets/icons/bell.svg";
 
 function ProfileSummary() {
   const { token } = useToken();
@@ -35,13 +34,6 @@ function ProfileSummary() {
           <h5>{`${profile?.first_name} ${profile?.last_name}`}</h5>
           <p>{profile?.email}</p>
         </section>
-        {/* Notification Center */}
-        {/* <section className="notification-center">
-          <div className="notification">
-            <NotificationIcon />
-            <div className="notification__number">{notificationCount}</div>
-          </div>
-        </section> */}
       </div>
     </div>
   );

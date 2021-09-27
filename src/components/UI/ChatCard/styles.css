@@ -1,32 +1,30 @@
 .chat-card {
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
-  padding: 1rem 1rem 0.5rem 1rem;
+  grid-template-columns: 1fr 5fr 1.5fr;
+  padding: 1rem;
   border-bottom: 1px solid rgb(167, 167, 167, 0.25);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.chat-card .client-avatar {
+  margin: auto 0;
 }
 
 .chat-card:hover {
   background: #efefef;
-  transition: all 0.3s ease-in-out;
-}
-
-.chat-card img {
-  width: 3rem;
-  height: 3rem;
-}
-
-.chat-card__info,
-.chat-card__time {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: start;
-  font-family: "Poppins", sans-serif;
 }
 
 .chat-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding-left: 0.7rem;
+}
+
+.chat-card__time {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .chat-card__info h2 {
@@ -34,6 +32,7 @@
   font-size: 0.85rem;
   color: #5a5a5a;
   margin: 0;
+  padding-bottom: 0.5rem;
 }
 
 .chat-card__info h3,
@@ -41,7 +40,7 @@
   font-weight: 500;
   font-size: 0.7rem;
   color: #b1b1b1;
-  margin: 0.3rem 0;
+  margin: 0;
 }
 
 .chat-card__info .tags {
@@ -60,8 +59,7 @@
   color: #8a8a8a;
   border-radius: 0.3rem;
   padding: 0.2rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0.5rem 0 0;
   font-size: 0.7rem;
 }
 

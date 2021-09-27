@@ -1,16 +1,13 @@
-.client-table {
-  background-color: white;
+.client-wrapper {
   margin: 0 2rem;
-  overflow-x: auto;
+  height: calc(100vh - 195px);
+  overflow: auto;
 }
 
-.client-table table {
+.client-table {
   width: 100%;
-  padding: 0 2rem;
-  position: relative;
+  background-color: #ffffff;
   border-collapse: collapse;
-  max-width: 100%;
-  margin: auto;
 }
 
 .client-table thead[className="categories"] tr > th {

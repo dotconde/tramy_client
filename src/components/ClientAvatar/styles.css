@@ -1,0 +1,11 @@
+.client-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  border: 1px solid #109cf1;
+  color: #109cf1;
+  font-size: 1.2rem;
+}

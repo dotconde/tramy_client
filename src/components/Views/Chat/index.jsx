@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
@@ -6,7 +7,6 @@ import ChatWindow from "../../ChatWindow";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
-import { timestampToTime } from "../../../helpers/formatters/date";
 
 function Chat() {
   // States
@@ -118,9 +118,9 @@ function Chat() {
               agentFullName={chatCard?.attributes?.attended_by?.first_name}
               stageName={chatCard?.attributes?.current_stage?.name}
               stageColor={""}
-              time={timestampToTime(
-                chatCard?.attributes?.last_message?.timestamp
-              )}
+              time={moment
+                .unix(chatCard?.attributes?.last_message?.timestamp)
+                .format("hh:mm a")}
               chatId={chatCard?.attributes?.id}
               setChatId={setChatId}
             />
