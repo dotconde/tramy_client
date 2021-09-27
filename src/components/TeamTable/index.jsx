@@ -3,8 +3,8 @@ import "./styles.css";
 
 function TeamTable({ headers, data, tools }) {
   return (
-    <div className="team-table">
-      <table>
+    <div className="team-wrapper">
+      <table className="team-table">
         <thead className="categories">
           <tr>
             {headers.map((header) => (
@@ -23,7 +23,7 @@ function TeamTable({ headers, data, tools }) {
                 <b>{row.attributes.role}</b>
               </td>
               <td>{row.attributes.active ? "Sí 🟢" : "No 🔴"}</td>
-              <td>{"-"}</td>
+              <td className="tools">{"No disponible"}</td>
             </tr>
           ))}
         </tbody>
@@ -33,8 +33,3 @@ function TeamTable({ headers, data, tools }) {
 }
 
 export default TeamTable;
-
-// TODO: Add action options with the following line:
-{
-  /* <td className="tools">{tools}</td> */
-}
