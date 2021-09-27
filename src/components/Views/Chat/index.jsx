@@ -3,7 +3,7 @@ import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
 import ChatWindow from "../../ChatWindow";
-import { useQuery, useMutation } from "react-query";
+import { useQuery, useMutation, useQueryClient } from "react-query";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
 import { timestampToTime } from "../../../helpers/formatters/date";
@@ -32,8 +32,24 @@ function Chat() {
     setInputMessage("");
   }
 
+  const queryClient = useQueryClient();
+
   const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
-    async () => api.postMessage(chatId, data, config)
+    async () => api.postMessage(chatId, data, config),
+    {
+      xonMutate: async (newMessage) => {
+        await queryClient.cancelQueries(["chat", chatId]);
+
+        const previousChat = queryClient.getQueryData(["chat", chatId]);
+
+        queryClient.setQueryData(["chat", chatId], (old) => [
+          ...old,
+          newMessage,
+        ]);
+
+        return { previousChat };
+      },
+    }
   );
 
   // Current chat
@@ -50,18 +66,18 @@ function Chat() {
   // List chats
   const {
     data: chatList,
-    isLoading: isLoadingChats,
-    isError: isErrorChats,
+    isLoading: isLoadingChatList,
+    isError: isErrorChatList,
   } = useQuery("chatList", async () => api.getChats(config), {
     retry: 3,
     refetchInterval: 2000,
   });
 
-  if (isLoadingChats) {
+  if (isLoadingChatList) {
     return <p>Cargando ...</p>;
   }
 
-  if (isErrorChats) {
+  if (isErrorChatList) {
     return <p>Ups, parece que algo salió mal ...</p>;
   }
 
