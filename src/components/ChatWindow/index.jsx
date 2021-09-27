@@ -50,9 +50,9 @@ function ChatWindow({
   return (
     <div className="chat__window">
       <section className="chat__window-header">
-        <div className="chat__window-about">
+        <div className="chat__window-summary">
           <ClientAvatar firstName={attributes?.lead?.name} />
-          <div>
+          <div className="chat__window-about">
             <h2>{attributes?.lead?.name}</h2>
             <h3>{attributes?.lead?.phone}</h3>
           </div>

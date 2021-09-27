@@ -3,8 +3,8 @@ import "./styles.css";
 
 function ClientTable({ headers, data, tools }) {
   return (
-    <div className="client-table">
-      <table>
+    <div className="client-wrapper">
+      <table className="client-table">
         <thead className="categories">
           <tr>
             {headers.map((header) => (

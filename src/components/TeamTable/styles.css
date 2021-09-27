@@ -1,16 +1,13 @@
-.team-table {
-  background-color: #ffff;
+.team-wrapper {
   margin: 0 2rem;
-  overflow-x: auto;
+  height: calc(100vh - 115px);
+  overflow: auto;
 }
 
-.team-table table {
+.team-table {
   width: 100%;
-  padding: 0 2rem;
-  position: relative;
+  background-color: #ffffff;
   border-collapse: collapse;
-  max-width: 100%;
-  margin: auto;
 }
 
 .team-table thead[className="categories"] tr > th {

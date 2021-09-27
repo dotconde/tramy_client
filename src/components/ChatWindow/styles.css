@@ -12,26 +12,28 @@
   padding: 0 1.5rem;
 }
 
+.chat__window-summary {
+  display: grid;
+  grid-template-columns: 2.8rem 1fr;
+  margin: auto 0;
+}
+
 .chat__window-about {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: start;
+  padding-left: 0.8rem;
 }
 
 .chat__window-about h2 {
   font-size: 1rem;
   font-weight: 500;
   color: #5a5a5a;
-  margin: 0 0.7rem;
+  margin: 0;
 }
 
 .chat__window-about h3 {
   font-size: 0.8rem;
   font-weight: 500;
   color: #b1b1b1;
-  margin: 0 0.7rem;
+  margin: 0;
 }
 
 .chat__window-options {
