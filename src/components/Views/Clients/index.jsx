@@ -6,6 +6,7 @@ import Search from "../../UI/Search";
 import Button from "../../UI/Button";
 import ClientFilter from "../../ClientFilter";
 import ClientTable from "../../ClientTable";
+import Loader from "../../UI/Loader";
 import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 import { ReactComponent as MessageIcon } from "../../../assets/icons/message.svg";
@@ -67,7 +68,7 @@ function Clients() {
       />
     </div>
   ) : (
-    <p>Cargando ...</p>
+    <Loader />
   );
 }
 

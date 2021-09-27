@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BASE_URL, ENDPOINTS } from "../../config";
 import useToken from "../../hooks/useToken";
 import { ProfileForm } from "./ProfileForm";
+import Loader from "../UI/Loader";
 import "./styles.css";
 
 import axios from "axios";
@@ -38,7 +39,7 @@ function ProfileDetail() {
       </span>
     </div>
   ) : (
-    <div>Cargando ...</div>
+    <Loader />
   );
 }
 

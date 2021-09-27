@@ -3,6 +3,7 @@ import { BASE_URL, ENDPOINTS } from "../../config";
 import useToken from "../../hooks/useToken";
 import "./styles.css";
 import TeamTable from "../TeamTable";
+import Loader from "../UI/Loader";
 import axios from "axios";
 
 function Team() {
@@ -33,7 +34,7 @@ function Team() {
           data={team}
         />
       ) : (
-        <p>Cargando ...</p>
+        <Loader />
       )}
     </div>
   );

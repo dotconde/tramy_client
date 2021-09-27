@@ -3,6 +3,7 @@ import moment from "moment";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
+import Loader from "../../UI/Loader";
 import ChatWindow from "../../ChatWindow";
 import { useQuery, useMutation } from "react-query";
 import useToken from "../../../hooks/useToken";
@@ -58,7 +59,7 @@ function Chat() {
   });
 
   if (isLoadingChats) {
-    return <p>Cargando ...</p>;
+    return <Loader />;
   }
 
   if (isErrorChats) {
