@@ -15,5 +15,5 @@ export const updateChat = (id, updatedChat, config) =>
 export const postMessage = (chatId, data, config) => {
   api
     .patch(`/${ENDPOINTS.CHAT}/${chatId}/new_message`, data, config)
-    .then((response) => console.log(response));
+    .then((response) => response.data);
 };

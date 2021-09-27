@@ -27,7 +27,7 @@ function ChatWindow({
 
   useEffect(() => {
     hookDiv.current.scrollIntoView();
-  }, [currentChat?.attributes?.chat_data]);
+  });
 
   // Wrap chat attributes
   const attributes = currentChat?.attributes;
@@ -85,7 +85,7 @@ function ChatWindow({
       </section>
       <section className="chat__window-messages">
         {attributes?.chat_data?.messages.map((message) => (
-          <ChatMessage messageData={message} />
+          <ChatMessage key={message.id} messageData={message} />
         ))}
         <div style={{ float: "right", clear: "both" }} ref={hookDiv}></div>
       </section>
