@@ -19,8 +19,8 @@ function Channels() {
         <h4>Mis plantillas</h4>
         <SetupCard
           icon={<WhatsappIcon />}
-          title={"Número de celular"}
-          subtitle={"+51 9325478412"}
+          title={"Número de celular: "}
+          businessPhone={"+51 9325478412"}
           content={"Gestiona las plantillas de mensajes de Whatsapp Business"}
         />
       </section> */}
