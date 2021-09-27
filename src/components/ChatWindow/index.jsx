@@ -1,16 +1,19 @@
 import { useRef, useState, useEffect } from "react";
 // import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
-import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
-import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
+// import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
+// import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
-import ClientAvatar from "../ClientAvatar";
 import ChatMessage from "../UI/ChatMessage";
-import { Picker } from "emoji-mart";
+import ClientAvatar from "../ClientAvatar";
+import { useQuery } from "react-query";
 import "emoji-mart/css/emoji-mart.css";
-import Select from "../UI/Select";
+import { Picker } from "emoji-mart";
 import Button from "../UI/Button";
+import Select from "react-select";
+import useToken from "../../hooks/useToken";
+import * as api from "../../services/api/pipeline";
 import "./styles.css";
 
 function ChatWindow({
@@ -19,6 +22,15 @@ function ChatWindow({
   setInputMessage,
   pushMessage,
 }) {
+  const { token } = useToken();
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  };
+
   // States
   const [showEmojis, setShowEmojis] = useState(false);
 
@@ -47,8 +59,32 @@ function ChatWindow({
     setInputMessage(inputMessage + emoji);
   };
 
+  // WIP for React Select
+  const { data: pipelines } = useQuery("pipelines", async () =>
+    api.getPipelines(config)
+  );
+  console.log(pipelines);
+
+  const options = [
+    {
+      label: "Group 1",
+      options: [
+        { label: "Group 1, option 1", value: "value_1" },
+        { label: "Group 1, option 2", value: "value_2" },
+      ],
+    },
+    {
+      label: "Group 2",
+      options: [
+        { label: "Group 2, option 1", value: "value_3" },
+        { label: "Group 2, option 2", value: "value_4" },
+      ],
+    },
+  ];
+
   return (
     <div className="chat__window">
+      {/* Chat window header with options */}
       <section className="chat__window-header">
         <div className="chat__window-summary">
           <ClientAvatar firstName={attributes?.lead?.name} />
@@ -58,20 +94,21 @@ function ChatWindow({
           </div>
         </div>
         <div className="chat__window-options">
-          <Select
+          <Select options={options} />
+          {/* <Select
             icon={<AgentIcon />}
             color={"#969696"}
             borderColor={"#dfdfdf"}
             backgroundColor={"white"}
             placeholder={"Diego Montes"}
-          />
-          <Select
+          /> */}
+          {/* <Select
             icon={<FilterIcon />}
             color={"#969696"}
             borderColor={"#dfdfdf"}
             backgroundColor={"white"}
             placeholder={"Nuevo Lead"}
-          />
+          /> */}
 
           <Button
             icon={<NoteIcon />}
@@ -83,6 +120,8 @@ function ChatWindow({
           />
         </div>
       </section>
+
+      {/* Chat window messages */}
       <section className="chat__window-messages">
         {attributes?.chat_data?.messages.map((message) => (
           <ChatMessage key={message.id} messageData={message} />
