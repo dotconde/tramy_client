@@ -37,15 +37,16 @@ function Chat() {
   const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
     async () => api.postMessage(chatId, data, config),
     {
-      xonMutate: async (newMessage) => {
+      onMutate: async (newMessage) => {
         await queryClient.cancelQueries(["chat", chatId]);
 
         const previousChat = queryClient.getQueryData(["chat", chatId]);
 
-        queryClient.setQueryData(["chat", chatId], (old) => [
-          ...old,
-          newMessage,
-        ]);
+        queryClient.setQueryData(["chat", chatId], (old) => {
+          console.log("old: ", old);
+          console.log("newMessage: ", newMessage);
+          return [...old, newMessage];
+        });
 
         return { previousChat };
       },
