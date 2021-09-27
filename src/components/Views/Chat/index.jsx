@@ -51,7 +51,6 @@ function Chat() {
             status: "delivered",
             timestamp: moment().unix(),
           });
-          console.log("oldCopy", oldCopy);
           return oldCopy;
         });
 

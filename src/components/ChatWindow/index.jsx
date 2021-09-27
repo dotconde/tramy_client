@@ -27,7 +27,7 @@ function ChatWindow({
 
   useEffect(() => {
     hookDiv.current.scrollIntoView();
-  }, [currentChat?.attributes?.chat_data]);
+  });
 
   // Wrap chat attributes
   const attributes = currentChat?.attributes;
