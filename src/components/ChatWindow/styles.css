@@ -13,12 +13,12 @@
 }
 
 .chat__window-summary {
-  display: grid;
-  grid-template-columns: 2.8rem 1fr;
-  margin: auto 0;
+  display: flex;
+  align-items: center;
 }
 
 .chat__window-about {
+  width: calc(100% - 2.8rem);
   padding-left: 0.8rem;
 }
 
