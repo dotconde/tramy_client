@@ -41,9 +41,9 @@ function Chat() {
 
         const previousChat = queryClient.getQueryData(["chat", chatId]);
 
-        queryClient.setQueryData(["chat", chatId], (old) => {
-          let oldCopy = old;
-          oldCopy.attributes.chat_data.messages.push({
+        queryClient.setQueryData(["chat", chatId], (oldChat) => {
+          let oldChatCopy = oldChat;
+          oldChatCopy.attributes.chat_data.messages.push({
             type: newMessage.type,
             text: { body: newMessage.message },
             id: new Date().toISOString(),
@@ -51,7 +51,7 @@ function Chat() {
             status: "delivered",
             timestamp: moment().unix(),
           });
-          return oldCopy;
+          return oldChatCopy;
         });
 
         return { previousChat };
