@@ -17,12 +17,12 @@
   border: 10px solid #eee;
   border-top: 10px solid #109cf1;
   border-radius: 50%;
-  animation-name: girar;
+  animation-name: spin;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@keyframes girar {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
