@@ -3,31 +3,36 @@ import "./styles.css";
 import { ReactComponent as RightArrowIcon } from "../../assets/icons/right-arrow.svg";
 import LeadCard from "../LeadCard";
 
-function Stage({ color, title, notificationCount, leads }) {
+function Stage({ width, stageData }) {
   return (
-    <div className="stage">
+    <div
+      className="stage"
+      style={{
+        width: `${width}%`,
+      }}
+    >
       {/* Header Section */}
       <section
         className="stage__header"
         style={{
-          backgroundColor: color,
+          backgroundColor: stageData.color,
         }}
       >
         <div className="header__content">
-          <p>{title}</p>
+          <p>{stageData.title}</p>
           <div
             className="notification__box"
             style={{
-              color: color,
+              color: stageData.color,
             }}
           >
-            {notificationCount}
+            {stageData.notificationCount}
           </div>
         </div>
         <div className="header__triangle">
           <RightArrowIcon
             style={{
-              fill: color,
+              fill: stageData.color,
             }}
           />
         </div>
@@ -35,7 +40,7 @@ function Stage({ color, title, notificationCount, leads }) {
 
       {/* Body Section */}
       <section className="stage__body">
-        {leads.map((lead) => (
+        {stageData.leads.map((lead) => (
           <LeadCard fullName={lead.fullName} agent={lead.agent} />
         ))}
       </section>
