@@ -1,21 +1,16 @@
 import { useRef, useState, useEffect } from "react";
-// import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
-// import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
-// import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
-import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
-import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
-import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
-import ChatMessage from "../UI/ChatMessage";
-import ClientAvatar from "../ClientAvatar";
 import { useQuery, useMutation } from "react-query";
-import "emoji-mart/css/emoji-mart.css";
-import { Picker } from "emoji-mart";
-import Button from "../UI/Button";
-import Select from "react-select";
 import useToken from "../../hooks/useToken";
 import { pipelinesToOptions } from "../../helpers/formatters/select";
 import { getPipelines } from "../../services/api/pipeline";
 import { updateLead } from "../../services/api/lead";
+import ChatMessage from "../UI/ChatMessage";
+import ClientAvatar from "../ClientAvatar";
+import Select from "react-select";
+import { Picker } from "emoji-mart";
+import "emoji-mart/css/emoji-mart.css";
+import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
+import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 
 import "./styles.css";
 
@@ -25,8 +20,11 @@ function ChatWindow({
   setInputMessage,
   pushMessage,
 }) {
-  const { token } = useToken();
+  // Wrap chat attributes
+  const attributes = currentChat?.attributes;
 
+  // Config
+  const { token } = useToken();
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -34,47 +32,23 @@ function ChatWindow({
     },
   };
 
-  // States
+  // Emoji
   const [showEmojis, setShowEmojis] = useState(false);
 
   // Ref to chat window bottom
   const hookDiv = useRef(null);
 
+  // Scroll down all messages by default
   useEffect(() => {
     hookDiv.current.scrollIntoView();
   });
 
-  // Wrap chat attributes
-  const attributes = currentChat?.attributes;
-
-  // When user press enter and inputMessage has a value, then push message
-  function handleKeyDown(event) {
-    if (event.key === "Enter" && inputMessage) {
-      pushMessage();
-    }
-  }
-
-  const appendEmoji = (event) => {
-    let sym = event.unified.split("-");
-    let codesArray = [];
-    sym.forEach((el) => codesArray.push("0x" + el));
-    let emoji = String.fromCodePoint(...codesArray);
-    setInputMessage(inputMessage + emoji);
-  };
-
-  // WIP for React Select
-  const leadId = currentChat?.attributes?.lead?.id;
+  // Selector: Lead
+  const leadId = attributes?.lead?.id;
   const stageToDefaultOption = {
-    label: currentChat?.attributes?.current_stage?.name || "Sin etapa",
-    value: currentChat?.attributes?.current_stage?.id,
+    label: attributes?.current_stage?.name || "Sin etapa",
+    value: attributes?.current_stage?.id,
   };
-  console.log(stageToDefaultOption);
-
-  // const [selectedStage, setSelectedStage] = useState(null);
-  const [defaultValue, setdefaultValue] = useState({
-    label: currentChat?.attributes?.current_stage?.name || "Sin etapa",
-    value: currentChat?.attributes?.current_stage?.id,
-  });
 
   const { data: pipelines } = useQuery("pipelines", async () =>
     getPipelines(config)
@@ -83,14 +57,30 @@ function ChatWindow({
   const formattedOpts = pipelinesToOptions(pipelines);
 
   const handleSelectedStage = (selectedOption) => {
-    console.log(selectedOption);
-    // setSelectedStage(selectedOption);
     mutate(selectedOption);
   };
 
   const { mutate } = useMutation(async (selectedOption) =>
     updateLead(leadId, { stage_id: selectedOption.value }, config)
   );
+
+  // Selector: Agent
+
+  // Function: Add emoji to message box
+  const appendEmoji = (event) => {
+    let sym = event.unified.split("-");
+    let codesArray = [];
+    sym.forEach((el) => codesArray.push("0x" + el));
+    let emoji = String.fromCodePoint(...codesArray);
+    setInputMessage(inputMessage + emoji);
+  };
+
+  // Function: Push message with enter key
+  function handleKeyDown(event) {
+    if (event.key === "Enter" && inputMessage) {
+      pushMessage();
+    }
+  }
 
   return (
     <div className="chat__window">
@@ -105,32 +95,15 @@ function ChatWindow({
         </div>
         <div className="chat__window-options">
           <Select
-            options={formattedOpts}
-            defaultValue={defaultValue}
-            onChange={handleSelectedStage}
-          />
-          {/* <Select
-            icon={<AgentIcon />}
             color={"#969696"}
             borderColor={"#dfdfdf"}
             backgroundColor={"white"}
             placeholder={"Diego Montes"}
-          /> */}
-          {/* <Select
-            icon={<FilterIcon />}
-            color={"#969696"}
-            borderColor={"#dfdfdf"}
-            backgroundColor={"white"}
-            placeholder={"Nuevo Lead"}
-          /> */}
-
-          <Button
-            icon={<NoteIcon />}
-            iconColor={"#969696"}
-            content={"Notas"}
-            backgroundColor={"white"}
-            contentColor={"#969696"}
-            borderColor={"1px solid #dfdfdf"}
+          />
+          <Select
+            options={formattedOpts}
+            onChange={handleSelectedStage}
+            defaultValue={stageToDefaultOption}
           />
         </div>
       </section>
@@ -170,10 +143,6 @@ function ChatWindow({
           </div>
         )}
         <div className="message-write">
-          {/* TODO: Connect with template Tramy API */}
-          {/* <button>
-            <TemplateIcon />
-          </button> */}
           <input
             type="text"
             placeholder="Escribir mensaje..."
@@ -191,3 +160,26 @@ function ChatWindow({
 }
 
 export default ChatWindow;
+
+// Pending imports
+
+// import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
+// import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
+// import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
+// import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
+// import Button from "../UI/Button";
+
+// Button for templates:
+//<button>
+//  <TemplateIcon />
+//</button>;
+
+// Button for notes:
+// <Button
+//   icon={<NoteIcon />}
+//   iconColor={"#969696"}
+//   content={"Notas"}
+//   backgroundColor={"white"}
+//   contentColor={"#969696"}
+//   borderColor={"1px solid #dfdfdf"}
+// />
