@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 
 function ClientTable({ headers, data, tools }) {
+  console.log(data);
   return (
     <div className="client-wrapper">
       <table className="client-table">
@@ -20,7 +21,10 @@ function ClientTable({ headers, data, tools }) {
               </td>
               <td>{row?.attributes?.phone || "-"}</td>
               <td>{row?.attributes?.email || "-"}</td>
-              <td>{row?.attributes?.agent || "No disponible"}</td>
+              <td>
+                {`${row?.attributes?.attended_by?.first_name} ${row?.attributes?.attended_by?.last_name}` ||
+                  "No disponible"}
+              </td>
               <td>{row?.attributes?.stage?.name || "-"}</td>
               <td>{row?.attributes?.created_at || "-"}</td>
               {/* <td className="tools">{tools}</td> */}

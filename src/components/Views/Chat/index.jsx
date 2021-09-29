@@ -61,15 +61,15 @@ function Chat() {
   );
 
   // Current chat
-  const {
-    data: currentChat,
-    // isLoading: isLoadingCurrentChat,
-    // isError: isErrorCurrentChat,
-  } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
-    retry: 3,
-    enabled: Boolean(chatId),
-    refetchInterval: 10000,
-  });
+  const { data: currentChat } = useQuery(
+    ["chat", chatId],
+    async () => api.getChat(chatId, config),
+    {
+      retry: 3,
+      enabled: Boolean(chatId),
+      refetchInterval: 10000,
+    }
+  );
 
   // List chats
   const {
@@ -95,7 +95,7 @@ function Chat() {
       <div className="chat__list">
         <section className="chat__list-options">
           <Search
-            placeholder={"Buscar por nombre, estado de embudo o agente"}
+            placeholder={"Buscar por nombre"}
             borderColor={"1px solid #dfdfdf"}
           />
           <div className="chat__list-filter">
