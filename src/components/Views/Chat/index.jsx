@@ -95,7 +95,7 @@ function Chat() {
       <div className="chat__list">
         <section className="chat__list-options">
           <Search
-            placeholder={"Buscar por nombre, estado de embudo o agente"}
+            placeholder={"Buscar por nombre"}
             borderColor={"1px solid #dfdfdf"}
           />
           <div className="chat__list-filter">

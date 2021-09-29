@@ -7,13 +7,16 @@ import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
 import ChatMessage from "../UI/ChatMessage";
 import ClientAvatar from "../ClientAvatar";
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
 import Button from "../UI/Button";
 import Select from "react-select";
 import useToken from "../../hooks/useToken";
-import * as api from "../../services/api/pipeline";
+import { pipelinesToOptions } from "../../helpers/formatters/select";
+import { getPipelines } from "../../services/api/pipeline";
+import { updateLead } from "../../services/api/lead";
+
 import "./styles.css";
 
 function ChatWindow({
@@ -60,27 +63,34 @@ function ChatWindow({
   };
 
   // WIP for React Select
-  const { data: pipelines } = useQuery("pipelines", async () =>
-    api.getPipelines(config)
-  );
-  console.log(pipelines);
+  const leadId = currentChat?.attributes?.lead?.id;
+  const stageToDefaultOption = {
+    label: currentChat?.attributes?.current_stage?.name || "Sin etapa",
+    value: currentChat?.attributes?.current_stage?.id,
+  };
+  console.log(stageToDefaultOption);
 
-  const options = [
-    {
-      label: "Group 1",
-      options: [
-        { label: "Group 1, option 1", value: "value_1" },
-        { label: "Group 1, option 2", value: "value_2" },
-      ],
-    },
-    {
-      label: "Group 2",
-      options: [
-        { label: "Group 2, option 1", value: "value_3" },
-        { label: "Group 2, option 2", value: "value_4" },
-      ],
-    },
-  ];
+  // const [selectedStage, setSelectedStage] = useState(null);
+  const [defaultValue, setdefaultValue] = useState({
+    label: currentChat?.attributes?.current_stage?.name || "Sin etapa",
+    value: currentChat?.attributes?.current_stage?.id,
+  });
+
+  const { data: pipelines } = useQuery("pipelines", async () =>
+    getPipelines(config)
+  );
+
+  const formattedOpts = pipelinesToOptions(pipelines);
+
+  const handleSelectedStage = (selectedOption) => {
+    console.log(selectedOption);
+    // setSelectedStage(selectedOption);
+    mutate(selectedOption);
+  };
+
+  const { mutate } = useMutation(async (selectedOption) =>
+    updateLead(leadId, { stage_id: selectedOption.value }, config)
+  );
 
   return (
     <div className="chat__window">
@@ -94,7 +104,11 @@ function ChatWindow({
           </div>
         </div>
         <div className="chat__window-options">
-          <Select options={options} />
+          <Select
+            options={formattedOpts}
+            defaultValue={defaultValue}
+            onChange={handleSelectedStage}
+          />
           {/* <Select
             icon={<AgentIcon />}
             color={"#969696"}
