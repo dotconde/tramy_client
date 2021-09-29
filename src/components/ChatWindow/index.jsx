@@ -40,7 +40,7 @@ function ChatWindow({
   // Scroll down all messages by default
   useEffect(() => {
     hookDiv.current.scrollIntoView();
-  });
+  }, [currentChat?.attributes?.id]);
 
   // Selector: Lead
   const leadId = attributes?.lead?.id;
@@ -112,11 +112,13 @@ function ChatWindow({
             options={accountToOptions(accounts)}
             onChange={handleSelectedAccount}
             defaultValue={accountToDefaultOption}
+            value={accountToDefaultOption}
           />
           <Select
             options={pipelinesToOptions(pipelines)}
             onChange={handleSelectedStage}
             defaultValue={stageToDefaultOption}
+            value={stageToDefaultOption}
           />
         </div>
       </section>
