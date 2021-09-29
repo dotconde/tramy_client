@@ -61,7 +61,7 @@ function Chat() {
   );
 
   // Current chat
-  const { data: currentChat } = useQuery(
+  const { data: currentChat, isLoading: isLoadingCurrentChat } = useQuery(
     ["chat", chatId],
     async () => api.getChat(chatId, config),
     {
@@ -128,9 +128,13 @@ function Chat() {
       </div>
 
       {/* Chat Window */}
-      <ChatWindow
-        {...{ currentChat, inputMessage, setInputMessage, pushMessage }}
-      />
+      {chatList && !currentChat && !isLoadingCurrentChat ? (
+        <p>Paste here your great welcome wallpaper 😜</p>
+      ) : (
+        <ChatWindow
+          {...{ currentChat, inputMessage, setInputMessage, pushMessage }}
+        />
+      )}
     </div>
   );
 }
