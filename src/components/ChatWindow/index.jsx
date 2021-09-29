@@ -63,6 +63,10 @@ function ChatWindow({
 
   // Selector: Agent
   const chatId = attributes?.id;
+  const accountToDefaultOption = {
+    label: attributes?.attended_by?.first_name || "Sin asignar",
+    value: attributes?.attended_by?.id,
+  };
 
   const { data: accounts } = useQuery("accounts", async () =>
     getAccounts(config)
@@ -107,6 +111,7 @@ function ChatWindow({
           <Select
             options={accountToOptions(accounts)}
             onChange={handleSelectedAccount}
+            defaultValue={accountToDefaultOption}
           />
           <Select
             options={pipelinesToOptions(pipelines)}
