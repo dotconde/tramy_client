@@ -1,3 +1,12 @@
+// Stages
+function stagesToArrayOptions(stages = []) {
+  let arrayOptions = [];
+  stages.map((stageObject) =>
+    arrayOptions.push({ label: stageObject?.name, value: stageObject?.id })
+  );
+  return arrayOptions;
+}
+
 export function pipelinesToOptions(pipelines = []) {
   let output = [];
   pipelines.map((pipeline) =>
@@ -9,10 +18,14 @@ export function pipelinesToOptions(pipelines = []) {
   return output;
 }
 
-function stagesToArrayOptions(stages = []) {
+// Accounts
+export function accountToOptions(accounts = []) {
   let arrayOptions = [];
-  stages.map((stageObject) =>
-    arrayOptions.push({ label: stageObject?.name, value: stageObject?.id })
+  accounts.map((account) =>
+    arrayOptions.push({
+      label: account?.attributes?.full_name || account?.attributes?.email,
+      value: account?.attributes?.id,
+    })
   );
   return arrayOptions;
 }

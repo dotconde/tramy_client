@@ -1,8 +1,13 @@
 import { useRef, useState, useEffect } from "react";
 import { useQuery, useMutation } from "react-query";
-import useToken from "../../hooks/useToken";
-import { pipelinesToOptions } from "../../helpers/formatters/select";
+import useConfig from "../../hooks/useConfig";
+import {
+  pipelinesToOptions,
+  accountToOptions,
+} from "../../helpers/formatters/select";
 import { getPipelines } from "../../services/api/pipeline";
+import { getAccounts } from "../../services/api/account";
+import { updateChat } from "../../services/api/chat";
 import { updateLead } from "../../services/api/lead";
 import ChatMessage from "../UI/ChatMessage";
 import ClientAvatar from "../ClientAvatar";
@@ -24,13 +29,7 @@ function ChatWindow({
   const attributes = currentChat?.attributes;
 
   // Config
-  const { token } = useToken();
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-  };
+  const { config } = useConfig();
 
   // Emoji
   const [showEmojis, setShowEmojis] = useState(false);
@@ -54,17 +53,28 @@ function ChatWindow({
     getPipelines(config)
   );
 
-  const formattedOpts = pipelinesToOptions(pipelines);
-
-  const handleSelectedStage = (selectedOption) => {
-    mutate(selectedOption);
-  };
-
-  const { mutate } = useMutation(async (selectedOption) =>
+  const { mutate: mutateLead } = useMutation(async (selectedOption) =>
     updateLead(leadId, { stage_id: selectedOption.value }, config)
   );
 
+  const handleSelectedStage = (selectedOption) => {
+    mutateLead(selectedOption);
+  };
+
   // Selector: Agent
+  const chatId = attributes?.id;
+
+  const { data: accounts } = useQuery("accounts", async () =>
+    getAccounts(config)
+  );
+
+  const { mutate: mutateChat } = useMutation(async (selectedOption) =>
+    updateChat(chatId, { account_id: selectedOption.value }, config)
+  );
+
+  const handleSelectedAccount = (selectedOption) => {
+    mutateChat(selectedOption);
+  };
 
   // Function: Add emoji to message box
   const appendEmoji = (event) => {
@@ -95,13 +105,11 @@ function ChatWindow({
         </div>
         <div className="chat__window-options">
           <Select
-            color={"#969696"}
-            borderColor={"#dfdfdf"}
-            backgroundColor={"white"}
-            placeholder={"Diego Montes"}
+            options={accountToOptions(accounts)}
+            onChange={handleSelectedAccount}
           />
           <Select
-            options={formattedOpts}
+            options={pipelinesToOptions(pipelines)}
             onChange={handleSelectedStage}
             defaultValue={stageToDefaultOption}
           />

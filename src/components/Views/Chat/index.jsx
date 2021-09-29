@@ -61,15 +61,15 @@ function Chat() {
   );
 
   // Current chat
-  const {
-    data: currentChat,
-    // isLoading: isLoadingCurrentChat,
-    // isError: isErrorCurrentChat,
-  } = useQuery(["chat", chatId], async () => api.getChat(chatId, config), {
-    retry: 3,
-    enabled: Boolean(chatId),
-    refetchInterval: 10000,
-  });
+  const { data: currentChat } = useQuery(
+    ["chat", chatId],
+    async () => api.getChat(chatId, config),
+    {
+      retry: 3,
+      enabled: Boolean(chatId),
+      refetchInterval: 10000,
+    }
+  );
 
   // List chats
   const {
