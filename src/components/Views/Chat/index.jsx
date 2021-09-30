@@ -6,7 +6,7 @@ import ChatCard from "../../UI/ChatCard";
 import Loader from "../../UI/Loader";
 import ChatWindow from "../../ChatWindow";
 import { ReactComponent as BlackTrammyLogo } from "../../../assets/logo/black_trammy_logo.svg";
-import WellcomeWallpaper from "../../../assets/img/trammy_chat_wallpaper.svg";
+import WelcomeWallpaper from "../../../assets/img/trammy_chat_wallpaper.svg";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
@@ -135,7 +135,7 @@ function Chat() {
           <p>
             Mantente conectado en&nbsp; <BlackTrammyLogo />
           </p>
-          <img src={WellcomeWallpaper} alt="imagen de fondo de Trammy" />
+          <img src={WelcomeWallpaper} alt="Trammy wallpaper" />
         </div>
       ) : (
         <ChatWindow
