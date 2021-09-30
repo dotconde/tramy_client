@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import { v4 as uuidv4 } from "uuid";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
@@ -114,6 +115,7 @@ function Chat() {
         <section className="chat__list-contacts">
           {chatList.map((chatCard) => (
             <ChatCard
+              key={uuidv4()}
               clientFullName={chatCard?.attributes?.lead?.name}
               messagePreview={chatCard?.attributes?.last_message?.text?.body}
               agentFullName={chatCard?.attributes?.attended_by?.first_name}

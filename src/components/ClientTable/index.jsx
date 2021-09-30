@@ -1,21 +1,21 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./styles.css";
 
 function ClientTable({ headers, data, tools }) {
-  console.log(data);
   return (
     <div className="client-wrapper">
       <table className="client-table">
         <thead className="categories">
           <tr>
             {headers.map((header) => (
-              <th>{header}</th>
+              <th key={uuidv4()}>{header}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {data.map((row) => (
-            <tr>
+            <tr key={uuidv4()}>
               <td>
                 <b>{row?.attributes?.name || "-"}</b>
               </td>
