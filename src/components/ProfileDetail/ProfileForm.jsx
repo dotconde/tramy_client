@@ -31,7 +31,7 @@ export function ProfileForm({ preloadedValues }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="profile-form">
       {/* First name */}
-      <label For="firstName">Nombre</label>
+      <label htmlFor="firstName">Nombre</label>
 
       <div className="input-container enabled">
         <input
@@ -55,7 +55,7 @@ export function ProfileForm({ preloadedValues }) {
       </div>
 
       {/* Last name */}
-      <label For="lastName">Primer apellido</label>
+      <label htmlFor="lastName">Primer apellido</label>
       <div className="input-container enabled">
         <input
           name="lastName"
@@ -78,7 +78,7 @@ export function ProfileForm({ preloadedValues }) {
       </div>
 
       {/* Email */}
-      <label For="email">Email</label>
+      <label htmlFor="email">Email</label>
       <div className="input-container disabled">
         <input
           name="email"
@@ -101,7 +101,7 @@ export function ProfileForm({ preloadedValues }) {
       </div>
 
       {/* Organization */}
-      <label For="organizationName">Nombre del negocio</label>
+      <label htmlFor="organizationName">Nombre del negocio</label>
       <div className="input-container disabled">
         <input
           name="organizationName"

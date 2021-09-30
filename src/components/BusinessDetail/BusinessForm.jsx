@@ -33,7 +33,7 @@ export function BusinessForm({ preloadedValues }) {
     <form onSubmit={handleSubmit(onSubmit)} className="business-form">
       {/* Name */}
 
-      <label For="name"> Nombre del negocio</label>
+      <label htmlFor="name"> Nombre del negocio</label>
       <div className="input-container disabled">
         <input
           name="name"
@@ -57,7 +57,7 @@ export function BusinessForm({ preloadedValues }) {
       </div>
 
       {/* Phone */}
-      <label For="phone"> Línea de whatsapp</label>
+      <label htmlFor="phone"> Línea de whatsapp</label>
       <div className="input-container disabled" disabled>
         <input
           name="phone"
@@ -80,7 +80,7 @@ export function BusinessForm({ preloadedValues }) {
       </div>
 
       {/* Address */}
-      <label For="address"> Dirección del negocio</label>
+      <label htmlFor="address"> Dirección del negocio</label>
       <div className="input-container disabled">
         <input
           name="address"
@@ -104,7 +104,7 @@ export function BusinessForm({ preloadedValues }) {
       </div>
 
       {/* Domain */}
-      <label For="domain"> Website</label>
+      <label htmlFor="domain"> Website</label>
       <div className="input-container disabled">
         <input
           name="domain"
