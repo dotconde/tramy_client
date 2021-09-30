@@ -77,10 +77,15 @@ function ChatWindow({
   // Ref to chat window bottom
   const hookDiv = useRef(null);
 
-  // Scroll down all messages by default
+  // Smooth scroll down when new message is pushed
   useEffect(() => {
     hookDiv.current.scrollIntoView({ behavior: "smooth" });
-  }, [currentChat?.attributes?.id, pushMessage]); // [currentChat?.attributes?.id]
+  }, [currentChat?.attributes?.id, pushMessage]);
+
+  // Instant scroll down when chat is initialized
+  useEffect(() => {
+    hookDiv.current.scrollIntoView({ behavior: "instant" });
+  }, [currentChat?.attributes?.id]);
 
   // Selector: Lead
   const leadId = attributes?.lead?.id;
