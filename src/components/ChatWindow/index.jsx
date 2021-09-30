@@ -85,7 +85,7 @@ function ChatWindow({
   // Selector: Lead
   const leadId = attributes?.lead?.id;
   const stageToDefaultOption = {
-    label: attributes?.current_stage?.name,
+    label: attributes?.current_stage?.name || "Sin etapa",
     value: attributes?.current_stage?.id,
   };
 
@@ -104,7 +104,7 @@ function ChatWindow({
   // Selector: Agent
   const chatId = attributes?.id;
   const accountToDefaultOption = {
-    label: attributes?.attended_by?.first_name,
+    label: attributes?.attended_by?.first_name || "Sin asignar",
     value: attributes?.attended_by?.id,
   };
 
