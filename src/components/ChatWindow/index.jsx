@@ -25,6 +25,37 @@ function ChatWindow({
   setInputMessage,
   pushMessage,
 }) {
+  // Select
+  const customStyles = {
+    container: (provided) => ({
+      ...provided,
+      padding: "0.7rem",
+      fontSize: "0.8rem",
+      color: "#5a5a5a",
+    }),
+
+    singleValue: (provided) => ({
+      ...provided,
+      color: "#5a5a5a",
+      width: "6rem",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    }),
+
+    control: (provided) => ({
+      ...provided,
+      fontSize: "0.8rem",
+      color: "#5a5a5a",
+      cursor: "pointer",
+      boxShadow:
+        "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
+      borderColor: "#dfdfdf",
+      "&:hover": {
+        borderColor: "#dfdfdf",
+      },
+    }),
+  };
   // Wrap chat attributes
   const attributes = currentChat?.attributes;
 
@@ -109,12 +140,14 @@ function ChatWindow({
         </div>
         <div className="chat__window-options">
           <Select
+            styles={customStyles}
             options={accountToOptions(accounts)}
             onChange={handleSelectedAccount}
             defaultValue={accountToDefaultOption}
             value={accountToDefaultOption}
           />
           <Select
+            styles={customStyles}
             options={pipelinesToOptions(pipelines)}
             onChange={handleSelectedStage}
             defaultValue={stageToDefaultOption}

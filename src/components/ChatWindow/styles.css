@@ -43,35 +43,6 @@
   align-items: center;
 }
 
-/* Custom styles to select (Using classNames)*/
-
-.chat__window-options .css-b62m3t-container {
-  padding-left: 0.7rem;
-  font-size: 0.8rem;
-  color: #5a5a5a;
-}
-
-.chat__window-options .css-1s2u09g-control,
-.chat__window-options .css-1pahdxg-control {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  border-color: #dfdfdf !important;
-  cursor: pointer !important;
-}
-
-.css-1s2u09g-control:hover,
-.css-1pahdxg-control:hover {
-  border-color: #dfdfdf !important;
-}
-
-.chat__window-options .css-qc6sy-singleValue {
-  width: 6rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #5a5a5a;
-}
-
 /* .chat__window-options button {
   margin-left: 1rem;
   height: 2.7rem;
