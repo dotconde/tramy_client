@@ -85,7 +85,7 @@ function ChatWindow({
   // Selector: Lead
   const leadId = attributes?.lead?.id;
   const stageToDefaultOption = {
-    label: attributes?.current_stage?.name || "Sin etapa",
+    label: attributes?.current_stage?.name,
     value: attributes?.current_stage?.id,
   };
 
@@ -104,7 +104,7 @@ function ChatWindow({
   // Selector: Agent
   const chatId = attributes?.id;
   const accountToDefaultOption = {
-    label: attributes?.attended_by?.first_name || "Sin asignar",
+    label: attributes?.attended_by?.first_name,
     value: attributes?.attended_by?.id,
   };
 
@@ -154,7 +154,7 @@ function ChatWindow({
               styles={customStyles}
               options={accountToOptions(accounts)}
               onChange={handleSelectedAccount}
-              defaultValue={accountToDefaultOption}
+              defaultValue={accountToDefaultOption || { label: "Sin asignar" }}
               value={accountToDefaultOption}
             />
           </div>
@@ -164,7 +164,7 @@ function ChatWindow({
               styles={customStyles}
               options={pipelinesToOptions(pipelines)}
               onChange={handleSelectedStage}
-              defaultValue={stageToDefaultOption}
+              defaultValue={stageToDefaultOption || { label: "Sin etapa" }}
               value={stageToDefaultOption}
             />
           </div>
