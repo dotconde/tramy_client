@@ -1,18 +1,22 @@
 .channels-tab {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   font-family: "Poppins", sans-serif;
-  padding: 0 2rem;
   height: 100%;
 }
 
-.channels h4,
-.templates h4 {
+.channels__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.channels__content h4 {
   display: flex;
   justify-content: flex-start;
   font-weight: 500;
   font-size: 1.25rem;
   color: #5a5a5a;
-  margin: 2.5rem 0 1rem 0;
+  margin: 2rem 0 1rem 0;
 }
