@@ -27,7 +27,7 @@ function ProfileSummary() {
       <div className="account">
         {/* Photo */}
         <section className="account__photo">
-          <img src={defaultProfile} alt="profile" />
+          <img src={profile?.photo_url || defaultProfile} alt="profile" />
         </section>
         {/* Profile/account info */}
         <section className="account__info">
