@@ -3,6 +3,7 @@ import { BASE_URL, ENDPOINTS } from "../../config";
 import useToken from "../../hooks/useToken";
 import { ProfileForm } from "./ProfileForm";
 import Loader from "../UI/Loader";
+import ContactDetails from "../UI/ContactDetails";
 import "./styles.css";
 
 import axios from "axios";
@@ -33,10 +34,7 @@ function ProfileDetail() {
         <h1>Mi perfil</h1>
         <ProfileForm preloadedValues={data} />
       </div>
-      <span className="profile-detail__contact">
-        Para editar tus datos, u otras consultas, &nbsp;
-        <a href="mailto:deyvi@tramy.io">contáctanos.</a>
-      </span>
+      <ContactDetails />
     </div>
   ) : (
     <Loader />

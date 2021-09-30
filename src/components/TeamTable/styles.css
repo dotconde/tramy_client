@@ -1,7 +1,7 @@
 .team-wrapper {
   margin: 0 2rem;
-  height: calc(100vh - 115px);
   overflow: auto;
+  height: calc(100vh - 215px);
 }
 
 .team-table {

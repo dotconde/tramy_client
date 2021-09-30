@@ -4,6 +4,7 @@ import useToken from "../../hooks/useToken";
 import "./styles.css";
 import TeamTable from "../TeamTable";
 import Loader from "../UI/Loader";
+import ContactDetails from "../UI/ContactDetails";
 import axios from "axios";
 
 function Team() {
@@ -26,16 +27,19 @@ function Team() {
   }, []);
 
   return (
-    <div className="team">
-      <div className="team__options">{/*  */}</div>
-      {team ? (
-        <TeamTable
-          headers={["Nombre", "Email", "Rol", "Activo", "Acciones"]}
-          data={team}
-        />
-      ) : (
-        <Loader />
-      )}
+    <div className="team-tab">
+      <div className="team__content">
+        <div className="team__options">{/*  */}</div>
+        {team ? (
+          <TeamTable
+            headers={["Nombre", "Email", "Rol", "Activo", "Acciones"]}
+            data={team}
+          />
+        ) : (
+          <Loader />
+        )}
+      </div>
+      <ContactDetails />
     </div>
   );
 }

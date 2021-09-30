@@ -18,14 +18,3 @@
   margin: 2rem 0;
   color: #5a5a5a;
 }
-
-.business-detail__contact {
-  font-size: 0.8rem;
-  color: #5a5a5a;
-  text-align: start;
-  padding: 2rem;
-}
-
-.business-detail__contact a {
-  color: #109cf1;
-}
