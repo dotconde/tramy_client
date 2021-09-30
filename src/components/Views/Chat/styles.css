@@ -44,3 +44,27 @@
   overflow-y: auto;
   height: calc(100vh - 8.3rem);
 }
+
+/* Chat Welcome */
+
+.chat__welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat__welcome p {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  font-size: 1.25rem;
+}
+
+.chat__welcome svg {
+  width: 5.5rem;
+}
+
+.chat__welcome img {
+  width: 38rem;
+}
