@@ -11,7 +11,7 @@ function Select({
 }) {
   return (
     <div
-      className="select"
+      className="tramy-select"
       style={{
         backgroundColor: backgroundColor,
         borderColor: borderColor,
@@ -25,7 +25,6 @@ function Select({
         {icon}
       </span>
       <select
-        name="trammy-select"
         style={{
           backgroundColor: backgroundColor,
           color: color,
