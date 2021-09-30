@@ -16,6 +16,7 @@ import { Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
+import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
 
 import "./styles.css";
 
@@ -29,9 +30,14 @@ function ChatWindow({
   const customStyles = {
     container: (provided) => ({
       ...provided,
-      padding: "0.7rem",
       fontSize: "0.8rem",
       color: "#5a5a5a",
+    }),
+
+    groupHeading: (provided) => ({
+      ...provided,
+      fontSize: "0.65rem",
+      borderBottom: "1px solid rgb(167, 167, 167, 0.25)",
     }),
 
     singleValue: (provided) => ({
@@ -41,6 +47,10 @@ function ChatWindow({
       whiteSpace: "nowrap",
       overflow: "hidden",
       textOverflow: "ellipsis",
+    }),
+    valueContainer: (provided) => ({
+      ...provided,
+      width: "7rem",
     }),
 
     control: (provided) => ({
@@ -139,20 +149,26 @@ function ChatWindow({
           </div>
         </div>
         <div className="chat__window-options">
-          <Select
-            styles={customStyles}
-            options={accountToOptions(accounts)}
-            onChange={handleSelectedAccount}
-            defaultValue={accountToDefaultOption}
-            value={accountToDefaultOption}
-          />
-          <Select
-            styles={customStyles}
-            options={pipelinesToOptions(pipelines)}
-            onChange={handleSelectedStage}
-            defaultValue={stageToDefaultOption}
-            value={stageToDefaultOption}
-          />
+          <div className="select">
+            <p>Asesor</p>
+            <Select
+              styles={customStyles}
+              options={accountToOptions(accounts)}
+              onChange={handleSelectedAccount}
+              defaultValue={accountToDefaultOption}
+              value={accountToDefaultOption}
+            />
+          </div>
+          <div className="select">
+            <p>Etapa</p>
+            <Select
+              styles={customStyles}
+              options={pipelinesToOptions(pipelines)}
+              onChange={handleSelectedStage}
+              defaultValue={stageToDefaultOption}
+              value={stageToDefaultOption}
+            />
+          </div>
         </div>
       </section>
 
