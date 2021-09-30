@@ -3,7 +3,7 @@ import { BASE_URL, ENDPOINTS } from "../../config";
 import useToken from "../../hooks/useToken";
 import { ProfileForm } from "./ProfileForm";
 import Loader from "../UI/Loader";
-import ContactMessage from "../UI/ContactMessage";
+import ContactDetails from "../UI/ContactDetails";
 import "./styles.css";
 
 import axios from "axios";
@@ -34,7 +34,7 @@ function ProfileDetail() {
         <h1>Mi perfil</h1>
         <ProfileForm preloadedValues={data} />
       </div>
-      <ContactMessage />
+      <ContactDetails />
     </div>
   ) : (
     <Loader />

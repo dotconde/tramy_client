@@ -4,7 +4,7 @@ import useToken from "../../hooks/useToken";
 import "./styles.css";
 import TeamTable from "../TeamTable";
 import Loader from "../UI/Loader";
-import ContactMessage from "../UI/ContactMessage";
+import ContactDetails from "../UI/ContactDetails";
 import axios from "axios";
 
 function Team() {
@@ -39,7 +39,7 @@ function Team() {
           <Loader />
         )}
       </div>
-      <ContactMessage />
+      <ContactDetails />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { BASE_URL, ENDPOINTS } from "../../config";
 import useToken from "../../hooks/useToken";
 import { BusinessForm } from "./BusinessForm";
 import Loader from "../UI/Loader";
-import ContactMessage from "../UI/ContactMessage";
+import ContactDetails from "../UI/ContactDetails";
 import "./styles.css";
 
 import axios from "axios";
@@ -34,7 +34,7 @@ function BusinessDetail() {
         <h1>Mi negocio</h1>
         <BusinessForm preloadedValues={data} />
       </div>
-      <ContactMessage />
+      <ContactDetails />
     </div>
   ) : (
     <Loader />

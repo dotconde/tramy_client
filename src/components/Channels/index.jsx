@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import SetupCard from "../UI/SetupCard";
 import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp.svg";
-import ContactMessage from "../UI/ContactMessage";
+import ContactDetails from "../UI/ContactDetails";
 
 function Channels() {
   return (
@@ -28,7 +28,7 @@ function Channels() {
       </section> */}
       </div>
 
-      <ContactMessage />
+      <ContactDetails />
     </div>
   );
 }

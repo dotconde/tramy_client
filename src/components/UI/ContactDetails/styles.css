@@ -1,10 +1,10 @@
-.contact-message {
+.contact-details {
   font-size: 0.8rem;
   color: #5a5a5a;
   text-align: start;
   padding: 2rem;
 }
 
-.contact-message a {
+.contact-details a {
   color: #109cf1;
 }
