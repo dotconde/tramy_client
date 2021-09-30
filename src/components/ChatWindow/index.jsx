@@ -154,7 +154,7 @@ function ChatWindow({
               styles={customStyles}
               options={accountToOptions(accounts)}
               onChange={handleSelectedAccount}
-              defaultValue={accountToDefaultOption || { label: "Sin asignar" }}
+              defaultValue={accountToDefaultOption}
               value={accountToDefaultOption}
             />
           </div>
@@ -164,7 +164,7 @@ function ChatWindow({
               styles={customStyles}
               options={pipelinesToOptions(pipelines)}
               onChange={handleSelectedStage}
-              defaultValue={stageToDefaultOption || { label: "Sin etapa" }}
+              defaultValue={stageToDefaultOption}
               value={stageToDefaultOption}
             />
           </div>
