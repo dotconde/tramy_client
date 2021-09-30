@@ -43,17 +43,13 @@
   align-items: center;
 }
 
-.chat__window-options button {
+/* .chat__window-options button {
   margin-left: 1rem;
   height: 2.7rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-}
+} */
 
-.chat__window-options div {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-}
 .chat__window-messages {
   background-image: url(../../assets/img/chatbg.png);
   background-color: #f5ece3;
