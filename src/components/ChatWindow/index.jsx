@@ -79,8 +79,8 @@ function ChatWindow({
 
   // Scroll down all messages by default
   useEffect(() => {
-    hookDiv.current.scrollIntoView();
-  }, [currentChat?.attributes?.id]);
+    hookDiv.current.scrollIntoView({ behavior: "smooth" });
+  }, [currentChat?.attributes?.id, pushMessage]); // [currentChat?.attributes?.id]
 
   // Selector: Lead
   const leadId = attributes?.lead?.id;
@@ -176,7 +176,13 @@ function ChatWindow({
         {attributes?.chat_data?.messages.map((message) => (
           <ChatMessage key={message.id} messageData={message} />
         ))}
-        <div style={{ float: "right", clear: "both" }} ref={hookDiv}></div>
+        <div
+          style={{
+            float: "right",
+            clear: "both",
+          }}
+          ref={hookDiv}
+        ></div>
       </section>
 
       {/* Chat Input Box */}
