@@ -5,6 +5,7 @@ import {
   pipelinesToOptions,
   accountToOptions,
 } from "../../helpers/formatters/select";
+import { tramySelectStyles } from "../../constants/select";
 import { getPipelines } from "../../services/api/pipeline";
 import { getAccounts } from "../../services/api/account";
 import { updateChat } from "../../services/api/chat";
@@ -26,46 +27,6 @@ function ChatWindow({
   pushMessage,
   isLoadingDeliveryMessage,
 }) {
-  // Select
-  const customStyles = {
-    container: (provided) => ({
-      ...provided,
-      fontSize: "0.8rem",
-      color: "#5a5a5a",
-    }),
-
-    groupHeading: (provided) => ({
-      ...provided,
-      fontSize: "0.65rem",
-      borderBottom: "1px solid rgb(167, 167, 167, 0.25)",
-    }),
-
-    singleValue: (provided) => ({
-      ...provided,
-      color: "#5a5a5a",
-      width: "6rem",
-      whiteSpace: "nowrap",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-    }),
-    valueContainer: (provided) => ({
-      ...provided,
-      width: "7rem",
-    }),
-
-    control: (provided) => ({
-      ...provided,
-      fontSize: "0.8rem",
-      color: "#5a5a5a",
-      cursor: "pointer",
-      boxShadow:
-        "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
-      borderColor: "#dfdfdf",
-      "&:hover": {
-        borderColor: "#dfdfdf",
-      },
-    }),
-  };
   // Wrap chat attributes
   const attributes = currentChat?.attributes;
 
@@ -157,7 +118,7 @@ function ChatWindow({
           <div className="select">
             <p>Asesor</p>
             <Select
-              styles={customStyles}
+              styles={tramySelectStyles}
               options={accountToOptions(accounts)}
               onChange={handleSelectedAccount}
               defaultValue={accountToDefaultOption}
@@ -167,7 +128,7 @@ function ChatWindow({
           <div className="select">
             <p>Etapa</p>
             <Select
-              styles={customStyles}
+              styles={tramySelectStyles}
               options={pipelinesToOptions(pipelines)}
               onChange={handleSelectedStage}
               defaultValue={stageToDefaultOption}
