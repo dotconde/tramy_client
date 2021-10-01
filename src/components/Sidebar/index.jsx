@@ -52,12 +52,12 @@ function Sidebar() {
                 Clientes
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink activeClassName="active" to="/funnel">
                 <FilterIcon />
                 Embudo de Ventas
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </section>
         <hr />
