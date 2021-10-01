@@ -141,7 +141,13 @@ function Chat() {
         </div>
       ) : (
         <ChatWindow
-          {...{ currentChat, inputMessage, setInputMessage, pushMessage }}
+          {...{
+            currentChat,
+            inputMessage,
+            setInputMessage,
+            pushMessage,
+            isLoadingDeliveryMessage,
+          }}
         />
       )}
     </div>

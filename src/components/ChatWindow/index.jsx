@@ -24,6 +24,7 @@ function ChatWindow({
   inputMessage,
   setInputMessage,
   pushMessage,
+  isLoadingDeliveryMessage,
 }) {
   // Select
   const customStyles = {
@@ -77,15 +78,15 @@ function ChatWindow({
   // Ref to chat window bottom
   const hookDiv = useRef(null);
 
-  // Smooth scroll down when new message is pushed
-  useEffect(() => {
-    hookDiv.current.scrollIntoView({ behavior: "smooth" });
-  }, [currentChat?.attributes?.id, pushMessage]);
-
   // Instant scroll down when chat is initialized
   useEffect(() => {
     hookDiv.current.scrollIntoView({ behavior: "instant" });
   }, [currentChat?.attributes?.id]);
+
+  // Smooth scroll down when new message is pushed
+  useEffect(() => {
+    hookDiv.current.scrollIntoView({ behavior: "smooth" });
+  }, [isLoadingDeliveryMessage]);
 
   // Selector: Lead
   const leadId = attributes?.lead?.id;
