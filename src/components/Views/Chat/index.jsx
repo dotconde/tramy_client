@@ -96,7 +96,7 @@ function Chat() {
     <div className="chat">
       {/* Chat List */}
       <div className="chat__list">
-        <section className="chat__list-options">
+        {/* <section className="chat__list-options">
           <Search
             placeholder={"Buscar por nombre"}
             borderColor={"1px solid #dfdfdf"}
@@ -111,7 +111,7 @@ function Chat() {
               <option value="">Mis asignados</option>
             </select>
           </div>
-        </section>
+        </section> */}
         <section className="chat__list-contacts">
           {chatList.map((chatCard) => (
             <ChatCard
