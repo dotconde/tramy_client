@@ -36,9 +36,9 @@ function Clients() {
 
   return clients ? (
     <div className="clients">
-      <Search placeholder={"Buscar por nombre, asesor o estado"} />
+      {/* <Search placeholder={"Buscar por nombre, asesor o estado"} /> */}
       <div className="clients__options">
-        <ClientFilter
+        {/* <ClientFilter
           placeholder={"Sin filtrar"}
           agentList={[
             { name: "Deyvi Conde" },
@@ -51,15 +51,15 @@ function Clients() {
             { title: "Conversión" },
             { title: "Fidelizar" },
           ]}
-        />
-        <Button
+        /> */}
+        {/* <Button
           icon={<AddUserIcon />}
           iconColor={"white"}
           content={"Añadir Cliente"}
           backgroundColor={"#109CF1"}
           contentColor={"white"}
           borderColor={"transparent"}
-        />
+        /> */}
       </div>
       <ClientTable
         headers={tableHeaders}
