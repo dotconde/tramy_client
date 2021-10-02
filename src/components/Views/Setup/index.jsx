@@ -35,7 +35,7 @@ function Setup() {
       />
       <label htmlFor="business-tab">
         <BusinessIcon />
-        <span>Mi negocio</span>
+        <span>Mi organización</span>
       </label>
 
       {/* Team Tab */}

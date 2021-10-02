@@ -31,7 +31,7 @@ function BusinessDetail() {
   return data ? (
     <div className="business-detail">
       <div className="business-detail__form">
-        <h1>Mi negocio</h1>
+        <h1>Mi organización</h1>
         <BusinessForm preloadedValues={data} />
       </div>
       <ContactDetails />
