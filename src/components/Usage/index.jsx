@@ -5,25 +5,22 @@ function Usage() {
   return (
     <div className="usage">
       <div className="usage__accordion">
-        {/* First step: Add a member */}
+        {/* First step: See new messages */}
         <div className="step">
           <input type="radio" id="rd1" name="rd" />
           <label className="step__title" htmlFor="rd1">
-            😃 &nbsp; Agrega un miembro
+            😊 &nbsp; Atiende tus clientes
           </label>
           <div className="step__content">
             <p>
-              Para agregar un nuevo miembro a tu equipo, sigue los siguientes
-              pasos:
+              Para responder el mensaje de un nuevo cliente, sigue estos pasos:
             </p>
             <ol>
               <li>
-                Ve al apartado de <b>Equipo.</b>
+                Ve al apartado de <b>Chat.</b>
               </li>
-              <li>
-                Dale click en <b>Añadir usuario.</b>
-              </li>
-              <li>Rellena la información del nuevo usuario. </li>
+              <li>Haz click en el nombre de tu cliente.</li>
+              <li>¡Listo! El mensaje llegará inmediatamente a su móvil</li>
             </ol>
           </div>
         </div>
@@ -31,22 +28,16 @@ function Usage() {
         <div className="step">
           <input type="radio" id="rd2" name="rd" />
           <label className="step__title" htmlFor="rd2">
-            🚀 &nbsp; Tu primer embudo
+            🚀 &nbsp; Lista de clientes
           </label>
           <div className="step__content">
             <p>
-              Para crear y editar tu primer embudo de ventas, sigue los
-              siguientes pasos:
+              Visualiza los clientes que interactuaron con tu organización,
+              siguiendo estos pasos:
             </p>
             <ol>
               <li>
-                Ve al apartado <b>Embudo de Ventas</b>
-              </li>
-              <li>
-                Dale click al <b>nombre del embudo.</b>
-              </li>
-              <li>
-                Selecciona <b>Añadir nuevo Embudo.</b>
+                Ve al apartado <b>Clientes</b>
               </li>
             </ol>
           </div>
@@ -59,24 +50,30 @@ function Usage() {
           </label>
           <div className="step__content">
             <p>
-              Para crear y editar tu primer embudo de ventas, sigue los
-              siguientes pasos:
+              Para configurar los datos de tu organización, sigue estos pasos:
             </p>
             <ol>
               <li>
-                Ve al apartado <b>Embudo de Ventas</b>
+                Ve al apartado <b>Configuracion</b>
               </li>
               <li>
-                Dale click al <b>nombre del embudo.</b>
+                En <b>Mi perfil</b> podrás actualizar tus datos.
               </li>
               <li>
-                Selecciona <b>Añadir nuevo Embudo.</b>
+                En <b>Mi organización</b> podrás actualizar los datos de tu
+                organización.
+              </li>
+              <li>
+                En <b>Mi equipo</b> podrás los miembros en tu equipo.
+              </li>
+              <li>
+                En <b>Canales</b> podrás ver tus canales activos.
               </li>
             </ol>
           </div>
         </div>
         {/* Fourth step: My first template */}
-        <div className="step">
+        {/* <div className="step">
           <input type="radio" id="rd4" name="rd" />
           <label className="step__title" htmlFor="rd4">
             📃 &nbsp; Mi primera plantilla{" "}
@@ -98,7 +95,7 @@ function Usage() {
               </li>
             </ol>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
