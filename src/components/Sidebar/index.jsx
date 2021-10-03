@@ -6,7 +6,7 @@ import tramyLogo from "../../assets/logo/tramy_logo.svg";
 import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
 import { ReactComponent as ChatIcon } from "../../assets/icons/chat.svg";
 import { ReactComponent as ClientIcon } from "../../assets/icons/client.svg";
-import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
+// import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/icons/logout.svg";
 import { NavLink } from "react-router-dom";
