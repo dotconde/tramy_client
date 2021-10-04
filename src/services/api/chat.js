@@ -1,8 +1,10 @@
 import { api } from "./baseApi";
 import { ENDPOINTS } from "../../config";
 
-export const getChats = (config) =>
-  api.get(`${ENDPOINTS.CHAT}`, config).then((response) => response.data);
+export const getChats = (config, query = "") =>
+  api
+    .get(`${ENDPOINTS.CHAT}${query}`, config)
+    .then((response) => response.data);
 
 export const getChat = (id, config) =>
   api.get(`/${ENDPOINTS.CHAT}/${id}`, config).then((response) => response.data);
