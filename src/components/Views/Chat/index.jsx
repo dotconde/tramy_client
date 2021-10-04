@@ -9,13 +9,18 @@ import ChatWindow from "../../ChatWindow";
 import { ReactComponent as BlackTrammyLogo } from "../../../assets/logo/black_trammy_logo.svg";
 import WelcomeWallpaper from "../../../assets/img/trammy_chat_wallpaper.svg";
 import { useQuery, useMutation, useQueryClient } from "react-query";
+import { useDebounce } from "use-debounce";
 import useToken from "../../../hooks/useToken";
 import * as api from "../../../services/api/chat";
 
 function Chat() {
+  const queryClient = useQueryClient();
+
   // States
   const [chatId, setChatId] = useState(null);
   const [inputMessage, setInputMessage] = useState("");
+  const [filter, setFilter] = useState("");
+  const [debouncedFilter] = useDebounce(filter, 1000);
 
   // Config
   const { token } = useToken();
@@ -34,8 +39,6 @@ function Chat() {
     }
     setInputMessage("");
   }
-
-  const queryClient = useQueryClient();
 
   const { isLoading: isLoadingDeliveryMessage, mutate } = useMutation(
     async (newMessage) => api.postMessage(chatId, newMessage, config),
@@ -79,10 +82,14 @@ function Chat() {
     data: chatList,
     isLoading: isLoadingChatList,
     isError: isErrorChatList,
-  } = useQuery("chatList", async () => api.getChats(config), {
-    retry: 3,
-    refetchInterval: 10000,
-  });
+  } = useQuery(
+    ["chatList", debouncedFilter],
+    async () => api.getChats(config, `?query=${debouncedFilter}`),
+    {
+      retry: 3,
+      refetchInterval: 10000,
+    }
+  );
 
   if (isLoadingChatList) {
     return <Loader />;
@@ -96,12 +103,14 @@ function Chat() {
     <div className="chat">
       {/* Chat List */}
       <div className="chat__list">
-        {/* <section className="chat__list-options">
+        <section className="chat__list-options">
           <Search
-            placeholder={"Buscar por nombre"}
+            value={filter}
+            onChange={(event) => setFilter(event.target.value)}
+            placeholder={"Buscar chat por nombre, apellido o teléfono"}
             borderColor={"1px solid #dfdfdf"}
           />
-          <div className="chat__list-filter">
+          {/* <div className="chat__list-filter">
             <label htmlFor="chat__list-filter">Filtro:</label>
             <select name="browser">
               <option value="" selected>
@@ -110,8 +119,8 @@ function Chat() {
               <option value="">Sin asignar</option>
               <option value="">Mis asignados</option>
             </select>
-          </div>
-        </section> */}
+          </div> */}
+        </section>
         <section className="chat__list-contacts">
           {chatList.map((chatCard) => (
             <ChatCard
