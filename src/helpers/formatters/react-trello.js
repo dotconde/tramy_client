@@ -1,3 +1,5 @@
+import { truncate } from "./message";
+
 export function pipelineToReactTrelloData(pipeline = []) {
   let lanesArray = [];
   let lanes = pipeline?.stages || [];
@@ -17,10 +19,20 @@ function leadsToCardsArray(leads) {
   leads.map((leadObject) =>
     cardsArray.push({
       id: leadObject?.id,
-      title: leadObject?.attributes?.name,
+      title: truncate(leadObject?.attributes?.name, 15),
       description: leadObject?.attributes?.phone,
-      label: leadObject?.attributes?.attended_by?.first_name,
+      label: attendedByFormat(leadObject?.attributes?.attended_by),
     })
   );
   return cardsArray;
+}
+
+function attendedByFormat(attendedByObject) {
+  if (attendedByObject === null) {
+    return "Sin asignar";
+  }
+  return truncate(
+    `${attendedByObject?.first_name} ${attendedByObject?.last_name}`,
+    15
+  );
 }
