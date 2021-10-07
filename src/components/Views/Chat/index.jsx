@@ -135,6 +135,7 @@ function Chat() {
                 .format("hh:mm a")}
               chatId={chatCard?.attributes?.id}
               setChatId={setChatId}
+              notificationCount={chatCard?.attributes?.unanswered_messages}
             />
           ))}
         </section>

@@ -89,3 +89,17 @@
   background-color: rgb(167, 167, 167, 0.25);
   border: none;
 }
+
+/* Notification center */
+.chat-card__notification {
+  background-color: #109cf1;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  padding: 0.1rem;
+}
