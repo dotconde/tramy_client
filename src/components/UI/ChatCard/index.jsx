@@ -12,7 +12,7 @@ function ChatCard({
   time,
   chatId,
   setChatId,
-  // notificationCount = 0,
+  notificationCount = 0,
 }) {
   const handleChatId = () => {
     setChatId(chatId);
@@ -37,8 +37,9 @@ function ChatCard({
       </section>
       <section>
         <h3 className="chat-card__time">{time}</h3>
-        {/* <div className="chat-card__notification">
-         {notificationCount}</div> */}
+        {notificationCount > 0 && (
+          <div className="chat-card__notification">{notificationCount}</div>
+        )}
       </section>
     </div>
   );
