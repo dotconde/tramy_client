@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./styles.css";
 import Board from "react-trello";
 import useConfig from "../../hooks/useConfig";
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
+import { updateLead } from "../../services/api/lead";
 import { getPipelineStageLeads } from "../../services/api/pipeline";
 import { pipelineToReactTrelloData } from "../../helpers/formatters/react-trello";
 
@@ -13,6 +14,9 @@ function Pipeline() {
   // States
   const [pipelineId, setPipelineId] = useState(1);
 
+  const [draggedLeadId, setDraggedLeadId] = useState(undefined);
+  // const [laneId, setLaneId] = useState(undefined);
+
   const { data: currentPipeline } = useQuery(
     ["pipeline", pipelineId],
     async () => getPipelineStageLeads(pipelineId, config),
@@ -21,12 +25,20 @@ function Pipeline() {
     }
   );
 
+  const { mutate } = useMutation(
+    async (updatedLead) => updateLead(draggedLeadId, updatedLead, config),
+    {}
+  );
+
   const onCardMoveAcrossLanes = (fromLaneId, toLaneId, cardId, index) => {
-    console.log("move across lanes");
-    console.log(`fromLaneId: ${fromLaneId}`);
-    console.log(`toLaneId: ${toLaneId}`);
-    console.log(`cardId: ${cardId}`);
-    console.log(`index: ${index}`);
+    // console.log("fromLaneId", fromLaneId);
+    // console.log("toLaneId", toLaneId);
+    // console.log("cardId", cardId);
+    // console.log("index", index);
+    if (toLaneId && cardId) {
+      setDraggedLeadId(cardId);
+      mutate({ stage_id: toLaneId });
+    }
   };
 
   return (
