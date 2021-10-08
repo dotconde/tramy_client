@@ -35,25 +35,27 @@ function Pipeline() {
       }
     );
 
-  // States when dragging cards
-  // const [draggedLeadId, setDraggedLeadId] = useState(undefined);
-  // // const [laneId, setLaneId] = useState(undefined);
+  const { mutate } = useMutation(
+    async (updatedLead) =>
+      updateLead(updatedLead?.card_id, updatedLead, config),
+    {}
+  );
 
-  // const { mutate } = useMutation(
-  //   async (updatedLead) => updateLead(draggedLeadId, updatedLead, config),
-  //   {}
-  // );
-
-  // const onCardMoveAcrossLanes = (fromLaneId, toLaneId, cardId, index) => {
-  //   // console.log("fromLaneId", fromLaneId);
-  //   // console.log("toLaneId", toLaneId);
-  //   // console.log("cardId", cardId);
-  //   // console.log("index", index);
-  //   if (toLaneId && cardId) {
-  //     setDraggedLeadId(cardId);
-  //     mutate({ stage_id: toLaneId });
-  //   }
-  // };
+  const handleDragEnd = (
+    cardId,
+    sourceLaneId,
+    targetLaneId,
+    position,
+    cardDetails
+  ) => {
+    console.log("cardId", cardId);
+    console.log("fromLaneId", sourceLaneId);
+    console.log("toLaneId", targetLaneId);
+    console.log("position", position);
+    if (targetLaneId && cardId) {
+      mutate({ stage_id: targetLaneId, card_id: cardId });
+    }
+  };
 
   return isLoadingCurrentPipeline ? (
     <Loader />
@@ -62,7 +64,7 @@ function Pipeline() {
       hideCardDeleteIcon
       data={pipelineToReactTrelloData(currentPipeline)}
       style={{ backgroundColor: "#f5f5f5" }}
-      // onCardMoveAcrossLanes={onCardMoveAcrossLanes}
+      handleDragEnd={handleDragEnd}
     />
   );
 }
