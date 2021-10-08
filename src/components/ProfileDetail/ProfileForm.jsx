@@ -39,6 +39,9 @@ export function ProfileForm({ preloadedValues }) {
           placeholder={"Nombre"}
           type="text"
           {...register("firstName", {
+            validate: (value) => {
+              return !!value.trim();
+            },
             required: true,
             minLength: {
               value: 2,
@@ -62,6 +65,9 @@ export function ProfileForm({ preloadedValues }) {
           placeholder={"Apellido"}
           type="text"
           {...register("lastName", {
+            validate: (value) => {
+              return !!value.trim();
+            },
             required: true,
             minLength: {
               value: 2,
