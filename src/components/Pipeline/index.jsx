@@ -34,7 +34,6 @@ function Pipeline() {
       {
         retry: 3,
         enabled: Boolean(pipelineId),
-        refetchInterval: 10000,
       }
     );
 
@@ -53,6 +52,19 @@ function Pipeline() {
         queryClient.setQueryData(["pipeline", pipelineId], (oldPipeline) => {
           let oldPipelineCopy = oldPipeline;
 
+          // Get target lead index
+          let targetIndex = oldPipelineCopy.stages
+            .find((stage) => stage.id === updateLead.source_lane_id)
+            .attributes.leads.findIndex(
+              (lead) => lead.id === updateLead.card_id
+            );
+
+          // Remove card from target source
+          oldPipelineCopy.stages
+            .find((stage) => stage.id === updateLead.source_lane_id)
+            .attributes.leads.splice(targetIndex, 1);
+
+          // Add new card to target lane
           oldPipelineCopy.stages
             .find((stage) => stage.id === updateLead.card_details.laneId)
             .attributes.leads.unshift({
@@ -74,11 +86,6 @@ function Pipeline() {
     }
   );
 
-  // description: "51922252915"
-  // id: "57"
-  // label: "Yahaira Collado"
-  // laneId: "34"
-  // title: "Gabriela 🦋"
   const handleDragEnd = (
     cardId,
     sourceLaneId,
@@ -86,14 +93,11 @@ function Pipeline() {
     position,
     cardDetails
   ) => {
-    console.log("cardId", cardId);
-    console.log("fromLaneId", sourceLaneId);
-    console.log("toLaneId", targetLaneId);
-    console.log("cardDetails", cardDetails);
     mutate({
       stage_id: targetLaneId,
       card_id: cardId,
       card_details: cardDetails,
+      source_lane_id: sourceLaneId,
     });
   };
 
