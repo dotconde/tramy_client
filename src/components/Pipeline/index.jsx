@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles.css";
 import Board from "react-trello";
 import Loader from "../UI/Loader";
@@ -41,6 +41,7 @@ function Pipeline() {
     async (updatedLead) =>
       updateLead(updatedLead?.card_id, updatedLead, config),
     {
+      // Optimistic update
       onMutate: async (updateLead) => {
         await queryClient.cancelQueries(["pipeline", pipelineId]);
 
@@ -73,8 +74,8 @@ function Pipeline() {
                 name: updateLead.card_details.title,
                 phone: updateLead.card_details.description,
                 attended_by: {
-                  first_name: "Tramy",
-                  last_name: "Agent",
+                  first_name: updateLead.card_details.label.split(" ")[0],
+                  last_name: updateLead.card_details.label.split(" ")[1],
                 },
               },
             });
