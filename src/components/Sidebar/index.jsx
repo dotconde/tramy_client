@@ -55,7 +55,7 @@ function Sidebar() {
             <li>
               <NavLink activeClassName="active" to="/funnel">
                 <FilterIcon />
-                Embudo (Beta) 🔧
+                Embudo
               </NavLink>
             </li>
           </ul>
