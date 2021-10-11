@@ -41,11 +41,13 @@ function Feed({ firstName = "Deyvi" }) {
             <iframe
               // width="560"
               // height="315"
-              src="https://www.youtube.com/embed/bBZqQCCB9nM"
-              title="YouTube video player"
+              src="https://www.loom.com/embed/bc9be3f4a2094a7284c03897a97d13b1"
+              title="Loom video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              webkitallowfullscreen
+              mozallowfullscreen
             ></iframe>
           </div>
           <div className="main-new__info">
