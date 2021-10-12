@@ -143,6 +143,7 @@ function ChatWindow({
         {attributes?.chat_data?.messages.map((message) => (
           <ChatMessage key={message.id} messageData={message} />
         ))}
+        <img src="http://localhost:3000/image_test" />
         <div
           style={{
             float: "right",
