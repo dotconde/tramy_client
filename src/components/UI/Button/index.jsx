@@ -2,20 +2,25 @@ import React from "react";
 import "./styles.css";
 
 function Button({
+  disabled = false,
   icon,
   content,
   backgroundColor,
-  contentColor,
-  borderColor,
+  contentColor = "white",
+  borderColor = "transparent",
+  borderRadius,
   iconColor,
 }) {
   return (
     <button
+      disabled={disabled}
+      type="submit"
       className="trammy-button"
       style={{
         backgroundColor: backgroundColor,
         color: contentColor,
-        border: borderColor,
+        borderColor: borderColor,
+        borderRadius: borderRadius,
       }}
     >
       <span
