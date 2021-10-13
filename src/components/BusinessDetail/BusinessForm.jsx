@@ -8,6 +8,7 @@ import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp-v2.s
 import { ReactComponent as LocationIcon } from "../../assets/icons/location.svg";
 import { ReactComponent as WebsiteIcon } from "../../assets/icons/world-wide-web.svg";
 import "./BusinessForm.css";
+import Button from "../UI/Button";
 
 export function BusinessForm({ preloadedValues }) {
   const endpoint = `${BASE_URL}/${ENDPOINTS.ORGANIZATION}`;
@@ -126,9 +127,13 @@ export function BusinessForm({ preloadedValues }) {
         <WebsiteIcon />
       </div>
 
-      <button type="submit" disabled>
-        Guardar cambios
-      </button>
+      <Button
+        disabled={true}
+        content={"Guardar cambios"}
+        contentColor={"#5a5a5a"}
+        backgroundColor={"#e5e5e5"}
+        borderRadius={"0.3rem"}
+      />
     </form>
   );
 }

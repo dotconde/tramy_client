@@ -8,6 +8,7 @@ import { ReactComponent as EditIcon } from "../../assets/icons/pencil.svg";
 import { ReactComponent as EmailIcon } from "../../assets/icons/email.svg";
 import { ReactComponent as BusinessIcon } from "../../assets/icons/business.svg";
 import { validateName } from "../../helpers/validators/react-hook-form";
+import Button from "../UI/Button";
 
 export function ProfileForm({ preloadedValues }) {
   const endpoint = `${BASE_URL}/${ENDPOINTS.PROFILE}`;
@@ -101,7 +102,11 @@ export function ProfileForm({ preloadedValues }) {
         <BusinessIcon />
       </div>
 
-      <button type="submit">Guardar cambios</button>
+      <Button
+        content={"Guardar cambios"}
+        backgroundColor={"#131313"}
+        borderRadius={"0.3rem"}
+      />
     </form>
   );
 }
