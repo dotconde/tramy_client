@@ -5,11 +5,11 @@ export const validateName = {
   required: true,
   minLength: {
     value: 2,
-    message: "¡Ups! Tu nombre debe tener al menos 2 caracteres",
+    message: "¡Ups! Este campo debe tener al menos 2 caracteres",
   },
   maxLength: {
     value: 100,
-    message: "¡Ups! Tu nombre debe tener como máximo 100 caracteres",
+    message: "¡Ups! Este campo debe tener como máximo 100 caracteres",
   },
 };
 
