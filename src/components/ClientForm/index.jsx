@@ -28,6 +28,7 @@ function ClientForm({ data, setIsOpen }) {
   const onSubmit = async (values) => {
     mutate(values);
     setIsOpen(false);
+    window.location.reload();
   };
 
   return (

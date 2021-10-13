@@ -10,7 +10,7 @@ import Loader from "../../UI/Loader";
 import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 import { ReactComponent as MessageIcon } from "../../../assets/icons/message.svg";
-import { ReactComponent as AddUserIcon } from "../../../assets/icons/add-user.svg";
+// import { ReactComponent as AddUserIcon } from "../../../assets/icons/add-user.svg";
 import axios from "axios";
 import "./styles.css";
 
@@ -32,6 +32,7 @@ function Clients() {
       await fetchClients();
     }
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return clients ? (
