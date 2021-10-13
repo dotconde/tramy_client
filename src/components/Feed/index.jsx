@@ -46,8 +46,8 @@ function Feed({ firstName = "Deyvi" }) {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              webkitallowfullscreen
-              mozallowfullscreen
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
             ></iframe>
           </div>
           <div className="main-new__info">
