@@ -60,7 +60,9 @@ function ClientTable({ headers, data, tools }) {
             style={customStyles}
             ariaHideApp={false}
           >
-            <button onClick={handleCloseModal}>X</button>
+            <button className="close-button" onClick={handleCloseModal}>
+              X
+            </button>
             <ClientForm data={currentLead} setIsOpen={setIsOpen} />
           </Modal>
         </tbody>

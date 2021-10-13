@@ -7,6 +7,8 @@ import {
   validateEmail,
   validatePhone,
 } from "../../helpers/validators/react-hook-form";
+import "./styles.css";
+import Button from "../UI/Button";
 
 function ClientForm({ data, setIsOpen }) {
   const { config } = useConfig();
@@ -32,30 +34,35 @@ function ClientForm({ data, setIsOpen }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          onChange={(event) => handleChange(event, "name")}
-          placeholder="Nombre"
-          name="name"
-          {...register("name", validateName)}
-        />
-        <input
-          onChange={(event) => handleChange(event, "email")}
-          placeholder="Email"
-          name="email"
-          {...register("email", validateEmail)}
-        />
-        <input
-          name="phone"
-          placeholder={"Teléfono"}
-          type="phone"
-          disabled
-          {...register("phone", validatePhone)}
-        />
-        <button type="submit">Guardar cambios</button>
-      </form>
-    </div>
+    <form className="client-form" onSubmit={handleSubmit(onSubmit)}>
+      <label htmlFor="name">Nombre</label>
+      <input
+        onChange={(event) => handleChange(event, "name")}
+        placeholder="Nombre"
+        name="name"
+        {...register("name", validateName)}
+      />
+      <label htmlFor="email">Email</label>
+      <input
+        onChange={(event) => handleChange(event, "email")}
+        placeholder="Email"
+        name="email"
+        {...register("email", validateEmail)}
+      />
+      <label htmlFor="phone">Teléfono</label>
+      <input
+        name="phone"
+        placeholder={"Teléfono"}
+        type="phone"
+        disabled
+        {...register("phone", validatePhone)}
+      />
+      <Button
+        content={"Guardar cambios"}
+        backgroundColor={"#131313"}
+        borderRadius={"0.3rem"}
+      />
+    </form>
   );
 }
 
