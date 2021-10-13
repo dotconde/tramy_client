@@ -7,6 +7,8 @@ import "./ProfileForm.css";
 import { ReactComponent as EditIcon } from "../../assets/icons/pencil.svg";
 import { ReactComponent as EmailIcon } from "../../assets/icons/email.svg";
 import { ReactComponent as BusinessIcon } from "../../assets/icons/business.svg";
+import { validateName } from "../../helpers/validators/react-hook-form";
+import Button from "../UI/Button";
 
 export function ProfileForm({ preloadedValues }) {
   const endpoint = `${BASE_URL}/${ENDPOINTS.PROFILE}`;
@@ -38,21 +40,7 @@ export function ProfileForm({ preloadedValues }) {
           name="firstName"
           placeholder={"Nombre"}
           type="text"
-          {...register("firstName", {
-            validate: (value) => {
-              return !!value.trim();
-            },
-            required: true,
-            minLength: {
-              value: 2,
-              message: "¡Hey tú! Tu nombre debe tener al menos 5 caracteres",
-            },
-            maxLength: {
-              value: 100,
-              message:
-                "¡Hey tú! Tu nombre debe tener como máximo 100 caracteres",
-            },
-          })}
+          {...register("firstName", validateName)}
         />
         <EditIcon />
       </div>
@@ -64,21 +52,7 @@ export function ProfileForm({ preloadedValues }) {
           name="lastName"
           placeholder={"Apellido"}
           type="text"
-          {...register("lastName", {
-            validate: (value) => {
-              return !!value.trim();
-            },
-            required: true,
-            minLength: {
-              value: 2,
-              message: "¡Hey tú! Tu apellido debe tener al menos 5 caracteres",
-            },
-            maxLength: {
-              value: 100,
-              message:
-                "¡Hey tú! Tu apellido debe tener como máximo 100 caracteres",
-            },
-          })}
+          {...register("lastName", validateName)}
         />
         <EditIcon />
       </div>
@@ -128,7 +102,11 @@ export function ProfileForm({ preloadedValues }) {
         <BusinessIcon />
       </div>
 
-      <button type="submit">Guardar cambios</button>
+      <Button
+        content={"Guardar cambios"}
+        backgroundColor={"#131313"}
+        borderRadius={"0.3rem"}
+      />
     </form>
   );
 }

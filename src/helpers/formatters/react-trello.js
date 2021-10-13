@@ -27,7 +27,7 @@ function leadsToCardsArray(leads) {
   return cardsArray;
 }
 
-function attendedByFormat(attendedByObject) {
+export function attendedByFormat(attendedByObject) {
   if (attendedByObject === null) {
     return "Sin asignar";
   }

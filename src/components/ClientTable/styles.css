@@ -45,3 +45,16 @@
   fill: #2a97d9;
   cursor: pointer;
 }
+
+.close-button {
+  position: relative;
+  left: 23.5rem;
+  bottom: 0.5rem;
+  background-color: transparent;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 600;
+  color: #5a5a5a;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}

@@ -5,6 +5,7 @@ import "./styles.css";
 import { ReactComponent as TrammyLogo } from "../../assets/logo/tramy_logo.svg";
 import { ReactComponent as BlackTrammyLogo } from "../../assets/logo/black_trammy_logo.svg";
 import TrammyLoginWallpaper from "../../assets/img/trammy_login_wallpaper.svg";
+import Button from "../UI/Button";
 
 function Login({ setToken }) {
   const {
@@ -84,7 +85,8 @@ function Login({ setToken }) {
           {errors.password && (
             <span role="alert">{errors.password.message}</span>
           )}
-          <button type="submit">Inicia Sesión</button>
+
+          <Button content={"Iniciar Sesión"} backgroundColor={"#109cf1"} />
         </form>
       </section>
       <section className="login__welcome">

@@ -47,10 +47,6 @@
   fill: #9a9a9a;
 }
 
-.business-form button:disabled {
-  margin: auto;
-  padding: 0.5rem 1.5em;
-  outline: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.8rem;
+.business-form button {
+  margin: 0 auto;
 }

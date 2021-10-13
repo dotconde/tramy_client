@@ -5,7 +5,7 @@ function Usage() {
   return (
     <div className="usage">
       <div className="usage__accordion">
-        {/* First step: See new messages */}
+        {/* First step: Clients */}
         <div className="step">
           <input type="radio" id="rd1" name="rd" />
           <label className="step__title" htmlFor="rd1">
@@ -20,11 +20,11 @@ function Usage() {
                 Ve al apartado de <b>Chat.</b>
               </li>
               <li>Haz click en el nombre de tu cliente.</li>
-              <li>¡Listo! El mensaje llegará inmediatamente a su móvil</li>
+              <li>¡Listo! El mensaje llegará inmediatamente a su móvil</li>.
             </ol>
           </div>
         </div>
-        {/* Second step: Your first pipeline */}
+        {/* Second step: Client list */}
         <div className="step">
           <input type="radio" id="rd2" name="rd" />
           <label className="step__title" htmlFor="rd2">
@@ -37,15 +37,32 @@ function Usage() {
             </p>
             <ol>
               <li>
-                Ve al apartado <b>Clientes</b>
+                Ve al apartado <b>Clientes</b>.
               </li>
             </ol>
           </div>
         </div>
-        {/* Third step: Setup */}
+        {/* Third step: Funnel */}
         <div className="step">
           <input type="radio" id="rd3" name="rd" />
           <label className="step__title" htmlFor="rd3">
+            🕹 &nbsp; Embudo de ventas
+          </label>
+          <div className="step__content">
+            <p>Actualiza la etapa de tus clientes deslizando entre columnas.</p>
+            <ol>
+              <li>
+                Ve al apartado <b>Embudo</b>.
+              </li>
+              <li>Selecciona un cliente y deslizalo.</li>
+              <li>¡Listo! La etapa fue actualizada.</li>
+            </ol>
+          </div>
+        </div>
+        {/* Fourth step: Setup */}
+        <div className="step">
+          <input type="radio" id="rd4" name="rd" />
+          <label className="step__title" htmlFor="rd4">
             🛠 &nbsp; Configuración
           </label>
           <div className="step__content">
@@ -54,7 +71,7 @@ function Usage() {
             </p>
             <ol>
               <li>
-                Ve al apartado <b>Configuracion</b>
+                Ve al apartado <b>Configuracion</b>.
               </li>
               <li>
                 En <b>Mi perfil</b> podrás actualizar tus datos.
