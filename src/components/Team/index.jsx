@@ -46,29 +46,3 @@ function Team() {
 }
 
 export default Team;
-
-// TODO: Add the following button to team__options
-{
-  /* <Button
-  icon={<AddUserIcon />}
-  iconColor={"white"}
-  content={"Añadir Usuario"}
-  backgroundColor={"#109CF1"}
-  contentColor={"white"}
-  borderColor={"transparent"}
-/>; */
-}
-
-// TODO: Add "acciones" to table as new column
-// "Acciones"
-
-// TODO: Pass the following value to Table's prop tools
-// tools={[<PencilIcon />, <TrashIcon />]}
-
-// TODO: Add team actions (Endpoint required!)
-
-// TODO: Add the following imports when actions are implemented
-// import Button from "../UI/Button";
-// import { ReactComponent as PencilIcon } from "../../assets/icons/pencil.svg";
-// import { ReactComponent as TrashIcon } from "../../assets/icons/trash.svg";
-// import { ReactComponent as AddUserIcon } from "../../assets/icons/add-user.svg";
