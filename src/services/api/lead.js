@@ -10,3 +10,8 @@ export const getLead = (leadId, config) =>
   api
     .get(`/${ENDPOINTS.LEAD}/${leadId}`, config)
     .then((response) => response.data);
+
+export const getLeads = (config, query = "") =>
+  api
+    .get(`${ENDPOINTS.LEAD}${query}`, config)
+    .then((response) => response.data);
