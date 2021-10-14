@@ -45,10 +45,8 @@ function Clients() {
         value={filter}
         onChange={(event) => setFilter(event.target.value)}
         placeholder={"Buscar cliente por nombre, teléfono o email"}
-        borderColor={"1px solid #dfdfdf"}
       />
 
-      <div className="clients__options"></div>
       <ClientTable
         headers={tableHeaders}
         data={leadList}

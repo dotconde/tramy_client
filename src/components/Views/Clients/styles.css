@@ -1,18 +1,5 @@
 .clients {
   display: block;
-  background-color: #f5f5f5;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 2rem;
-}
-
-.clients .clients__options {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.5rem 2rem;
-}
-
-.clients button {
-  margin: 1.05rem 0;
+  margin: 2rem;
 }
