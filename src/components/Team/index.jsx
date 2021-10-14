@@ -24,6 +24,7 @@ function Team() {
       await fetchTeam();
     }
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
