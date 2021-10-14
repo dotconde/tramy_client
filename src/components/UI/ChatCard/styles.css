@@ -1,6 +1,6 @@
 .chat-card {
   display: grid;
-  grid-template-columns: 2.8rem 14rem 4rem;
+  grid-template-columns: 2.8rem 14.5rem 4rem;
   padding: 1rem;
   border-bottom: 1px solid rgb(167, 167, 167, 0.25);
   cursor: pointer;
@@ -16,7 +16,7 @@
 
 .chat-card__info {
   display: block;
-  padding-left: 0.7rem;
+  padding-left: 0.8rem;
 }
 
 .chat-card__time {
@@ -41,7 +41,7 @@
 
 .chat-card__info h2,
 .chat-card__info h3 {
-  width: 13.3rem;
+  width: 13.85rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -67,18 +67,14 @@
   text-overflow: ellipsis;
   border: 1px solid #8a8a8a;
   color: #8a8a8a;
+  width: 6.05rem;
   border-radius: 0.3rem;
   padding: 0.2rem;
   font-size: 0.7rem;
 }
 
 .chat-card__info .agent {
-  width: 7rem;
   margin-right: 0.5rem;
-}
-
-.chat-card__info .funnel-stage {
-  width: 4.75rem;
 }
 
 /* End Tags */

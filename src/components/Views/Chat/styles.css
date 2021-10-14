@@ -1,6 +1,6 @@
 .chat {
   display: grid;
-  grid-template-columns: 2fr 4.5fr;
+  grid-template-columns: 23.3rem 1fr;
   font-family: "Poppins", sans-serif;
   background-color: white;
 }
@@ -15,15 +15,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 7.75rem;
-  padding: 0 0.8rem;
+  height: 7.5rem;
+  margin: 0 1rem;
 }
 
-.chat__list-options input {
-  font-size: 0.7rem;
-}
-
-.chat__list-options .chat__list-filter {
+/* .chat__list-options .chat__list-filter {
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   color: #6a707e;
@@ -37,12 +33,12 @@
   border: 0;
   outline: 0;
   padding: 0 0.3rem 0 0.2rem;
-}
+} */
 
 .chat__list-contacts {
   border-top: 1px solid rgb(167, 167, 167, 0.25);
   overflow-y: auto;
-  height: calc(100vh - 7.9rem);
+  height: calc(100vh - 7.5rem);
 }
 
 /* Chat Welcome */
@@ -66,5 +62,6 @@
 }
 
 .chat__welcome img {
+  padding: 0 1.5rem;
   width: 38rem;
 }
