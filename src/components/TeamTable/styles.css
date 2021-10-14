@@ -8,6 +8,7 @@
   width: 100%;
   background-color: #ffffff;
   border-collapse: collapse;
+  border-radius: 0.3rem;
 }
 
 .team-table thead[className="categories"] tr > th {

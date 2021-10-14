@@ -1,6 +1,6 @@
 .client-wrapper {
-  margin: 0 2rem;
-  height: calc(100vh - 100px);
+  margin-top: 1rem;
+  height: calc(100vh - 118px);
   overflow: auto;
 }
 
@@ -8,6 +8,7 @@
   width: 100%;
   background-color: #ffffff;
   border-collapse: collapse;
+  border-radius: 0.3rem;
 }
 
 .client-table thead[className="categories"] tr > th {
@@ -34,6 +35,10 @@
   border-bottom: 1px solid rgb(167, 167, 167, 0.25);
 }
 
+.client-table .tools {
+  text-align: center;
+}
+
 .tools svg {
   padding-right: 0.5rem;
   width: 1rem;
@@ -43,7 +48,6 @@
 
 .tools svg:hover {
   fill: #2a97d9;
-  cursor: pointer;
 }
 
 .close-button {

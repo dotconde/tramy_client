@@ -1,5 +1,5 @@
 .feed {
-  margin: 2rem 3rem;
+  margin: 2rem;
   color: #5a5a5a;
 }
 
@@ -30,9 +30,9 @@
 /* Feed Blogs */
 .blogs__main-new {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 18.7rem 1fr;
   background-color: #fafafa;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   box-shadow: 0 0.18rem 0.625rem rgb(0 0 0 / 0.2);
   padding: 2rem;
   margin-top: 1.5rem;
@@ -41,8 +41,6 @@
 .main-new__video {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-right: 1.5rem;
 }
 
 .main-new__info {
@@ -50,6 +48,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding-left: 1.5rem;
 }
 
 .main-new__info h2 {
