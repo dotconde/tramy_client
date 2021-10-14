@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.css";
 import Board from "react-trello";
 import Loader from "../UI/Loader";
 import useConfig from "../../hooks/useConfig";
@@ -108,7 +107,7 @@ function Pipeline() {
     <Board
       hideCardDeleteIcon
       data={pipelineToReactTrelloData(currentPipeline)}
-      style={{ backgroundColor: "#f5f5f5" }}
+      style={{ backgroundColor: "#f5f5f5", padding: "1.68rem" }}
       handleDragEnd={handleDragEnd}
     />
   );
