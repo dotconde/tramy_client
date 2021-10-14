@@ -26,6 +26,7 @@ function BusinessDetail() {
       await fetchOrganization();
     }
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return data ? (

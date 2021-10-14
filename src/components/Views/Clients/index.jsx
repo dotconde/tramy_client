@@ -1,75 +1,60 @@
-import React, { useState, useEffect } from "react";
-import { BASE_URL, ENDPOINTS } from "../../../config";
-import useToken from "../../../hooks/useToken";
+import React, { useState } from "react";
+import useConfig from "../../../hooks/useConfig";
 import { tableHeaders } from "../../../constants/client";
-// import Search from "../../UI/Search";
-// import Button from "../../UI/Button";
-// import ClientFilter from "../../ClientFilter";
+import Search from "../../UI/Search";
 import ClientTable from "../../ClientTable";
 import Loader from "../../UI/Loader";
+import { useQuery } from "react-query";
 import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 import { ReactComponent as MessageIcon } from "../../../assets/icons/message.svg";
-// import { ReactComponent as AddUserIcon } from "../../../assets/icons/add-user.svg";
-import axios from "axios";
+import { useDebounce } from "use-debounce";
+import { getLeads } from "../../../services/api/lead";
 import "./styles.css";
 
 function Clients() {
-  const [clients, setClients] = useState(null);
+  const { config } = useConfig();
 
-  const endpoint = `${BASE_URL}/${ENDPOINTS.LEAD}`;
-  const { token } = useToken();
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
-  };
+  const [filter, setFilter] = useState("");
+  const [debouncedFilter] = useDebounce(filter, 1000);
 
-  const fetchClients = () => {
-    axios.get(endpoint, config).then((response) => setClients(response.data));
-  };
-
-  useEffect(() => {
-    async function fetchData() {
-      await fetchClients();
+  // List chats
+  const {
+    data: leadList,
+    isLoading: isLoadingLeadList,
+    isError: isErrorLeadList,
+  } = useQuery(
+    ["leadList", debouncedFilter],
+    async () => getLeads(config, `?query=${debouncedFilter}`),
+    {
+      retry: 3,
     }
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  );
 
-  return clients ? (
+  if (isLoadingLeadList) {
+    return <Loader />;
+  }
+
+  if (isErrorLeadList) {
+    return <p>Ups, parece que algo salió mal ...</p>;
+  }
+
+  return (
     <div className="clients">
-      {/* <Search placeholder={"Buscar por nombre, asesor o estado"} /> */}
-      <div className="clients__options">
-        {/* <ClientFilter
-          placeholder={"Sin filtrar"}
-          agentList={[
-            { name: "Deyvi Conde" },
-            { name: "Diego Montes" },
-            { name: "Renzo Trujillo" },
-          ]}
-          stageList={[
-            { title: "Nuevo lead" },
-            { title: "Atención" },
-            { title: "Conversión" },
-            { title: "Fidelizar" },
-          ]}
-        /> */}
-        {/* <Button
-          icon={<AddUserIcon />}
-          iconColor={"white"}
-          content={"Añadir Cliente"}
-          backgroundColor={"#109CF1"}
-          contentColor={"white"}
-          borderColor={"transparent"}
-        /> */}
-      </div>
+      <Search
+        value={filter}
+        onChange={(event) => setFilter(event.target.value)}
+        placeholder={"Buscar cliente por nombre, teléfono o email"}
+        borderColor={"1px solid #dfdfdf"}
+      />
+
+      <div className="clients__options"></div>
       <ClientTable
         headers={tableHeaders}
-        data={clients}
+        data={leadList}
         tools={[<MessageIcon />, <PencilIcon />, <TrashIcon />]}
       />
     </div>
-  ) : (
-    <Loader />
   );
 }
 

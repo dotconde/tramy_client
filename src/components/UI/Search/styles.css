@@ -9,15 +9,9 @@
 .search__icon {
   width: 1.6rem;
   height: 1.6rem;
-  border-radius: 50%;
   fill: #969696;
   background-color: white;
-  cursor: pointer;
   border: none;
-}
-
-.search__icon:hover {
-  background-color: #ebebeb;
 }
 
 .search__input {
