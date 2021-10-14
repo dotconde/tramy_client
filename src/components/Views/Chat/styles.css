@@ -1,6 +1,6 @@
 .chat {
   display: grid;
-  grid-template-columns: 23.3rem 4.5fr;
+  grid-template-columns: 23.3rem 1fr;
   font-family: "Poppins", sans-serif;
   background-color: white;
 }
