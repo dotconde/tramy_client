@@ -1,6 +1,6 @@
 .chat {
   display: grid;
-  grid-template-columns: 2fr 4.5fr;
+  grid-template-columns: 23.3rem 4.5fr;
   font-family: "Poppins", sans-serif;
   background-color: white;
 }
@@ -8,7 +8,6 @@
 /* Chat List */
 
 .chat__list {
-  width: 23.3rem;
   box-shadow: 5px 0 5px -5px #ccc;
 }
 
