@@ -1,6 +1,5 @@
 .home {
   display: grid;
   grid-template-columns: 2.5fr 1fr;
-  background-color: #f5f5f5;
   font-family: "Poppins", sans-serif;
 }
