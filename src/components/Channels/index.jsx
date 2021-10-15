@@ -31,7 +31,7 @@ function Channels() {
           </h2>
           <SetupCard
             icon={<MessengerIcon />}
-            title={"Facebook Messenger para empresas(Integración Oficial)"}
+            title={"Facebook Messenger para empresas (Integración Oficial)"}
             content={
               "Envía y recibe mensajes de  Facebook Messenger a través de Tramy"
             }
