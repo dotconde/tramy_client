@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .setup-card__description h1 {
