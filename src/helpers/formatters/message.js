@@ -12,15 +12,27 @@ export function renderMessage(messsage) {
       break;
     case "image":
       renderedMessage = (
-        <a href={`${BASE_URL}/retrieve_media/${messsage?.image?.id}`}>
+        <a
+          href={`${BASE_URL}/retrieve_media/${messsage?.image?.id}`}
+          target="_blank"
+          rel="noreferrer"
+          download
+        >
           <img
             src={`${BASE_URL}/retrieve_media/${messsage?.image?.id}`}
             alt="Tramy content"
+            style={{ width: "100%", maxHeight: "350px" }}
           />
         </a>
       );
-    // eslint-disable-next-line no-fallthrough
+      break;
     default:
+      renderedMessage = (
+        <p>
+          {`El siguiente formato será soportado próximamente: `}
+          <b>{`${messsage.type}`}</b>
+        </p>
+      );
       break;
   }
   return renderedMessage;
