@@ -11,26 +11,26 @@ function SetupCard({
   title,
   businessPhone,
   content,
-  conectionStatus = undefined,
+  status = undefined,
 }) {
   let displayStatus;
 
-  switch (conectionStatus) {
-    case "1":
+  switch (status) {
+    case "active":
       displayStatus = (
         <span className="status__active">
           <CheckIcon /> Conectado
         </span>
       );
       break;
-    case "2":
+    case "inactive":
       displayStatus = (
         <span className="status__inactive">
           <CrossIcon /> No conectado
         </span>
       );
       break;
-    case "3":
+    case "coming-soon":
       displayStatus = (
         <span className="status__coming-soon">
           <ClockIcon /> Muy Pronto

@@ -15,7 +15,7 @@ function Channels() {
             icon={<WhatsappIcon />}
             title={"WhatsApp Business (Integración Oficial)"}
             content={"Envía y recibe mensajes de WhatsApp a través de Tramy"}
-            conectionStatus={"1"}
+            status={"active"}
           />
           <h1>Próximamente</h1>
           <h2>
@@ -35,7 +35,7 @@ function Channels() {
             content={
               "Envía y recibe mensajes de  Facebook Messenger a través de Tramy"
             }
-            conectionStatus={"3"}
+            status={"coming-soon"}
           />
         </section>
         {/* <section className="templates">
