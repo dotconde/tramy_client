@@ -15,7 +15,7 @@ function Button({
     <button
       disabled={disabled}
       type="submit"
-      className="trammy-button"
+      className="tramy-button"
       style={{
         backgroundColor: backgroundColor,
         color: contentColor,
