@@ -8,7 +8,7 @@
 .chat__window-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 7.75rem;
+  height: 7.5rem;
   padding: 0 1.5rem;
 }
 
