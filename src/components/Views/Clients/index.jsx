@@ -28,7 +28,7 @@ function Clients() {
     ["leadList", debouncedFilter],
     async () => getLeads(config, `?query=${debouncedFilter}`),
     {
-      // retry: 3,
+      retry: 3,
     }
   );
 
