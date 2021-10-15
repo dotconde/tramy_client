@@ -4,6 +4,7 @@ import { tableHeaders } from "../../../constants/client";
 import Search from "../../UI/Search";
 import ClientTable from "../../ClientTable";
 import Loader from "../../UI/Loader";
+import ServerError from "../../UI/ServerError";
 import { useQuery } from "react-query";
 import { ReactComponent as PencilIcon } from "../../../assets/icons/pencil.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
@@ -36,7 +37,7 @@ function Clients() {
   }
 
   if (isErrorLeadList) {
-    return <p>Ups, parece que algo salió mal ...</p>;
+    return <ServerError />;
   }
 
   return (

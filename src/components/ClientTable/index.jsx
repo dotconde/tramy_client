@@ -5,7 +5,7 @@ import ClientForm from "../ClientForm";
 import { attendedByFormat } from "../../helpers/formatters/react-trello";
 import "./styles.css";
 
-function ClientTable({ headers, data, tools }) {
+function ClientTable({ headers, data = [], tools }) {
   const [currentLead, setCurrentLead] = useState(undefined);
   const customStyles = {
     content: {

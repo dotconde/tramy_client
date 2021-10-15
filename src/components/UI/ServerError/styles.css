@@ -1,0 +1,30 @@
+.server-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.server-error h1 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 1.5rem 0;
+}
+
+.server-error p {
+  font-size: 0.8rem;
+  margin: 1.5rem 0 0 0;
+}
+
+.server-error button {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  background-color: #109cf1;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
