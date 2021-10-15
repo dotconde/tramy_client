@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import { ReactComponent as CheckIcon } from "../../../assets/icons/check.svg";
 import { ReactComponent as CrossIcon } from "../../../assets/icons/cross.svg";
+import { ReactComponent as ClockIcon } from "../../../assets/icons/clock.svg";
 // import { ReactComponent as SetupIcon } from "../../../assets/icons/setup.svg";
 // import Button from "../Button";
 
@@ -15,17 +16,24 @@ function SetupCard({
   let displayStatus;
 
   switch (conectionStatus) {
-    case true:
+    case "1":
       displayStatus = (
-        <span className="status-active">
+        <span className="status__active">
           <CheckIcon /> Conectado
         </span>
       );
       break;
-    case false:
+    case "2":
       displayStatus = (
-        <span className="status-inactive">
+        <span className="status__inactive">
           <CrossIcon /> No conectado
+        </span>
+      );
+      break;
+    case "3":
+      displayStatus = (
+        <span className="status__coming-soon">
+          <ClockIcon /> Muy Pronto
         </span>
       );
       break;

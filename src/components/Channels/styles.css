@@ -4,6 +4,7 @@
   justify-content: space-between;
   font-family: "Poppins", sans-serif;
   height: 100%;
+  color: #5a5a5a;
 }
 
 .channels__content {
@@ -12,11 +13,21 @@
   align-items: center;
 }
 
-.channels__content h4 {
+.channels__content h1 {
   display: flex;
   justify-content: flex-start;
   font-weight: 500;
   font-size: 1.25rem;
-  color: #5a5a5a;
-  margin: 2rem 0 1rem 0;
+  margin: 2rem 0 0 0;
+}
+
+.channels__content h2 {
+  text-align: start;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0.5rem 0 0 0;
+}
+
+.channels__content a {
+  color: #109cf1;
 }
