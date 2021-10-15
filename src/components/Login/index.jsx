@@ -2,9 +2,9 @@ import { BASE_URL, ENDPOINTS } from "../../config";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./styles.css";
-import { ReactComponent as TrammyLogo } from "../../assets/logo/tramy_logo.svg";
-import { ReactComponent as BlackTrammyLogo } from "../../assets/logo/black_trammy_logo.svg";
-import TrammyLoginWallpaper from "../../assets/img/trammy_login_wallpaper.svg";
+import { ReactComponent as TramyLogo } from "../../assets/logo/tramy_logo.svg";
+import { ReactComponent as BlackTramyLogo } from "../../assets/logo/black_tramy_logo.svg";
+import TramyLoginWallpaper from "../../assets/img/tramy_login_wallpaper.svg";
 import Button from "../UI/Button";
 
 function Login({ setToken }) {
@@ -39,7 +39,7 @@ function Login({ setToken }) {
   return (
     <div className="login">
       <section className="login__form">
-        <TrammyLogo />
+        <TramyLogo />
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Email */}
           <label htmlFor="email">Email</label>
@@ -91,9 +91,9 @@ function Login({ setToken }) {
       </section>
       <section className="login__welcome">
         <p>
-          Bienvenidos a&nbsp; <BlackTrammyLogo />
+          Bienvenidos a&nbsp; <BlackTramyLogo />
         </p>
-        <img src={TrammyLoginWallpaper} alt="imagen de fondo de Trammy" />
+        <img src={TramyLoginWallpaper} alt="imagen de fondo de Tramy" />
       </section>
     </div>
   );

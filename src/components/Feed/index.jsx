@@ -1,8 +1,8 @@
 import React from "react";
 import "./styles.css";
-import TrammyNews1 from "../../assets/img/trammy_news_1.svg";
-import TrammyNews2 from "../../assets/img/trammy_news_2.svg";
-import TrammyNews3 from "../../assets/img/trammy_news_3.svg";
+import TramyNews1 from "../../assets/img/tramy_news_1.svg";
+import TramyNews2 from "../../assets/img/tramy_news_2.svg";
+import TramyNews3 from "../../assets/img/tramy_news_3.svg";
 import PostCard from "../UI/PostCard";
 import { getProfile } from "../../services/api/profile";
 import { useQuery } from "react-query";
@@ -62,19 +62,19 @@ function Feed({ firstName = "Deyvi" }) {
           <h3>Últimas publicaciones</h3>
           <div className="flex-container">
             <PostCard
-              image={TrammyNews1}
+              image={TramyNews1}
               title={"¿Qué es el comercio conversacional?"}
               link={"https://tramy.substack.com/p/comercio-conversacional"}
             />
             <PostCard
-              image={TrammyNews2}
+              image={TramyNews2}
               title={
                 "Cuatro pasos para integrar la API de WhatsApp a tu negocio"
               }
               link={"https://tramy.substack.com/p/intregar-api-whatsapp"}
             />
             <PostCard
-              image={TrammyNews3}
+              image={TramyNews3}
               title={"Razones para apostar por el comercio conversacional"}
               link={"https://tramy.substack.com/p/tramy"}
             />

@@ -7,8 +7,8 @@ import ChatCard from "../../UI/ChatCard";
 import ServerError from "../../UI/ServerError";
 import Loader from "../../UI/Loader";
 import ChatWindow from "../../ChatWindow";
-import { ReactComponent as BlackTrammyLogo } from "../../../assets/logo/black_trammy_logo.svg";
-import WelcomeWallpaper from "../../../assets/img/trammy_chat_wallpaper.svg";
+import { ReactComponent as BlackTramyLogo } from "../../../assets/logo/black_tramy_logo.svg";
+import WelcomeWallpaper from "../../../assets/img/tramy_chat_wallpaper.svg";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { useDebounce } from "use-debounce";
 import useToken from "../../../hooks/useToken";
@@ -146,9 +146,9 @@ function Chat() {
       {chatList && !currentChat && !isLoadingCurrentChat ? (
         <div className="chat__welcome">
           <p>
-            Mantente conectado en&nbsp; <BlackTrammyLogo />
+            Mantente conectado en&nbsp; <BlackTramyLogo />
           </p>
-          <img src={WelcomeWallpaper} alt="Trammy wallpaper" />
+          <img src={WelcomeWallpaper} alt="Tramy wallpaper" />
         </div>
       ) : (
         <ChatWindow
