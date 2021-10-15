@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import "./styles.css";
 import Search from "../../UI/Search";
 import ChatCard from "../../UI/ChatCard";
+import ServerError from "../../UI/ServerError";
 import Loader from "../../UI/Loader";
 import ChatWindow from "../../ChatWindow";
 import { ReactComponent as BlackTrammyLogo } from "../../../assets/logo/black_trammy_logo.svg";
@@ -96,7 +97,7 @@ function Chat() {
   }
 
   if (isErrorChatList) {
-    return <p>Ups, parece que algo salió mal ...</p>;
+    return <ServerError />;
   }
 
   return (
