@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import { ReactComponent as CheckIcon } from "../../../assets/icons/check.svg";
 import { ReactComponent as CrossIcon } from "../../../assets/icons/cross.svg";
+import { ReactComponent as ClockIcon } from "../../../assets/icons/clock.svg";
 // import { ReactComponent as SetupIcon } from "../../../assets/icons/setup.svg";
 // import Button from "../Button";
 
@@ -10,22 +11,29 @@ function SetupCard({
   title,
   businessPhone,
   content,
-  conectionStatus = undefined,
+  status = undefined,
 }) {
   let displayStatus;
 
-  switch (conectionStatus) {
-    case true:
+  switch (status) {
+    case "active":
       displayStatus = (
-        <span className="status-active">
+        <span className="status__active">
           <CheckIcon /> Conectado
         </span>
       );
       break;
-    case false:
+    case "inactive":
       displayStatus = (
-        <span className="status-inactive">
+        <span className="status__inactive">
           <CrossIcon /> No conectado
+        </span>
+      );
+      break;
+    case "coming-soon":
+      displayStatus = (
+        <span className="status__coming-soon">
+          <ClockIcon /> Muy Pronto
         </span>
       );
       break;

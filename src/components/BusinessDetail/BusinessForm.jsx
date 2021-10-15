@@ -4,7 +4,7 @@ import useToken from "../../hooks/useToken";
 import humps from "humps";
 import axios from "axios";
 import { ReactComponent as BusinessIcon } from "../../assets/icons/business.svg";
-import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp-v2.svg";
+import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp.svg";
 import { ReactComponent as LocationIcon } from "../../assets/icons/location.svg";
 import { ReactComponent as WebsiteIcon } from "../../assets/icons/world-wide-web.svg";
 import "./BusinessForm.css";
