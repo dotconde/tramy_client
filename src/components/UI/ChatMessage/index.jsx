@@ -6,6 +6,7 @@ import { ReactComponent as ReadIcon } from "../../../assets/icons/double-check.s
 import { ReactComponent as FailedIcon } from "../../../assets/icons/exclamation.svg";
 import { ReactComponent as DeletedIcon } from "../../../assets/icons/stop.svg";
 import { validateEmail } from "../../../helpers/validators/email";
+import { renderMessage } from "../../../helpers/formatters/message";
 
 function ChatMessage({ messageData }) {
   let displayStatus;
@@ -48,6 +49,7 @@ function ChatMessage({ messageData }) {
       break;
     // no default
   }
+
   return (
     <div
       className="chat-message"
@@ -65,7 +67,7 @@ function ChatMessage({ messageData }) {
             : "white",
         }}
       >
-        <p>{messageData?.text?.body}</p>
+        {renderMessage(messageData)}
         <div className="chat-message__data">
           <span>
             {moment.unix(messageData?.timestamp).format("DD/MM/YYYY hh:mm a")}
