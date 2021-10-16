@@ -24,11 +24,13 @@ function BlobImage({ imageId }) {
   }
 
   return (
-    <img
-      alt="Contenido de Whatsapp by Tramy"
-      src={blob}
-      style={{ width: "100%", maxHeight: "350px" }}
-    />
+    <a href={blob} target="_blank" rel="noreferrer" download>
+      <img
+        alt="Contenido de Whatsapp by Tramy"
+        src={blob}
+        style={{ width: "100%", maxHeight: "350px" }}
+      />
+    </a>
   );
 }
 
