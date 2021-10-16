@@ -68,7 +68,6 @@ function ChatMessage({ messageData }) {
         }}
       >
         {renderMessage(messageData)}
-        {/* {JSON.stringify(messageData)} */}
         <div className="chat-message__data">
           <span>
             {moment.unix(messageData?.timestamp).format("DD/MM/YYYY hh:mm a")}

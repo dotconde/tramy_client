@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BASE_URL } from "../../../config";
 import useToken from "../../../hooks/useToken";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function BlobImage({ imageId }) {
   const { token } = useToken();
@@ -25,8 +26,8 @@ function BlobImage({ imageId }) {
 
   return (
     <a href={blob} target="_blank" rel="noreferrer" download>
-      <img
-        alt="Contenido de Whatsapp by Tramy"
+      <LazyLoadImage
+        alt={"Contenido de Whatsapp by Tramy"}
         src={blob}
         style={{ width: "100%", maxHeight: "350px" }}
       />
