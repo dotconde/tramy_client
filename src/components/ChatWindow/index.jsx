@@ -18,6 +18,8 @@ import "emoji-mart/css/emoji-mart.css";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
+import Modal from "react-modal";
+import TemplatePanel from "../TemplatePanel";
 
 import "./styles.css";
 
@@ -28,6 +30,22 @@ function ChatWindow({
   pushMessage,
   isLoadingDeliveryMessage,
 }) {
+  // Handle template modal
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCloseModal = () => setIsOpen(false);
+
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+
   // Wrap chat attributes
   const attributes = currentChat?.attributes;
 
@@ -112,13 +130,20 @@ function ChatWindow({
     }
   }
 
-  const { data: templates } = useQuery("templates", async () =>
-    getTemplates(config)
+  const { data: templates, refetch: refetchTemplates } = useQuery(
+    "templates",
+    async () => getTemplates(config),
+    {
+      enabled: false,
+      retry: 3,
+      staleTime: 1000 * 60 * 60 * 24, // 24 hours
+    }
   );
 
   // Function: Load templates
-  function loadTemplates() {
-    console.log(templates);
+  function handleTemplateClick() {
+    refetchTemplates();
+    setIsOpen(true);
   }
 
   return (
@@ -170,6 +195,18 @@ function ChatWindow({
         ></div>
       </section>
 
+      <Modal
+        onRequestClose={handleCloseModal}
+        isOpen={isOpen}
+        style={customStyles}
+        ariaHideApp={false}
+      >
+        <button className="close-button" onClick={handleCloseModal}>
+          X
+        </button>
+        <TemplatePanel data={templates} setIsOpen={setIsOpen} />
+      </Modal>
+
       {/* Chat Input Box */}
       <section className="chat__window-textbox">
         <button onClick={() => setShowEmojis(!showEmojis)}>
@@ -197,7 +234,7 @@ function ChatWindow({
           </div>
         )}
         <div className="message-write">
-          <button onClick={loadTemplates}>
+          <button onClick={handleTemplateClick}>
             <TemplateIcon />
           </button>
 
