@@ -8,7 +8,7 @@ import {
 import { tramySelectStyles } from "../../constants/select";
 import { getPipelines } from "../../services/api/pipeline";
 import { getAccounts } from "../../services/api/account";
-import { updateChat } from "../../services/api/chat";
+import { getTemplates, updateChat } from "../../services/api/chat";
 import { updateLead } from "../../services/api/lead";
 import ChatMessage from "../UI/ChatMessage";
 import ClientAvatar from "../ClientAvatar";
@@ -17,6 +17,7 @@ import { Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
+import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
 
 import "./styles.css";
 
@@ -56,8 +57,12 @@ function ChatWindow({
     value: attributes?.current_stage?.id,
   };
 
-  const { data: pipelines } = useQuery("pipelines", async () =>
-    getPipelines(config)
+  const { data: pipelines } = useQuery(
+    "pipelines",
+    async () => getPipelines(config),
+    {
+      staleTime: 1000 * 60 * 60 * 24, // 24 hours
+    }
   );
 
   const { mutate: mutateLead } = useMutation(async (selectedOption) =>
@@ -75,8 +80,12 @@ function ChatWindow({
     value: attributes?.attended_by?.id,
   };
 
-  const { data: accounts } = useQuery("accounts", async () =>
-    getAccounts(config)
+  const { data: accounts } = useQuery(
+    "accounts",
+    async () => getAccounts(config),
+    {
+      staleTime: 1000 * 60 * 60 * 24, // 24 hours
+    }
   );
 
   const { mutate: mutateChat } = useMutation(async (selectedOption) =>
@@ -101,6 +110,15 @@ function ChatWindow({
     if (event.key === "Enter" && inputMessage) {
       pushMessage();
     }
+  }
+
+  const { data: templates } = useQuery("templates", async () =>
+    getTemplates(config)
+  );
+
+  // Function: Load templates
+  function loadTemplates() {
+    console.log(templates);
   }
 
   return (
@@ -179,6 +197,10 @@ function ChatWindow({
           </div>
         )}
         <div className="message-write">
+          <button onClick={loadTemplates}>
+            <TemplateIcon />
+          </button>
+
           <input
             type="text"
             placeholder="Escribir mensaje..."
@@ -199,16 +221,10 @@ export default ChatWindow;
 
 // Pending imports
 
-// import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
 // import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 // import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
 // import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
 // import Button from "../UI/Button";
-
-// Button for templates:
-//<button>
-//  <TemplateIcon />
-//</button>;
 
 // Button for notes:
 // <Button

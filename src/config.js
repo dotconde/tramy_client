@@ -19,6 +19,7 @@ const ENDPOINTS = {
   CHAT_ASSIGNED_TO_ME: "chats_assigned_to_me",
   CHAT_NOT_ASSIGNED: "chats_not_assigned",
   PIPELINE: "pipelines",
+  TEMPLATE: "templates",
 };
 
 export { BASE_URL, ENDPOINTS };
