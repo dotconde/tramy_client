@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import TemplateForm from "../TemplateForm";
 import { v4 as uuidv4 } from "uuid";
 
-function TemplatePanel({ data }) {
-  const [currentTemplate, setCurrentTemplate] = useState(
-    "Seleccione plantilla"
-  );
+function TemplatePanel({ chatId, data, setIsOpen }) {
+  const [selectedTemplate, setSelectedTemplate] = useState(undefined);
 
   // Handle current template
   const handleTemplate = (template) => {
-    setCurrentTemplate(template);
+    setSelectedTemplate(template);
   };
+
   return (
     <div style={{ display: "grid", gridTemplateColumns: "16rem 1fr" }}>
       <ul>
@@ -33,7 +32,11 @@ function TemplatePanel({ data }) {
             </li>
           ))}
       </ul>
-      <TemplateForm templateData={currentTemplate} />
+      <TemplateForm
+        chatId={chatId}
+        template={selectedTemplate}
+        setIsOpen={setIsOpen}
+      />
     </div>
   );
 }

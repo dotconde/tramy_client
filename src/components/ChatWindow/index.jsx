@@ -204,7 +204,7 @@ function ChatWindow({
         <button className="close-button" onClick={handleCloseModal}>
           X
         </button>
-        <TemplatePanel data={templates} setIsOpen={setIsOpen} />
+        <TemplatePanel chatId={chatId} data={templates} setIsOpen={setIsOpen} />
       </Modal>
 
       {/* Chat Input Box */}
