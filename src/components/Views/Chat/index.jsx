@@ -127,7 +127,10 @@ function Chat() {
             <ChatCard
               key={uuidv4()}
               clientFullName={chatCard?.attributes?.lead?.name}
-              messagePreview={chatCard?.attributes?.last_message?.text?.body}
+              messagePreview={
+                chatCard?.attributes?.last_message?.text?.body ||
+                chatCard?.attributes?.last_message?.template?.body
+              }
               agentFullName={chatCard?.attributes?.attended_by?.first_name}
               stageName={chatCard?.attributes?.current_stage?.name}
               stageColor={""}
