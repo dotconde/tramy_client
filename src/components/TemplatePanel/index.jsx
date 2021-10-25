@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TemplateForm from "../TemplateForm";
 import { v4 as uuidv4 } from "uuid";
+// import Search from "../UI/Search";
+import "./styles.css";
 
 function TemplatePanel({ chatId, data, setIsOpen }) {
   const [selectedTemplate, setSelectedTemplate] = useState(undefined);
@@ -11,27 +13,31 @@ function TemplatePanel({ chatId, data, setIsOpen }) {
   };
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "16rem 1fr" }}>
-      <ul>
-        {data?.waba_templates
-          .filter(
-            (template) =>
-              template.components.length <= 1 && template.status === "approved"
-          )
-          .map((template) => (
-            <li
-              key={uuidv4()}
-              style={{ cursor: "pointer" }}
-              onClick={async () => handleTemplate(template)}
-            >
-              {
-                template.components.filter(
-                  (component) => component.type === "BODY"
-                )[0].text
-              }
-            </li>
-          ))}
-      </ul>
+    <div className="template-panel">
+      <div className="template-list">
+        {/* <Search placeholder={"Buscar plantilla"} margin={"1rem"} /> */}
+        <ul>
+          {data?.waba_templates
+            .filter(
+              (template) =>
+                template.components.length <= 1 &&
+                template.status === "approved"
+            )
+            .map((template) => (
+              <li
+                key={uuidv4()}
+                style={{ cursor: "pointer" }}
+                onClick={async () => handleTemplate(template)}
+              >
+                {
+                  template.components.filter(
+                    (component) => component.type === "BODY"
+                  )[0].text
+                }
+              </li>
+            ))}
+        </ul>
+      </div>
       <TemplateForm
         chatId={chatId}
         template={selectedTemplate}
