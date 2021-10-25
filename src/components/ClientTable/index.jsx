@@ -15,6 +15,9 @@ function ClientTable({ headers, data = [], tools }) {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      padding: "0",
+      border: "none",
+      boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
     },
   };
 
@@ -60,9 +63,15 @@ function ClientTable({ headers, data = [], tools }) {
             style={customStyles}
             ariaHideApp={false}
           >
-            <button className="close-button" onClick={handleCloseModal}>
-              X
-            </button>
+            <div className="client__modal-header">
+              <h1>Editar cliente</h1>
+              <button
+                className="client__close-button"
+                onClick={handleCloseModal}
+              >
+                X
+              </button>
+            </div>
             <ClientForm data={currentLead} setIsOpen={setIsOpen} />
           </Modal>
         </tbody>

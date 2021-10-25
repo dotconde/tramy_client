@@ -1,7 +1,7 @@
 .client-form {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
 }
@@ -29,8 +29,4 @@
   color: #9a9a9a;
   font-weight: 500;
   padding-bottom: 0.5rem;
-}
-
-.client-form button {
-  margin: 0 auto;
 }
