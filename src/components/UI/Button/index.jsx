@@ -9,6 +9,7 @@ function Button({
   contentColor = "white",
   borderColor = "transparent",
   borderRadius,
+  margin,
   iconColor,
 }) {
   return (
@@ -21,6 +22,7 @@ function Button({
         color: contentColor,
         borderColor: borderColor,
         borderRadius: borderRadius,
+        margin: margin,
       }}
     >
       <span

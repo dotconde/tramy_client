@@ -133,6 +133,7 @@ export function BusinessForm({ preloadedValues }) {
         contentColor={"#5a5a5a"}
         backgroundColor={"#e5e5e5"}
         borderRadius={"0.3rem"}
+        margin={"0 auto"}
       />
     </form>
   );
