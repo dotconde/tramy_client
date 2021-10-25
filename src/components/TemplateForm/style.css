@@ -1,0 +1,61 @@
+.template-form__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 1rem 0;
+}
+
+.template-form__container h1 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.template-form__container h2 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #bce9bb;
+  width: 21.5rem;
+}
+
+.template-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.template-form input {
+  outline: none;
+  text-align: center;
+  width: 22rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #dfdfdf;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.3rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+}
+
+/* Template steps */
+
+.template-form__steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.template-form__steps svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #109cf1;
+}
+
+.template-form__steps ol {
+  margin: 0;
+  padding-left: 0.9rem;
+}

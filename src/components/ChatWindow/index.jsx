@@ -8,7 +8,7 @@ import {
 import { tramySelectStyles } from "../../constants/select";
 import { getPipelines } from "../../services/api/pipeline";
 import { getAccounts } from "../../services/api/account";
-import { updateChat } from "../../services/api/chat";
+import { getTemplates, updateChat } from "../../services/api/chat";
 import { updateLead } from "../../services/api/lead";
 import ChatMessage from "../UI/ChatMessage";
 import ClientAvatar from "../ClientAvatar";
@@ -17,6 +17,9 @@ import { Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
+import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
+import Modal from "react-modal";
+import TemplatePanel from "../TemplatePanel";
 
 import "./styles.css";
 
@@ -27,6 +30,28 @@ function ChatWindow({
   pushMessage,
   isLoadingDeliveryMessage,
 }) {
+  // Handle template modal
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCloseModal = () => setIsOpen(false);
+
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      padding: "0",
+      width: "50rem",
+      height: "30rem",
+      overflow: "hidden",
+      border: "none",
+      boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    },
+  };
+
   // Wrap chat attributes
   const attributes = currentChat?.attributes;
 
@@ -56,8 +81,12 @@ function ChatWindow({
     value: attributes?.current_stage?.id,
   };
 
-  const { data: pipelines } = useQuery("pipelines", async () =>
-    getPipelines(config)
+  const { data: pipelines } = useQuery(
+    "pipelines",
+    async () => getPipelines(config),
+    {
+      staleTime: 1000 * 60 * 60 * 24, // 24 hours
+    }
   );
 
   const { mutate: mutateLead } = useMutation(async (selectedOption) =>
@@ -75,8 +104,12 @@ function ChatWindow({
     value: attributes?.attended_by?.id,
   };
 
-  const { data: accounts } = useQuery("accounts", async () =>
-    getAccounts(config)
+  const { data: accounts } = useQuery(
+    "accounts",
+    async () => getAccounts(config),
+    {
+      staleTime: 1000 * 60 * 60 * 24, // 24 hours
+    }
   );
 
   const { mutate: mutateChat } = useMutation(async (selectedOption) =>
@@ -101,6 +134,22 @@ function ChatWindow({
     if (event.key === "Enter" && inputMessage) {
       pushMessage();
     }
+  }
+
+  const { data: templates, refetch: refetchTemplates } = useQuery(
+    "templates",
+    async () => getTemplates(config),
+    {
+      enabled: false,
+      retry: 3,
+      staleTime: 1000 * 60 * 60 * 24, // 24 hours
+    }
+  );
+
+  // Function: Load templates
+  function handleTemplateClick() {
+    refetchTemplates();
+    setIsOpen(true);
   }
 
   return (
@@ -152,6 +201,21 @@ function ChatWindow({
         ></div>
       </section>
 
+      <Modal
+        onRequestClose={handleCloseModal}
+        isOpen={isOpen}
+        style={customStyles}
+        ariaHideApp={false}
+      >
+        <div className="template__modal-header">
+          <h1>Mis plantillas</h1>
+          <button className="template__close-button" onClick={handleCloseModal}>
+            X
+          </button>
+        </div>
+        <TemplatePanel chatId={chatId} data={templates} setIsOpen={setIsOpen} />
+      </Modal>
+
       {/* Chat Input Box */}
       <section className="chat__window-textbox">
         <button onClick={() => setShowEmojis(!showEmojis)}>
@@ -179,6 +243,10 @@ function ChatWindow({
           </div>
         )}
         <div className="message-write">
+          <button onClick={handleTemplateClick}>
+            <TemplateIcon />
+          </button>
+
           <input
             type="text"
             placeholder="Escribir mensaje..."
@@ -199,16 +267,10 @@ export default ChatWindow;
 
 // Pending imports
 
-// import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
 // import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 // import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
 // import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
 // import Button from "../UI/Button";
-
-// Button for templates:
-//<button>
-//  <TemplateIcon />
-//</button>;
 
 // Button for notes:
 // <Button

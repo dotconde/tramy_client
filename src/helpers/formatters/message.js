@@ -13,6 +13,14 @@ export function renderMessage(messsage) {
     case "image":
       renderedMessage = <BlobImage imageId={messsage?.image?.id} />;
       break;
+    case "template":
+      renderedMessage = (
+        <p>
+          <b>➡️ Plantilla: </b>
+          {messsage?.template?.body}
+        </p>
+      );
+      break;
     default:
       renderedMessage = (
         <p>

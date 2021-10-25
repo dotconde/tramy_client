@@ -104,8 +104,9 @@ export function ProfileForm({ preloadedValues }) {
 
       <Button
         content={"Guardar cambios"}
-        backgroundColor={"#131313"}
+        backgroundColor={"#1a1a1a"}
         borderRadius={"0.3rem"}
+        margin={"0 auto"}
       />
     </form>
   );

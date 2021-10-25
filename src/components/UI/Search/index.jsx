@@ -3,9 +3,14 @@ import "./styles.css";
 import { ReactComponent as SearchIcon } from "../../../assets/icons/search.svg";
 import PropTypes from "prop-types";
 
-function Search({ value, onChange, placeholder }) {
+function Search({ value, onChange, placeholder, margin }) {
   return (
-    <div className="search">
+    <div
+      className="search"
+      style={{
+        margin: margin,
+      }}
+    >
       <SearchIcon />
       <input
         type="text"

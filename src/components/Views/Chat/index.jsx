@@ -109,7 +109,6 @@ function Chat() {
             value={filter}
             onChange={(event) => setFilter(event.target.value)}
             placeholder={"Buscar chat por nombre, apellido o teléfono"}
-            borderColor={"1px solid #dfdfdf"}
           />
           {/* <div className="chat__list-filter">
             <label htmlFor="chat__list-filter">Filtro:</label>
@@ -127,7 +126,10 @@ function Chat() {
             <ChatCard
               key={uuidv4()}
               clientFullName={chatCard?.attributes?.lead?.name}
-              messagePreview={chatCard?.attributes?.last_message?.text?.body}
+              messagePreview={
+                chatCard?.attributes?.last_message?.text?.body ||
+                chatCard?.attributes?.last_message?.template?.body
+              }
               agentFullName={chatCard?.attributes?.attended_by?.first_name}
               stageName={chatCard?.attributes?.current_stage?.name}
               stageColor={""}

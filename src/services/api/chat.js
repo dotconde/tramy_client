@@ -19,3 +19,6 @@ export const postMessage = (chatId, data, config) => {
     .patch(`/${ENDPOINTS.CHAT}/${chatId}/new_message`, data, config)
     .then((response) => response.data);
 };
+
+export const getTemplates = (config) =>
+  api.get(`/${ENDPOINTS.TEMPLATE}`, config).then((response) => response.data);
