@@ -109,7 +109,6 @@ function Chat() {
             value={filter}
             onChange={(event) => setFilter(event.target.value)}
             placeholder={"Buscar chat por nombre, apellido o teléfono"}
-            borderColor={"1px solid #dfdfdf"}
           />
           {/* <div className="chat__list-filter">
             <label htmlFor="chat__list-filter">Filtro:</label>
