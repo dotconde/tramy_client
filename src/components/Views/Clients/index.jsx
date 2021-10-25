@@ -45,7 +45,9 @@ function Clients() {
       <Search
         value={filter}
         onChange={(event) => setFilter(event.target.value)}
-        placeholder={"Buscar cliente por nombre, teléfono o email"}
+        placeholder={
+          "Buscar cliente por nombre, teléfono, email o documento de identidad"
+        }
       />
 
       <ClientTable
