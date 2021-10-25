@@ -18,6 +18,7 @@ function ClientForm({ data, setIsOpen }) {
       name: data?.attributes?.name,
       email: data?.attributes?.email,
       phone: data?.attributes?.phone,
+      id_number: data?.attributes?.id_number,
     },
   });
 
@@ -35,6 +36,7 @@ function ClientForm({ data, setIsOpen }) {
 
   return (
     <form className="client-form" onSubmit={handleSubmit(onSubmit)}>
+      {/* Name */}
       <label htmlFor="name">Nombre</label>
       <input
         onChange={(event) => handleChange(event, "name")}
@@ -42,6 +44,8 @@ function ClientForm({ data, setIsOpen }) {
         name="name"
         {...register("name", validateName)}
       />
+
+      {/* Email */}
       <label htmlFor="email">Email</label>
       <input
         onChange={(event) => handleChange(event, "email")}
@@ -49,6 +53,17 @@ function ClientForm({ data, setIsOpen }) {
         name="email"
         {...register("email", validateEmail)}
       />
+
+      {/* ID number */}
+      <label htmlFor="id_number">Documento de identidad</label>
+      <input
+        onChange={(event) => handleChange(event, "id_number")}
+        placeholder="Documento de identidad (Ejm: DNI, CI o RUT)"
+        name="id_number"
+        {...register("id_number")}
+      />
+
+      {/* Phone number (non-editable) */}
       <label htmlFor="phone">Teléfono</label>
       <input
         name="phone"

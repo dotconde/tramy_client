@@ -48,6 +48,7 @@ function ClientTable({ headers, data = [], tools }) {
               </td>
               <td>{row?.attributes?.phone || "-"}</td>
               <td>{row?.attributes?.email || "-"}</td>
+              <td>{row?.attributes?.id_number || "-"}</td>
               <td>{attendedByFormat(row?.attributes?.attended_by)}</td>
               <td>{row?.attributes?.stage?.name || "-"}</td>
               <td>{row?.attributes?.created_at || "-"}</td>
