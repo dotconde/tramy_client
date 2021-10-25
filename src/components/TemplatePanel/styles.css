@@ -1,0 +1,33 @@
+.template-panel {
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  color: #5a5a5a;
+  grid-template-columns: 20rem 30rem;
+  font-size: 0.85rem;
+  padding: 0;
+  height: 26.85rem;
+}
+.template-list {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgb(167, 167, 167, 0.25);
+  overflow-y: scroll;
+}
+
+.template-list h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem;
+}
+
+.template-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  border-top: 1px solid rgb(167, 167, 167, 0.25);
+}
+
+.template-list li {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgb(167, 167, 167, 0.25);
+}

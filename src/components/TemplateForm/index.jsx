@@ -1,7 +1,9 @@
 import React from "react";
+import "./style.css";
 import { useForm } from "react-hook-form";
 import useConfig from "../../hooks/useConfig";
 import Button from "../UI/Button";
+import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
 import { useMutation } from "react-query";
 import { postMessage } from "../../services/api/chat";
 import { templateFieldCounter } from "../../helpers/formatters/template";
@@ -47,12 +49,25 @@ function TemplateForm({ chatId, template, setIsOpen }) {
   };
 
   if (template?.components === undefined) {
-    return <p>Seleccione plantilla</p>;
+    return (
+      <div className="template-form__steps">
+        <TemplateIcon />
+        <h2>¿Cómo usar mis plantillas?</h2>
+        <ol>
+          <li>Seleccione una plantilla</li>
+          <li>Inserte los parámetros para completar el mensaje</li>
+          <li>
+            Haz click en <b>Enviar</b>
+          </li>
+        </ol>
+      </div>
+    );
   }
   return (
-    <div>
-      <p>{template?.components[0]?.text} </p>
-      <form className="client-form" onSubmit={handleSubmit(onSubmit)}>
+    <div className="template-form__container">
+      <h1>Editar plantilla</h1>
+      <h2>{template?.components[0]?.text} </h2>
+      <form className="template-form" onSubmit={handleSubmit(onSubmit)}>
         {Array.apply(null, {
           length: templateFieldCounter(template?.components[0]?.text),
         }).map((_, i) => (
@@ -63,11 +78,11 @@ function TemplateForm({ chatId, template, setIsOpen }) {
             {...register(`${i}`)}
           ></input>
         ))}
-
         <Button
-          content={"Enviar plantilla"}
-          backgroundColor={"#131313"}
+          content={"Enviar"}
+          backgroundColor={"#1a1a1a"}
           borderRadius={"0.3rem"}
+          margin={"0 auto"}
         />
       </form>
     </div>

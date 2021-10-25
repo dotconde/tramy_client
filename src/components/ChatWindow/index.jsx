@@ -43,6 +43,12 @@ function ChatWindow({
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      padding: "0",
+      width: "50rem",
+      height: "30rem",
+      overflow: "hidden",
+      border: "none",
+      boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
     },
   };
 
@@ -201,9 +207,12 @@ function ChatWindow({
         style={customStyles}
         ariaHideApp={false}
       >
-        <button className="close-button" onClick={handleCloseModal}>
-          X
-        </button>
+        <div className="template__modal-header">
+          <h1>Mis plantillas</h1>
+          <button className="template__close-button" onClick={handleCloseModal}>
+            X
+          </button>
+        </div>
         <TemplatePanel chatId={chatId} data={templates} setIsOpen={setIsOpen} />
       </Modal>
 
