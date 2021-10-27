@@ -20,8 +20,8 @@ function TemplatePanel({ chatId, data, setIsOpen }) {
           {data?.waba_templates
             .filter(
               (template) =>
-                template.components.length <= 1 &&
-                template.status === "approved"
+                template.components.length <= 1 && // Standard mode or text-only has only 1 component (called BODY)
+                template.status === "approved" // Status approved-only
             )
             .map((template) => (
               <li
