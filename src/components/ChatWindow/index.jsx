@@ -8,7 +8,7 @@ import {
 import { tramySelectStyles } from "../../constants/select";
 import { getPipelines } from "../../services/api/pipeline";
 import { getAccounts } from "../../services/api/account";
-import { getTemplates, updateChat } from "../../services/api/chat";
+import { getTemplates, updateChat, postMedia } from "../../services/api/chat";
 import { updateLead } from "../../services/api/lead";
 import ChatMessage from "../UI/ChatMessage";
 import ClientAvatar from "../ClientAvatar";
@@ -18,6 +18,7 @@ import "emoji-mart/css/emoji-mart.css";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
+import { ReactComponent as ClipIcon } from "../../assets/icons/clip.svg";
 import Modal from "react-modal";
 import TemplatePanel from "../TemplatePanel";
 
@@ -146,10 +147,18 @@ function ChatWindow({
     }
   );
 
-  // Function: Load templates
+  // Load templates
   function handleTemplateClick() {
     refetchTemplates();
     setIsOpen(true);
+  }
+
+  // Image upload
+  function handleInputUpload(event) {
+    let fileName = event?.target?.files[0];
+    const data = new FormData();
+    data.append("file", fileName);
+    postMedia(chatId, data, config);
   }
 
   return (
@@ -218,6 +227,17 @@ function ChatWindow({
 
       {/* Chat Input Box */}
       <section className="chat__window-textbox">
+        <input
+          id="upload-file"
+          type="file"
+          accept="image/*"
+          onChange={handleInputUpload}
+          style={{ display: "none" }}
+          multiple={false}
+        />
+        <label htmlFor="upload-file">
+          <ClipIcon />
+        </label>
         <button onClick={() => setShowEmojis(!showEmojis)}>
           <EmojiIcon />
         </button>
