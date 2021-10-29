@@ -20,5 +20,18 @@ export const postMessage = (chatId, data, config) => {
     .then((response) => response.data);
 };
 
+export const postMedia = (chatId, data, config) => {
+  const headers = {
+    ...config.headers,
+    "Content-Type": "multipart/form-data",
+  };
+
+  return api
+    .post(`/${ENDPOINTS.CHAT}/${chatId}/upload_file`, data, {
+      headers,
+    })
+    .then((response) => response.data);
+};
+
 export const getTemplates = (config) =>
   api.get(`/${ENDPOINTS.TEMPLATE}`, config).then((response) => response.data);
