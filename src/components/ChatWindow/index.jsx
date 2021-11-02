@@ -8,7 +8,12 @@ import {
 import { tramySelectStyles } from "../../constants/select";
 import { getPipelines } from "../../services/api/pipeline";
 import { getAccounts } from "../../services/api/account";
-import { getTemplates, updateChat, postMedia } from "../../services/api/chat";
+import {
+  getTemplates,
+  updateChat,
+  postMedia,
+  postDocument,
+} from "../../services/api/chat";
 import { updateLead } from "../../services/api/lead";
 import ChatMessage from "../UI/ChatMessage";
 import ClientAvatar from "../ClientAvatar";
@@ -161,6 +166,14 @@ function ChatWindow({
     postMedia(chatId, data, config);
   }
 
+  // Document upload
+  function handleDocumentUpload(event) {
+    let file = event?.target?.files[0];
+    const data = new FormData();
+    data.append("file", file);
+    postDocument(chatId, data, config);
+  }
+
   return (
     <div className="chat__window">
       {/* Chat window header with options */}
@@ -238,6 +251,16 @@ function ChatWindow({
         <label htmlFor="upload-file">
           <ClipIcon />
         </label>
+        {/* Document */}
+        <input
+          id="upload-document"
+          type="file"
+          accept="application/pdf"
+          onChange={handleDocumentUpload}
+          style={{ display: "none" }}
+          multiple={false}
+        />
+        <label htmlFor="upload-document">📁</label>
         <button onClick={() => setShowEmojis(!showEmojis)}>
           <EmojiIcon />
         </button>
