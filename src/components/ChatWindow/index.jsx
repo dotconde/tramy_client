@@ -8,17 +8,23 @@ import {
 import { tramySelectStyles } from "../../constants/select";
 import { getPipelines } from "../../services/api/pipeline";
 import { getAccounts } from "../../services/api/account";
-import { getTemplates, updateChat, postMedia } from "../../services/api/chat";
+import {
+  getTemplates,
+  updateChat,
+  postMedia,
+  postDocument,
+} from "../../services/api/chat";
 import { updateLead } from "../../services/api/lead";
 import ChatMessage from "../UI/ChatMessage";
 import ClientAvatar from "../ClientAvatar";
 import Select from "react-select";
 import { Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
-import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
+import { ReactComponent as SmileIcon } from "../../assets/icons/smile.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
-import { ReactComponent as ClipIcon } from "../../assets/icons/clip.svg";
+import { ReactComponent as PdfIcon } from "../../assets/icons/pdf.svg";
+import { ReactComponent as ImageIcon } from "../../assets/icons/image.svg";
 import Modal from "react-modal";
 import TemplatePanel from "../TemplatePanel";
 
@@ -161,6 +167,14 @@ function ChatWindow({
     postMedia(chatId, data, config);
   }
 
+  // Document upload
+  function handleDocumentUpload(event) {
+    let file = event?.target?.files[0];
+    const data = new FormData();
+    data.append("file", file);
+    postDocument(chatId, data, config);
+  }
+
   return (
     <div className="chat__window">
       {/* Chat window header with options */}
@@ -236,10 +250,22 @@ function ChatWindow({
           multiple={false}
         />
         <label htmlFor="upload-file">
-          <ClipIcon />
+          <ImageIcon />
+        </label>
+        {/* Document */}
+        <input
+          id="upload-document"
+          type="file"
+          accept="application/pdf"
+          onChange={handleDocumentUpload}
+          style={{ display: "none" }}
+          multiple={false}
+        />
+        <label htmlFor="upload-document">
+          <PdfIcon />
         </label>
         <button onClick={() => setShowEmojis(!showEmojis)}>
-          <EmojiIcon />
+          <SmileIcon />
         </button>
         {showEmojis && (
           <div>
