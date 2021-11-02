@@ -20,10 +20,11 @@ import ClientAvatar from "../ClientAvatar";
 import Select from "react-select";
 import { Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
-import { ReactComponent as EmojiIcon } from "../../assets/icons/emoji.svg";
+import { ReactComponent as SmileIcon } from "../../assets/icons/smile.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
-import { ReactComponent as ClipIcon } from "../../assets/icons/clip.svg";
+import { ReactComponent as PdfIcon } from "../../assets/icons/pdf.svg";
+import { ReactComponent as ImageIcon } from "../../assets/icons/image.svg";
 import Modal from "react-modal";
 import TemplatePanel from "../TemplatePanel";
 
@@ -249,7 +250,7 @@ function ChatWindow({
           multiple={false}
         />
         <label htmlFor="upload-file">
-          <ClipIcon />
+          <ImageIcon />
         </label>
         {/* Document */}
         <input
@@ -260,9 +261,11 @@ function ChatWindow({
           style={{ display: "none" }}
           multiple={false}
         />
-        <label htmlFor="upload-document">📁</label>
+        <label htmlFor="upload-document">
+          <PdfIcon />
+        </label>
         <button onClick={() => setShowEmojis(!showEmojis)}>
-          <EmojiIcon />
+          <SmileIcon />
         </button>
         {showEmojis && (
           <div>
