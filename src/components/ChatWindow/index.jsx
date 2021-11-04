@@ -10,6 +10,7 @@ import { getPipelines } from "../../services/api/pipeline";
 import { getAccounts } from "../../services/api/account";
 import {
   getTemplates,
+  getNotes,
   updateChat,
   postMedia,
   postDocument,
@@ -27,6 +28,7 @@ import { ReactComponent as PdfIcon } from "../../assets/icons/pdf.svg";
 import { ReactComponent as ImageIcon } from "../../assets/icons/image.svg";
 import Modal from "react-modal";
 import TemplatePanel from "../TemplatePanel";
+import NotePanel from "../NotePanel";
 
 import "./styles.css";
 
@@ -42,22 +44,16 @@ function ChatWindow({
 
   const handleCloseModal = () => setIsOpen(false);
 
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      padding: "0",
-      width: "50rem",
-      height: "30rem",
-      overflow: "hidden",
-      border: "none",
-      boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-    },
-  };
+  // Handle note modal
+  const [noteIsOpen, setNoteIsOpen] = useState(false);
+
+  const handleNoteModal = () => setNoteIsOpen(false);
+
+  // Load notes
+  function handleNoteList() {
+    refetchNotes();
+    setNoteIsOpen(true);
+  }
 
   // Wrap chat attributes
   const attributes = currentChat?.attributes;
@@ -127,6 +123,16 @@ function ChatWindow({
     mutateChat(selectedOption);
   };
 
+  const { data: notes, refetch: refetchNotes } = useQuery(
+    "notes",
+    async () => getNotes(chatId, config),
+    {
+      enabled: false,
+      retry: 3,
+      staleTime: 1000 * 60 * 60 * 24, // 24 hours
+    }
+  );
+
   // Function: Add emoji to message box
   const appendEmoji = (event) => {
     let sym = event.unified.split("-");
@@ -175,6 +181,23 @@ function ChatWindow({
     postDocument(chatId, data, config);
   }
 
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      padding: "0",
+      width: "50rem",
+      height: "30rem",
+      overflow: "hidden",
+      border: "none",
+      boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    },
+  };
+
   return (
     <div className="chat__window">
       {/* Chat window header with options */}
@@ -207,6 +230,26 @@ function ChatWindow({
               value={stageToDefaultOption}
             />
           </div>
+
+          {/* Notes */}
+          <button onClick={handleNoteList}>📋</button>
+          <Modal
+            onRequestClose={handleNoteModal}
+            isOpen={noteIsOpen}
+            style={customStyles}
+            ariaHideApp={false}
+          >
+            <div className="template__modal-header">
+              <h1>Notas</h1>
+              <button
+                className="template__close-button"
+                onClick={handleNoteModal}
+              >
+                X
+              </button>
+            </div>
+            <NotePanel chatId={chatId} data={notes} />
+          </Modal>
         </div>
       </section>
 
@@ -314,7 +357,6 @@ export default ChatWindow;
 // Pending imports
 
 // import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
-// import { ReactComponent as AgentIcon } from "../../assets/icons/agent.svg";
 // import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
 // import Button from "../UI/Button";
 
