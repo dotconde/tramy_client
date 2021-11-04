@@ -124,7 +124,7 @@ function ChatWindow({
   };
 
   const { data: notes, refetch: refetchNotes } = useQuery(
-    "notes",
+    ["notes", chatId],
     async () => getNotes(chatId, config),
     {
       enabled: false,
@@ -240,7 +240,7 @@ function ChatWindow({
             ariaHideApp={false}
           >
             <div className="template__modal-header">
-              <h1>Notas</h1>
+              <h1>Notas ✏️</h1>
               <button
                 className="template__close-button"
                 onClick={handleNoteModal}
