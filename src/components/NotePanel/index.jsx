@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import moment from "moment";
 import { unixToFriendlyDate } from "../../helpers/formatters/date";
 import { useMutation, useQueryClient } from "react-query";
@@ -10,23 +10,6 @@ function NotePanel({ chatId, data }) {
   const queryClient = useQueryClient();
 
   const { config } = useConfig();
-
-  const [note, setNote] = useState("");
-
-  // Function: Push message with enter key
-  function handleKeyDown(event) {
-    if (event.key === "Enter" && note) {
-      sendNote();
-    }
-  }
-
-  function sendNote() {
-    mutate({ note: note });
-    if (sendingNote) {
-      return "Enviando mensaje ...";
-    }
-    setNote("");
-  }
 
   const { isLoading: sendingNote, mutate } = useMutation(
     async (newNote) => postNote(chatId, newNote, config),
@@ -51,6 +34,35 @@ function NotePanel({ chatId, data }) {
     }
   );
 
+  const [note, setNote] = useState("");
+
+  const hookDiv = useRef(null);
+
+  // Instant scroll down when chat is initialized
+  useEffect(() => {
+    hookDiv?.current?.scrollIntoView({ behavior: "instant" });
+  }, [data]);
+
+  // Smooth scroll down when new message is pushed
+  useEffect(() => {
+    hookDiv?.current?.scrollIntoView({ behavior: "smooth" });
+  }, [sendingNote]);
+
+  // Function: Push message with enter key
+  function handleKeyDown(event) {
+    if (event.key === "Enter" && note) {
+      sendNote();
+    }
+  }
+
+  function sendNote() {
+    mutate({ note: note });
+    if (sendingNote) {
+      return "Enviando mensaje ...";
+    }
+    setNote("");
+  }
+
   if (!data) {
     return <div>Cargando ...</div>;
   }
@@ -60,11 +72,19 @@ function NotePanel({ chatId, data }) {
       <div className="note-message">
         {data["notes"].map((note) => (
           <div className="note-message__box">
-            <p>{note.content} </p>
-            <p>{note.author}</p>
-            <p>{unixToFriendlyDate(note.timestamp)}</p>
+            <p>
+              {note.content} - {note.author} -
+              {unixToFriendlyDate(note.timestamp)}{" "}
+            </p>
           </div>
         ))}
+        <div
+          style={{
+            float: "right",
+            clear: "both",
+          }}
+          ref={hookDiv}
+        ></div>
       </div>
       <input
         type="text"
