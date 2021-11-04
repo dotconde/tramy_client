@@ -48,3 +48,13 @@ export const postDocument = (chatId, data, config) => {
 
 export const getTemplates = (config) =>
   api.get(`/${ENDPOINTS.TEMPLATE}`, config).then((response) => response.data);
+
+export const getNotes = (id, config) =>
+  api
+    .get(`/${ENDPOINTS.CHAT}/${id}/notes`, config)
+    .then((response) => response.data);
+
+export const postNote = (chatId, data, config) =>
+  api
+    .post(`/${ENDPOINTS.CHAT}/${chatId}/notes`, data, config)
+    .then((response) => response.data);
