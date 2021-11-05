@@ -37,7 +37,7 @@ function BlobPdf({ pdfId, filename }) {
         download
         onClick={handlePdfDownload}
       >
-        {filename}
+        <p>{filename}</p>
         <DownloadIcon />
       </a>
     </div>
