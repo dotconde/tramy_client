@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import { unixToFriendlyDate } from "../../helpers/formatters/date";
 import { useMutation, useQueryClient } from "react-query";
@@ -37,21 +37,9 @@ function NotePanel({ chatId, data }) {
 
   const [note, setNote] = useState("");
 
-  const hookDiv = useRef(null);
-
-  // Instant scroll down when chat is initialized
-  useEffect(() => {
-    hookDiv?.current?.scrollIntoView({ behavior: "instant" });
-  }, [data]);
-
-  // Smooth scroll down when new message is pushed
-  useEffect(() => {
-    hookDiv?.current?.scrollIntoView({ behavior: "smooth" });
-  }, [sendingNote]);
-
   // Function: Push message with enter key
   function handleKeyDown(event) {
-    if (event.key === "Enter" && note) {
+    if (event.key === "Enter" && note.length > 0) {
       sendNote();
     }
   }
@@ -72,7 +60,7 @@ function NotePanel({ chatId, data }) {
     <div className="note-panel">
       <div className="new-note">
         <textarea
-          placeholder="Crear nueva nota..."
+          placeholder="Agregar nueva nota ..."
           value={note}
           onChange={(event) => setNote(event.target.value)}
           onKeyDown={handleKeyDown}
@@ -82,24 +70,19 @@ function NotePanel({ chatId, data }) {
         </button>
       </div>
       <div className="note-list">
-        {data["notes"].map((note) => (
-          <div className="note-list__box">
-            <span>
-              <h1>{note.content}</h1>
-              <p>
-                Creado por: <b>{note.author}</b>
-              </p>
-            </span>
-            <h2>{unixToFriendlyDate(note.timestamp)}</h2>
-          </div>
-        ))}
-        <div
-          style={{
-            float: "right",
-            clear: "both",
-          }}
-          ref={hookDiv}
-        ></div>
+        {data["notes"]
+          .map((note) => (
+            <div className="note-list__box">
+              <span>
+                <h1>{note.content}</h1>
+                <p>
+                  Creado por: <b>{note.author}</b>
+                </p>
+              </span>
+              <h2>{unixToFriendlyDate(note.timestamp)}</h2>
+            </div>
+          ))
+          .reverse()}
       </div>
     </div>
   );
