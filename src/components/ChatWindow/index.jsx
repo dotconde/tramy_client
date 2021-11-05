@@ -25,7 +25,8 @@ import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
 import { ReactComponent as SmileIcon } from "../../assets/icons/smile.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
-import { ReactComponent as PdfIcon } from "../../assets/icons/pdf.svg";
+// import { ReactComponent as PdfIcon } from "../../assets/icons/pdf.svg";
+import { ReactComponent as ClipIcon } from "../../assets/icons/clip.svg";
 import { ReactComponent as ImageIcon } from "../../assets/icons/image.svg";
 import Modal from "react-modal";
 import TemplatePanel from "../TemplatePanel";
@@ -287,29 +288,7 @@ function ChatWindow({
 
       {/* Chat Input Box */}
       <section className="chat__window-textbox">
-        <input
-          id="upload-file"
-          type="file"
-          accept="image/*"
-          onChange={handleInputUpload}
-          style={{ display: "none" }}
-          multiple={false}
-        />
-        <label htmlFor="upload-file">
-          <ImageIcon />
-        </label>
-        {/* Document */}
-        <input
-          id="upload-document"
-          type="file"
-          accept="application/pdf"
-          onChange={handleDocumentUpload}
-          style={{ display: "none" }}
-          multiple={false}
-        />
-        <label htmlFor="upload-document">
-          <PdfIcon />
-        </label>
+        {/* Emojies */}
         <button onClick={() => setShowEmojis(!showEmojis)}>
           <SmileIcon />
         </button>
@@ -334,6 +313,33 @@ function ChatWindow({
             />
           </div>
         )}
+
+        {/* Document */}
+        <input
+          id="upload-document"
+          type="file"
+          accept="application/pdf"
+          onChange={handleDocumentUpload}
+          style={{ display: "none" }}
+          multiple={false}
+        />
+        <label htmlFor="upload-document">
+          <ClipIcon />
+        </label>
+
+        {/* Image */}
+        <input
+          id="upload-file"
+          type="file"
+          accept="image/*"
+          onChange={handleInputUpload}
+          style={{ display: "none" }}
+          multiple={false}
+        />
+        <label htmlFor="upload-file">
+          <ImageIcon />
+        </label>
+
         <div className="message-write">
           <button onClick={handleTemplateClick}>
             <TemplateIcon />
@@ -358,17 +364,4 @@ function ChatWindow({
 export default ChatWindow;
 
 // Pending imports
-
 // import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
-// import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
-// import Button from "../UI/Button";
-
-// Button for notes:
-// <Button
-//   icon={<NoteIcon />}
-//   iconColor={"#969696"}
-//   content={"Notas"}
-//   backgroundColor={"white"}
-//   contentColor={"#969696"}
-//   borderColor={"1px solid #dfdfdf"}
-// />
