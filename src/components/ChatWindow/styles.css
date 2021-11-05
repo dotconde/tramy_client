@@ -38,24 +38,32 @@
 
 .chat__window-options {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
+
+/* Notes Button */
+
+.chat__window-options button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.chat__window-options button svg {
+  fill: #b6b6b6;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: 1.4rem 0 0 0.5rem;
+}
+
+/* Selects */
 
 .chat__window-options .select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-left: 1rem;
-}
-
-.chat__window-options .select span {
-  display: flex;
-}
-.chat__window-options .select svg {
-  fill: #5a5a5a;
-  padding-right: 0.5rem;
 }
 
 .chat__window-options .select p {
@@ -66,6 +74,7 @@
   padding-left: 0.1rem;
 }
 
+/* Window messages */
 .chat__window-messages {
   background-image: url(../../assets/img/chatbg.png);
   background-color: #f5ece3;
@@ -76,6 +85,8 @@
   padding: 1rem;
   height: calc(100vh - 18rem);
 }
+
+/* Texbox */
 
 .chat__window-textbox {
   height: 8.25rem;

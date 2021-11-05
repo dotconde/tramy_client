@@ -11,8 +11,9 @@
 }
 
 .download-pdf {
-  display: flex;
-  align-items: center;
+  width: calc(100% - 3.05rem);
+  display: grid;
+  grid-template-columns: 1fr 2.25rem;
   cursor: pointer;
 }
 
@@ -25,4 +26,11 @@
   height: 1.25rem;
   fill: #555555;
   padding-left: 1rem;
+  margin: auto 0;
+}
+
+.download-pdf p {
+  max-width: 100%;
+  min-width: 4rem;
+  word-wrap: break-word;
 }

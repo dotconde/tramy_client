@@ -5,7 +5,7 @@
 
 .chat-message__box {
   max-width: 50%;
-  min-width: 6rem;
+  min-width: 10rem;
   word-wrap: break-word;
   padding: 0.8rem;
   margin-bottom: 1rem;

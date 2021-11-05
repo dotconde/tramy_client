@@ -1,5 +1,3 @@
-import moment from "moment";
-import "./styles.css";
 import { ReactComponent as SentIcon } from "../../../assets/icons/sent.svg";
 import { ReactComponent as DeliveredIcon } from "../../../assets/icons/double-check.svg";
 import { ReactComponent as ReadIcon } from "../../../assets/icons/double-check.svg";
@@ -7,6 +5,8 @@ import { ReactComponent as FailedIcon } from "../../../assets/icons/exclamation.
 import { ReactComponent as DeletedIcon } from "../../../assets/icons/stop.svg";
 import { validateEmail } from "../../../helpers/validators/email";
 import { renderMessage } from "../../../helpers/formatters/message";
+import { unixToFriendlyDate } from "../../../helpers/formatters/date";
+import "./styles.css";
 
 function ChatMessage({ messageData }) {
   let displayStatus;
@@ -69,9 +69,7 @@ function ChatMessage({ messageData }) {
       >
         {renderMessage(messageData)}
         <div className="chat-message__data">
-          <span>
-            {moment.unix(messageData?.timestamp).format("DD/MM/YYYY hh:mm a")}
-          </span>
+          <span>{unixToFriendlyDate(messageData?.timestamp)}</span>
           {displayStatus}
         </div>
       </div>
