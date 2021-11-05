@@ -4,6 +4,7 @@ import { unixToFriendlyDate } from "../../helpers/formatters/date";
 import { useMutation, useQueryClient } from "react-query";
 import useConfig from "../../hooks/useConfig";
 import { postNote } from "../../services/api/chat";
+import { ReactComponent as PlusIcon } from "../../assets/icons/plus.svg";
 import "./styles.css";
 
 function NotePanel({ chatId, data }) {
@@ -68,14 +69,28 @@ function NotePanel({ chatId, data }) {
   }
 
   return (
-    <div>
-      <div className="note-message">
+    <div className="note-panel">
+      <div className="new-note">
+        <textarea
+          placeholder="Crear nueva nota..."
+          value={note}
+          onChange={(event) => setNote(event.target.value)}
+          onKeyDown={handleKeyDown}
+        ></textarea>
+        <button type="submit" onClick={sendNote}>
+          <PlusIcon />
+        </button>
+      </div>
+      <div className="note-list">
         {data["notes"].map((note) => (
-          <div className="note-message__box">
-            <p>
-              {note.content} - {note.author} -
-              {unixToFriendlyDate(note.timestamp)}{" "}
-            </p>
+          <div className="note-list__box">
+            <span>
+              <h1>{note.content}</h1>
+              <p>
+                Creado por: <b>{note.author}</b>
+              </p>
+            </span>
+            <h2>{unixToFriendlyDate(note.timestamp)}</h2>
           </div>
         ))}
         <div
@@ -86,16 +101,6 @@ function NotePanel({ chatId, data }) {
           ref={hookDiv}
         ></div>
       </div>
-      <input
-        type="text"
-        placeholder="Escribir mensaje..."
-        value={note}
-        onChange={(event) => setNote(event.target.value)}
-        onKeyDown={handleKeyDown}
-      ></input>
-      <button type="submit" onClick={sendNote}>
-        Guardar nota
-      </button>
     </div>
   );
 }

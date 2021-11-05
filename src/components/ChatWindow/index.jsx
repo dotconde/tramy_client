@@ -21,6 +21,7 @@ import ClientAvatar from "../ClientAvatar";
 import Select from "react-select";
 import { Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
+import { ReactComponent as NoteIcon } from "../../assets/icons/note.svg";
 import { ReactComponent as SmileIcon } from "../../assets/icons/smile.svg";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import { ReactComponent as TemplateIcon } from "../../assets/icons/template.svg";
@@ -232,7 +233,9 @@ function ChatWindow({
           </div>
 
           {/* Notes */}
-          <button onClick={handleNoteList}>📋</button>
+          <button onClick={handleNoteList}>
+            <NoteIcon />
+          </button>
           <Modal
             onRequestClose={handleNoteModal}
             isOpen={noteIsOpen}
@@ -240,7 +243,7 @@ function ChatWindow({
             ariaHideApp={false}
           >
             <div className="template__modal-header">
-              <h1>Notas ✏️</h1>
+              <h1>Mis notas</h1>
               <button
                 className="template__close-button"
                 onClick={handleNoteModal}
