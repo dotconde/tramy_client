@@ -6,7 +6,7 @@
 
 .business-form label {
   text-align: start;
-  color: #9a9a9a;
+  color: #969696;
   font-size: 0.8rem;
   font-weight: 500;
   padding-bottom: 0.5rem;
@@ -44,5 +44,5 @@
 .business-form svg {
   width: 1.2rem;
   height: 1.2rem;
-  fill: #9a9a9a;
+  fill: #969696;
 }

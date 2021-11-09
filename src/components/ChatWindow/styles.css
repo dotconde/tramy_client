@@ -51,7 +51,7 @@
 }
 
 .chat__window-options button svg {
-  fill: #b6b6b6;
+  fill: #969696;
   width: 1.6rem;
   height: 1.6rem;
   margin: 1.4rem 0 0 0.5rem;
@@ -113,7 +113,7 @@
 .chat__window-textbox svg {
   width: 1.5rem;
   height: 1.5rem;
-  fill: #b6b6b6;
+  fill: #969696;
   padding-right: 0.25rem;
 }
 

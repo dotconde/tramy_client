@@ -1,6 +1,6 @@
 .usage {
   background-color: #ffff;
-  color: #9a9a9a;
+  color: #969696;
 }
 
 .step input {
@@ -16,7 +16,7 @@
 
 .step {
   width: 100%;
-  color: #9a9a9a;
+  color: #969696;
   overflow: hidden;
 }
 
@@ -64,7 +64,7 @@
   margin: 0;
   padding-left: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #9a9a9a;
+  color: #969696;
 }
 
 /* :checked */

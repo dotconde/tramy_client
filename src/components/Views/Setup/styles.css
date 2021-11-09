@@ -52,7 +52,7 @@
   width: 1rem;
   padding-right: 0.35rem;
   vertical-align: top;
-  fill: #9a9a9a;
+  fill: #969696;
 }
 
 .setup__tabset > label {
@@ -63,7 +63,7 @@
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  color: #9a9a9a;
+  color: #969696;
 }
 
 .setup__tabset > label::after {
