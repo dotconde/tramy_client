@@ -58,6 +58,11 @@ function Sidebar() {
                 Embudo
               </NavLink>
             </li>
+            <li>
+              <NavLink activeClassName="active" to="/analytics">
+                🔎 Analíticas
+              </NavLink>
+            </li>
           </ul>
         </section>
         <hr />
