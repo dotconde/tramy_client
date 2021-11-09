@@ -107,7 +107,13 @@ function Pipeline() {
     <Board
       hideCardDeleteIcon
       data={pipelineToReactTrelloData(currentPipeline)}
-      style={{ backgroundColor: "#f5f5f5", padding: "1.68rem" }}
+      style={{
+        overflow: "auto",
+        height: "calc(100vh - 6.5rem)",
+        padding: "0",
+        backgroundColor: "#f5f5f5",
+        borderRadius: "0.5rem",
+      }}
       handleDragEnd={handleDragEnd}
     />
   );

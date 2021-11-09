@@ -1,6 +1,64 @@
 .funnel {
-  display: flex;
-  flex-direction: column;
+  display: block;
   font-family: "Poppins", sans-serif;
-  height: 100%;
+  padding: calc(2rem - 5px);
+}
+
+.funnel hr {
+  height: 0.06rem;
+  background-color: rgb(167, 167, 167, 0.25);
+  border: none;
+  margin: 0.5rem 5px;
+}
+
+.funnel__title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.funnel__title h1 {
+  margin: 0 0 0.15rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #5a5a5a;
+}
+
+.funnel__title svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #5a5a5a;
+  padding-left: 0.5rem;
+}
+
+/* Tooltip */
+.funnel__tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.funnel__tooltip .funnel__tooltiptext {
+  visibility: hidden;
+  width: 17.5rem;
+  height: 2rem;
+  font-size: 0.7rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #5a5a5a;
+  text-align: start;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  top: -1rem;
+  left: 6.5rem;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.funnel__tooltip:hover .funnel__tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
