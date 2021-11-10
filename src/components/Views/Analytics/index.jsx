@@ -8,6 +8,7 @@ import Select from "../../UI/Select";
 import useConfig from "../../../hooks/useConfig";
 import AnalyticsCard from "../../UI/AnalyticsCard";
 import { getAnalytics } from "../../../services/api/analytics";
+import { media, allContacts, newContacts } from "../../../constants/tooltips";
 
 function Analytics() {
   const { config } = useConfig();
@@ -35,8 +36,9 @@ function Analytics() {
       {/* Analytics options */}
       <div className="analytics__options">
         <Select
-          backgroundColor={"#EAEAEA"}
-          color={"#5a5a5a"}
+          backgroundColor={"transparent"}
+          color={"#109cf1"}
+          borderColor={"#109cf1"}
           icon={<CalendarIcon />}
           placeholder={"Últimos 7 días"}
         />
@@ -49,14 +51,17 @@ function Analytics() {
           <AnalyticsCard
             title={"Tiempo de primera respuesta (Media)"}
             data={analytics?.average_time_first_reply || "Por calcular"}
+            tooltip={media}
           />
           <AnalyticsCard
             title={"Leads nuevos"}
             data={analytics?.leads_this_week}
+            tooltip={newContacts}
           />
           <AnalyticsCard
             title={"Leads históricos en Tramy"}
             data={analytics?.leads_in_tramy}
+            tooltip={allContacts}
           />
           <AnalyticsCard title={"Agente destacado"} data={"Próximamente"} />
           <AnalyticsCard title={"Tu mejor día fue"} data={"Próximamente"} />
@@ -66,18 +71,26 @@ function Analytics() {
       {/* Team Performance */}
       {/* <div className="analytics__data">
         <h1>Rendimiento del equipo</h1>
-        <div className="analytics__wrapper">
-          <table className="analytics__table">
+
+        <table className="analytics__table">
+          <thead>
             <tr>
               {analyticsHeaders.map((analyticsHeader) => (
                 <th>{analyticsHeader}</th>
               ))}
             </tr>
+          </thead>
+          <tbody>
             <tr>
               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
-          </table>
-        </div>
+          </tbody>
+        </table>
       </div> */}
     </div>
   );

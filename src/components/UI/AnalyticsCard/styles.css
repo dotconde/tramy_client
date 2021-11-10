@@ -6,28 +6,60 @@
   padding: 1.25rem;
   margin: 0.5rem;
 }
+.analytics-card__title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
 
-.analytics-card h2 {
+.analytics-card__title h1 {
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #969696;
   margin: 0;
 }
 
-.analytics-card span {
-  display: flex;
-  align-items: center;
-  padding-top: 0.5rem;
+.analytics-card__title svg {
+  width: 1rem;
+  height: 1rem;
+  fill: #969696;
+  padding: 0.25rem 0 0 0.25rem;
 }
 
-.analytics-card h1 {
-  margin: 0;
+.analytics-card h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #5a5a5a;
+  margin: 0.25rem 0 0 0;
 }
-/* 
-.analytics-card p {
-  font-weight: 400;
-  font-size: 0.75rem;
-  color: #707070;
-  margin: 0;
-  padding-left: 0.5rem;
-} */
+
+/* Tooltip */
+.analytics-card__tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.analytics-card__tooltip .analytics-card__tooltiptext {
+  visibility: hidden;
+  width: 18rem;
+  height: 2rem;
+  font-size: 0.7rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #5a5a5a;
+  text-align: start;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  top: -3.25rem;
+  left: -7.5rem;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.analytics-card__tooltip:hover .analytics-card__tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
