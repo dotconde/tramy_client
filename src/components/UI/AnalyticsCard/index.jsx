@@ -7,7 +7,6 @@ function AnalyticsCard({ title, data }) {
       <h2>{title}</h2>
       <span>
         <h1>{data}</h1>
-        {/* <p>{details}</p> */}
       </span>
     </div>
   );
