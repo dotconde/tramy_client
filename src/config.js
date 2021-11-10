@@ -20,6 +20,7 @@ const ENDPOINTS = {
   CHAT_NOT_ASSIGNED: "chats_not_assigned",
   PIPELINE: "pipelines",
   TEMPLATE: "templates",
+  ANALYTICS: "analytics",
 };
 
 export { BASE_URL, ENDPOINTS };

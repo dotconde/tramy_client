@@ -9,6 +9,7 @@ import { ReactComponent as ClientIcon } from "../../assets/icons/client.svg";
 import { ReactComponent as FilterIcon } from "../../assets/icons/filter.svg";
 import { ReactComponent as SetupIcon } from "../../assets/icons/setup.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/icons/logout.svg";
+import { ReactComponent as ChartIcon } from "../../assets/icons/chart.svg";
 import { NavLink } from "react-router-dom";
 
 function Sidebar() {
@@ -56,6 +57,12 @@ function Sidebar() {
               <NavLink activeClassName="active" to="/funnel">
                 <FilterIcon />
                 Embudo
+              </NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="active" to="/analytics">
+                <ChartIcon />
+                Analíticas (Beta)
               </NavLink>
             </li>
           </ul>

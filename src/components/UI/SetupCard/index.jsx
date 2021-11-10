@@ -56,10 +56,10 @@ function SetupCard({
         {/* <div className="setup-card__button">
           <Button
             icon={<SetupIcon />}
-            iconColor={"#9a9a9a"}
+            iconColor={"#969696"}
             content={"Configuración"}
             backgroundColor={"white"}
-            contentColor={"#9a9a9a"}
+            contentColor={"#969696"}
             borderColor={"transparent"}
           />
         </div> */}

@@ -1,0 +1,140 @@
+.analytics {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  padding: 1.7rem 1.5rem;
+}
+
+.analytics hr {
+  height: 0.06rem;
+  background-color: rgb(167, 167, 167, 0.25);
+  border: none;
+  margin: 0.5rem;
+}
+
+.analytics__title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  margin: 0 0.5rem;
+}
+
+.analytics__title h1 {
+  margin: 0 0 0.15rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #5a5a5a;
+}
+
+.analytics__title svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #5a5a5a;
+  padding-left: 0.5rem;
+}
+
+/* Tooltip */
+.analytics__tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.analytics__tooltip .analytics__tooltiptext {
+  visibility: hidden;
+  width: 22rem;
+  height: 2rem;
+  font-size: 0.7rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #5a5a5a;
+  text-align: start;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  top: -1rem;
+  left: 6.5rem;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.analytics__tooltip:hover .analytics__tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Analytics options */
+
+.analytics__options {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0;
+  margin: 0 0.5rem;
+}
+
+.analytics__options a {
+  display: flex;
+  align-items: center;
+  color: #109cf1;
+  text-decoration: none;
+  padding-left: 1rem;
+  font-size: 0.85rem;
+}
+
+.analytics__options a svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  padding-right: 0.5rem;
+}
+
+/* Anaylitcs Data */
+
+.analytics__data h1 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #5a5a5a;
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+.analytics__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* Analytics Table */
+
+.analytics__wrapper {
+  overflow: auto;
+  height: calc(100vh - 31rem);
+}
+
+.analytics__table {
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.18rem 0.625rem rgb(0 0 0 / 0.2);
+  text-align: left;
+  margin: 1rem 0.5rem;
+  border-collapse: collapse;
+  width: calc(100% - 1rem);
+}
+
+.analytics__table th {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #969696;
+}
+
+.analytics__table td {
+  font-weight: 0.9rem;
+  font-weight: 500;
+  color: #5a5a5a;
+}
+
+.analytics__table td,
+.analytics__table th {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+}

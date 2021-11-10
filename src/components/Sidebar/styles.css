@@ -47,7 +47,7 @@
 
 .sidebar__list li a {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   text-decoration: none;
   padding: 0.7rem 1.25rem;
   color: #ffffff;
@@ -58,6 +58,7 @@
   width: 1rem;
   height: 1rem;
   padding-right: 0.6rem;
+  padding-top: 0.06rem;
   fill: white;
 }
 
@@ -99,7 +100,6 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
