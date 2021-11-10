@@ -25,7 +25,7 @@ export function renderMessage(message) {
     case "template":
       renderedMessage = (
         <p>
-          <b>➡️ Plantilla: </b>
+          <b>➡️ &nbsp;Plantilla: </b>
           {message?.template?.body}
         </p>
       );

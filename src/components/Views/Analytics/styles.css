@@ -44,9 +44,9 @@
   width: 22rem;
   height: 2rem;
   font-size: 0.7rem;
-  background-color: white;
+  background-color: #5a5a5a;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  color: #5a5a5a;
+  color: white;
   text-align: start;
   border-radius: 6px;
   padding: 0.5rem;
@@ -70,14 +70,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.5rem 0;
-  margin: 0 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
 }
 
 /* Anaylitcs Data */
 
 .analytics__data h1 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #5a5a5a;
   margin: 1rem 0.5rem 0.5rem 0.5rem;
@@ -105,7 +104,7 @@
   display: block;
   width: 100%;
   overflow: auto;
-  max-height: calc(100vh - 34rem);
+  max-height: calc(100vh - 32rem);
 }
 
 .analytics__table thead tr {
@@ -113,21 +112,20 @@
 }
 
 .analytics__table th {
-  font-size: 0.85rem;
   font-weight: 400;
   color: #969696;
 }
 
 .analytics__table td {
-  font-weight: 0.85rem;
   font-weight: 500;
   color: #5a5a5a;
 }
 
 .analytics__table td,
 .analytics__table th {
+  font-size: 0.85rem;
   border-bottom: 1px solid #ddd;
   padding: 0.6rem 1rem;
   text-align: left;
-  width: 30rem;
+  width: calc(100vw / 6);
 }

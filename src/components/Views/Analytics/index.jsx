@@ -7,8 +7,15 @@ import { useQuery } from "react-query";
 import Select from "../../UI/Select";
 import useConfig from "../../../hooks/useConfig";
 import AnalyticsCard from "../../UI/AnalyticsCard";
+// import { analyticsHeaders } from "../../../constants/contents";
 import { getAnalytics } from "../../../services/api/analytics";
-import { media, allContacts, newContacts } from "../../../constants/tooltips";
+import {
+  media,
+  allContacts,
+  newContacts,
+  featuredAgent,
+  bestDay,
+} from "../../../constants/tooltips";
 
 function Analytics() {
   const { config } = useConfig();
@@ -54,24 +61,31 @@ function Analytics() {
             tooltip={media}
           />
           <AnalyticsCard
-            title={"Leads nuevos"}
+            title={"Nuevos contactos"}
             data={analytics?.leads_this_week}
             tooltip={newContacts}
           />
           <AnalyticsCard
-            title={"Leads históricos en Tramy"}
+            title={"Todos los contactos"}
             data={analytics?.leads_in_tramy}
             tooltip={allContacts}
           />
-          <AnalyticsCard title={"Agente destacado"} data={"Próximamente"} />
-          <AnalyticsCard title={"Tu mejor día fue"} data={"Próximamente"} />
+          <AnalyticsCard
+            title={"Agente destacado"}
+            data={"Próximamente"}
+            tooltip={featuredAgent}
+          />
+          <AnalyticsCard
+            title={"Tu mejor día fue"}
+            data={"Próximamente"}
+            tooltip={bestDay}
+          />
         </div>
       </div>
 
       {/* Team Performance */}
       {/* <div className="analytics__data">
         <h1>Rendimiento del equipo</h1>
-
         <table className="analytics__table">
           <thead>
             <tr>
@@ -82,12 +96,12 @@ function Analytics() {
           </thead>
           <tbody>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Próximamente</td>
+              <td>Próximamente</td>
+              <td>Próximamente</td>
+              <td>Próximamente</td>
+              <td>Próximamente</td>
+              <td>Próximamente</td>
             </tr>
           </tbody>
         </table>

@@ -14,7 +14,13 @@ export const newConversations =
   "Esta métrica muestra las conversaciones creadas durante el período de tiempo elegido.";
 
 export const allContacts =
-  "Esta méstrica muestra con cuántos contactos se interactuó durante el período de tiempo elegido.";
+  "Esta métrica muestra con cuántos contactos se interactuó durante el período de tiempo elegido.";
 
 export const newContacts =
-  "Esta méstrica muestra el total de contactos que se han creado durante el período de tiempo elegido.";
+  "Esta métrica muestra el total de contactos que se han creado durante el período de tiempo elegido.";
+
+export const featuredAgent =
+  "Esta métrica muestra el agente que atendió más clientes durante el período de tiempo elegido.";
+
+export const bestDay =
+  "Esta métrica muestra el día en el que se atendió a más clientes durante el período de tiempo elegido.";
