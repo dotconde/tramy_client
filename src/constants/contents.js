@@ -23,31 +23,6 @@ export const blogArray = [
 export const tutorialDescription =
   "En este video podrás visualizar las principales funcionalidades de tramy para tu empresa.";
 
-export const analyticsArray = [
-  {
-    title: "Tiempo de primera respuesta (Media)",
-    data: "00h 00m 09s",
-  },
-  {
-    title: "Tiempo de respuesta (Media)",
-    data: "00h 00m 09s",
-  },
-
-  {
-    title: "Conversaciones nuevas (Creadas)",
-    data: "13 conversaciones",
-  },
-  {
-    title: "Todos los contactos (Atendidos)",
-    data: "75 contactos",
-  },
-
-  {
-    title: "Contactos nuevos (Creados)",
-    data: "15 contactos",
-  },
-];
-
 export const analyticsHeaders = [
   "Agente",
   "Última actividad",
