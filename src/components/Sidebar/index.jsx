@@ -62,7 +62,7 @@ function Sidebar() {
             <li>
               <NavLink activeClassName="active" to="/analytics">
                 <ChartIcon />
-                Analíticas
+                Analíticas (Beta)
               </NavLink>
             </li>
           </ul>
