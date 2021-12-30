@@ -91,7 +91,8 @@ function Login({ setToken }) {
       </section>
       <section className="login__welcome">
         <p>
-          Bienvenidos a&nbsp; <BlackTramyLogo />
+          Muchas gracias por tu confianza, oficialmente Tramy estará disponible
+          hasta el 31 de diciembre del 2021.
         </p>
         <img src={TramyLoginWallpaper} alt="imagen de fondo de Tramy" />
       </section>
